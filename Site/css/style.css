@@ -42,8 +42,9 @@
 }
 
 .footer-container {
+    height: 300px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 20px;
     background-color: #1d6975;
     color: white;
