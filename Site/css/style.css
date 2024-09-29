@@ -6,6 +6,329 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
+:root{
+    --primary-color:#003519;
+    --complementar-color: #34751D;
+    --secondary-color: #1D6975;
+    --danger-color: #C53015;
+}
+
+.header{
+    height: 80px;
+    width: 100%;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.nav-div{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  width: 60%;
+}
+
+.nav-list{
+  list-style: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list .nav-item {
+  position: relative;
+}
+
+.nav-list .nav-item a{
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.nav-list .nav-item::after {
+  background-color: var(--complementar-color);
+  width: 0;
+  content: "";
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  transition: width 0.35s ease 0s;
+  position: absolute;
+}
+
+.nav-list .nav-item:hover::after {
+  width: 100%;
+}
+
+
+
+
+.nav-list .nav-item a{
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+.nav-list .active a{
+  color: var(--complementar-color);
+}
+
+.div-logo{
+  
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.navbar{
+  width: 90%;
+  height: 100%;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.home{
+    width: 100%;
+    background-color: var(--primary-color);
+    height: 70vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-container{
+  width: 90%;
+
+  
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.box {
+  width: 50%;
+  height: 100%;
+  
+}
+
+.controle-arte{
+  display: flex;
+  
+  justify-content: flex-end;
+}
+
+#home-escrita{
+  display: flex;
+  flex-direction: column;
+  
+
+}
+
+#home-escrita h1{
+  font-size: 70px;
+  margin: 0;
+  padding: 0;
+}
+
+.home-buttons-group{
+  
+  display: flex;
+  gap: 10px;
+}
+
+.home-buttons-group button{
+  cursor: pointer;
+  
+  width: 48%;
+  height: 60px;
+  border-radius: 11px;
+  border: none;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.btn-secondary{
+  background-color: var(--secondary-color);
+  color: #fff;
+  filter: drop-shadow(2px 1.5px 2px #ffffff);
+  transition: 1s all;
+}
+
+.btn-secondary:hover{
+  filter: drop-shadow(2px 1.5px 2px var(--complementar-color));
+  color: var(--secondary-color);
+  background-color: #fff;
+}
+
+.btn-white{
+  filter: drop-shadow(2px 1.5px 2px var(--complementar-color));
+  color: var(--secondary-color);
+  transition: 1s all;
+}
+
+.btn-white:hover{
+  background-color: var(--secondary-color);
+  color: #fff;
+  filter: drop-shadow(2px 1.5px 2px #ffffff);
+}
+
+.box-arte{
+  
+  width: 90%;
+  margin-top:5% ;
+  height: 90%;
+  position: relative;
+}
+box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quinas{
+  width: 80px;
+  height: 80px;
+  
+}
+
+.raios{
+  position: absolute;
+    left: 50%;
+    margin-left: -40%;
+    top: 50%;
+    margin-top: -175px;
+    width: 80%;
+    height: 350px;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    border: 10px dotted #FFF;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.raio-2{
+  position: absolute;
+    left: 50%;
+    margin-left: -35%;
+    top: 60%;
+    margin-top: -160px;
+    width: 70%;
+    height: 320px;
+    border-top-left-radius: 120%;
+    border-top-right-radius: 120%;
+    border: 10px solid ;
+    filter: drop-shadow(2px 1.5px 2px #ffffff);
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.raio-3{
+  position: absolute;
+    left: 50%;
+    margin-left: -30%;
+    top: 70%;
+    margin-top: -145px;
+    width: 60%;
+    height: 290px;
+    border-top-left-radius: 120%;
+    border-top-right-radius: 120%;
+    border: 10px solid ;
+    filter: drop-shadow(2px 1.5px 2px #ffffff);
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.arte-sensor{
+  background-image: url('../img/sensor/ultra.png');
+  background-size: contain;
+  position: absolute;
+  filter: drop-shadow(3px 7px 1px rgb(255, 255, 255,0.2));
+  width: 400px;
+  height: 400px;
+  top: 58%;
+  transform: rotate(-10deg);
+  margin-top: -200px;
+  left: 50%;
+  margin-left: -200px;
+}
+
+.esquerda-top{
+  position: absolute;
+  top:0;
+  left: 0;
+  border-left: 8px solid white;
+  border-top: 8px solid white;
+  border-top-left-radius: 15px;
+}
+.direita-top{
+  position: absolute;
+  top:0;
+  right: 0;
+  border-right: 8px solid white;
+  border-top: 8px solid white;
+  border-top-right-radius: 15px;
+}
+.direita-bottom{
+  position: absolute;
+  bottom:0;
+  right: 0;
+  border-right: 8px solid white;
+  border-bottom: 8px solid white;
+  border-bottom-right-radius: 15px;
+}
+
+.esquerda-bottom{
+  position: absolute;
+  bottom:0;
+  left: 0;
+  border-left: 8px solid white;
+  border-bottom: 8px solid white;
+  border-bottom-left-radius: 15px;
+}
+
+.raios{
+
+}
+
+#home-escrita h3{
+  font-size: 40px;
+  text-transform: capitalize;
+  
+}
+
+#home-escrita p{
+  padding: 0;
+  margin: 0;
+  font-style: italic !important;
+  margin: 13px 0px;
+}
+
+#home-escrita p span{
+  font-weight: 700;
+}
+
+footer{
+  bottom: 0;
+  width: 100%;
+  background-color: var(--secondary-color);
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
 .quadrado-pai{
     display: flex;
     flex-direction: row;
@@ -14,7 +337,7 @@
 .quadrado-grande{
     width: 50%;
     height: 60%;
-    border: 1px solid green;
+    
     
 }
 
@@ -46,7 +369,7 @@
     display: flex;
     justify-content: space-around;
     padding: 20px;
-    background-color: #1d6975;
+    width: 90%;
     color: white;
     font-size: 20px;
     font-weight: 650;
@@ -72,6 +395,9 @@
   .icon-sv {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    margin-left:10% ;
+    
   }
   .icon {
     margin-right: -100px;
