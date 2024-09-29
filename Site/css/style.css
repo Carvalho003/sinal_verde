@@ -14,12 +14,15 @@
 }
 
 .header{
+    z-index: 2;
     height: 80px;
     width: 100%;
     background-color: var(--primary-color);
     display: flex;
     justify-content: center;
     align-items: center;    
+    position: fixed;
+    top: 0;
 }
 
 .nav-div{
@@ -96,6 +99,7 @@
 }
 
 .home{
+    margin-top: 80px;
     width: 100%;
     background-color: var(--primary-color);
     height: 70vh;
@@ -299,9 +303,6 @@ box{
   border-bottom-left-radius: 15px;
 }
 
-.raios{
-
-}
 
 #home-escrita h3{
   font-size: 40px;
