@@ -339,6 +339,11 @@ footer{
     flex-direction: row;
 }
 
+.quadrado-pai-column{
+  display: flex;
+  flex-direction: column;
+}
+
 .quadrado-grande{
     width: 50%;
     height: 60%;
@@ -367,6 +372,12 @@ footer{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+/* SIMULADOR */
+.simulador{
+  width: 90%;
+  height: 50vh;
 }
 
 .footer-container {
