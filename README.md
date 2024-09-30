@@ -1,7 +1,5 @@
 # Site Institucional do Sianl Verde
 
-## 💻 Pré-requisitos
-
 ## 🚀 Instalando 
 
 Para instalar, siga estas etapas:
