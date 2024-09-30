@@ -14,7 +14,7 @@
 }
 
 .header{
-    z-index: 2;
+    z-index: 4;
     height: 80px;
     width: 100%;
     background-color: var(--primary-color);
@@ -134,12 +134,15 @@
 #home-escrita{
   display: flex;
   flex-direction: column;
-  
+  height: 70%;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 
 }
 
 #home-escrita h1{
-  font-size: 70px;
+  font-size: 6rem;
   margin: 0;
   padding: 0;
 }
@@ -305,16 +308,17 @@ box{
 
 
 #home-escrita h3{
-  font-size: 40px;
+  font-size: 3rem;
   text-transform: capitalize;
   
 }
 
 #home-escrita p{
   padding: 0;
+  font-size: 1.5rem;
   margin: 0;
   font-style: italic !important;
-  margin: 13px 0px;
+  
 }
 
 #home-escrita p span{
@@ -406,4 +410,186 @@ footer{
     margin-left: -25px;
   }
 
-  
+  .tituloC1 {
+    color: #003519;
+    font-size: 86px;
+    display: flex;
+    font-weight: 300;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sectionCaio {
+    height: 200vh;
+    width: 85%;
+    
+    width: 85%;
+}
+
+.textoCCaio1 {
+    color: #717774;
+    font-size: 20px;
+    display: flex;
+    font-weight: 300px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.cardsCaio {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    margin-top: 10%;
+    margin-bottom: 80px;
+    margin-right: 100px;
+}
+
+.cardCaio {
+    width: 299px;
+    height: 200px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    border: 3px solid rgba(0, 53, 25, 0.16);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 200px;
+    z-index: 2;
+    position: relative;
+}
+
+.circuloCaio{
+    background-color: #E9EBF3;
+    width: 164px;
+    height: 164px;
+    border-radius: 164px;
+    border: none;
+    display: flex;
+    z-index: 3;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -23%;
+}
+
+.sensoresC {
+    margin-left: 163px;
+    margin-bottom: 400px;
+}
+
+.suporteC {
+    margin-left: 560px;
+    margin-bottom: 400px;
+}
+
+.dashboardC {
+    margin-left: 953px;
+    margin-bottom: 400px;
+}
+
+.fotosCaio {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.textoACaio {
+    color: #1D6975;
+    font-size: 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tituloC2{
+    color: #1D6975;
+    font-size: 90px;
+    display: flex;
+    font-weight: 600;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 150px;
+}
+
+.textoCCaio2 {
+    color: #717774;
+    font-size: 20px;
+    display: flex;
+    font-weight: 300px;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 150px;
+    margin-bottom: 20px;
+    width: 400px;
+}
+
+.buttonEquipe {
+    width: 304px;
+    height: 82px;
+    border-radius: 20px;
+    background-color: #1D6975;
+    border: none;
+    margin-left: 150px;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: 300;
+    font-size: 32px;
+}
+
+.textoQuemSomos {
+    display: flex;
+    flex-direction: column;
+    width: 70vh;
+}
+
+.segundaParteCaio {
+    display: flex;
+    flex-direction: row;
+}
+
+.cardsjustificativa {
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+}
+
+.cardjustificativaum {
+    width: 300px;
+    height: 276px;
+    border-radius: 20px;
+    border: 3px solid rgba(0, 53, 25, 0.16);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    background-color: white;
+    z-index: 2;
+}
+
+.tituloJustificativa {
+    color: #044125;
+    font-size: 90px;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+.textoJustificativa {
+    text-align: center;
+    font-size: 32px;
+}
+
+.cardjustificativadois {
+    width: 300px;
+    height: 276px;
+    border-radius: 20px;
+    border: 3px solid rgba(0, 53, 25, 0.16);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 240px;
+    margin-top: 220px;
+    position: absolute;
+    z-index: 1;
+}
