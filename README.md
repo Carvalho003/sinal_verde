@@ -1,4 +1,6 @@
-# Site Institucional do Sianl Verde
+# Site Institucional do Sinal Verde
+
+Esse é o repositório onde está o nosso Site Institucional
 
 ## 🚀 Instalando 
 
