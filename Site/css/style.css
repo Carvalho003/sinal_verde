@@ -222,6 +222,8 @@ box{
     border-left: none;
     border-right: none;
     border-bottom: none;
+    animation: rodar 10s  infinite alternate;
+    animation-timing-function: linear;
 }
 
 .raio-2{
@@ -239,6 +241,9 @@ box{
     border-left: none;
     border-right: none;
     border-bottom: none;
+    animation: rodar 10s  infinite alternate;
+    animation-timing-function: linear;
+    
 }
 
 .raio-3{
