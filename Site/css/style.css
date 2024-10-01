@@ -6,12 +6,145 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
+
+
 :root{
     --primary-color:#003519;
     --complementar-color: #34751D;
     --secondary-color: #1D6975;
     --danger-color: #C53015;
 }
+
+.titulo-contato{
+  font-family: "Poppins", system-ui;
+  color: #003519;
+  font-weight: 500;
+  font-size: 4rem;
+  
+}
+
+.contato-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  
+  align-items: center;
+  height: 60vh;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.pai{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+  
+  width: 90%;
+  height: 100%;
+}
+
+.informacoes-esquerda{
+  font-family: "Poppins", system-ui;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-weight: 500;
+  color: #003519;
+  height: 100%;
+  gap: 10px;
+  width: 50%;  
+}
+#ipt_nome, #ipt_email, #ipt_assunto{
+  font-family: "Poppins", system-ui;
+  font-size: 1rem;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 85%;
+  border-radius: 7px;
+}
+
+.informacoes-direita{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+
+}
+.mensagem{
+  font-family: "Poppins", system-ui;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #003519;
+  
+}
+
+
+input, textarea{
+  outline: none;
+ 
+}
+#ipt_mensagem{
+  font-family: "Poppins", system-ui;
+  font-size: 1rem;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 80%;
+  border-radius: 7px;
+  height: 180px;
+  resize: none;
+}
+
+#ipt_mensagem1{
+  width: 25px;
+  height: 25px;
+}
+label{
+  font-family: "Poppins", system-ui;
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 1.25rem;
+  margin-left: 2%;
+}
+
+.button-group{
+  width: 82%;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-enviar{
+  cursor: pointer;
+  
+  width: 35%;
+  height: 60px;
+  border-radius: 11px;
+  border: none;
+  font-size: 22px;
+  font-weight: 600;
+  align-self: flex-end;
+  background-color: var(--primary-color);
+  color: #fff;
+  filter: drop-shadow(2px 1.5px 2px #ffffff);
+  transition: 1s all;
+}
+
+
+.btn-enviar:hover{
+  background-color: #003519;
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: 0.2;
+}
+
+.check{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 50px;
+}
+
 
 .header{
     z-index: 4;
@@ -163,6 +296,8 @@
   font-size: 22px;
   font-weight: 600;
 }
+
+
 
 .btn-secondary{
   background-color: var(--secondary-color);
@@ -342,6 +477,7 @@ footer{
 .quadrado-pai{
     display: flex;
     flex-direction: row;
+    
 }
 
 .quadrado-pai-column{
