@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
+    <!-- CONFIGURAÇÕES BÁSICAS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- ICON E TITULO DA PÁGINA -->
+    <link rel="icon" href="/Site/img/logos/logo maior.png">
+    <title>Sinal Verde</title>
+
+    <!-- IMPORTAÇÕES DE CSS E LIBS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,16 +44,16 @@
                 <div class="nav-div ">
                     <ul class="nav-list">
                     <li class="nav-item active">
-                        <a href="">Home</a>
+                        <a href="#">Home</a>
                     </li>
                     <li class="nav-item ">
                         <a href="#simulador">Simulador</a>
                     </li>
                     <li class="nav-item ">
-                        <a href="">Equipe</a>
+                        <a href="#equipe">Equipe</a>
                     </li>
                     <li class="nav-item ">
-                        <a href="">Contato</a>
+                        <a href="#contato">Contato</a>
                     </li>
                     </ul>
                 </div>
@@ -164,7 +170,7 @@
         </div>  
     </section>
 
-    <main class="contato-container">
+    <main id="contato" class="contato-container">
         <div class="pai">
         <span class="titulo-contato fade-in">CONTATO</span>
         </div>
@@ -173,7 +179,7 @@
                     <p>Nome Completo:</p>
                     <input type="text" id="ipt_nome" placeholder="Nome">
                     <p>Email:</p>
-                    <input type="text" id="ipt_email" placeholder="Email">
+                    <input type="email" id="ipt_email" placeholder="Email">
                     <p>Assunto:</p>
                     <input type="text" id="ipt_assunto" placeholder="Assunto">
                 </div>  
@@ -183,14 +189,14 @@
                     <div class="button-group">
                     <div class="check">
                         <input type="checkbox" id="ipt_mensagem1">
-                        <label for="ipt_mensagem">Concordo em receber respostas pelo e-mail</label>
+                        <label for="ipt_mensagem1">Concordo em receber respostas pelo e-mail</label>
                     </div>
                     <button class="btn-enviar" onclick="sendEmail()">Enviar <i class="fa-solid fa-arrow-right"></i></button> </div>
                 </div> 
         </div>    
     </main>
 
-    <section class="container-equipe">
+    <section id="equipe" class="container-equipe">
         <div class="fundo-equipe fade-in">
             <span class="title-equipe ">CONHEÇA A EQUIPE</span>
             <div class="swiper carrosselEquipe">

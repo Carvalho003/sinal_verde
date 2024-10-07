@@ -4,24 +4,26 @@ var emailCorreto = '';
 const CARACTERES_ESPECIAIS = /[^A-Za-z0-9]/;
 
 function analisarEmail(){
-        var email = iptEmail.value;
-        var isEmailValidado = false;
-        var tamEmail = email.length;
+    var email = iptEmail.value;
+    var isEmailValidado = false;
+    var tamEmail = email.length;
 
-        var isEnd = email.endsWith('.com') || email.endsWith('.br') || email.endsWith('.gov');
+    var isEnd = email.endsWith('.com') || email.endsWith('.br') || email.endsWith('.gov');
 
-        var indiceCom = email.indexOf('.com');
-        var indiceBr = email.indexOf('.br');
+    var indiceCom = email.indexOf('.com');
+    var indiceBr = email.indexOf('.br');
 
-        var indiceArroba = email.indexOf('@'); 
-        var isArroba = email.includes('@') && (indiceArroba < indiceCom || indiceArroba < indiceBr);
+    var indiceArroba = email.indexOf('@'); 
+    var isArroba = email.includes('@') && (indiceArroba < indiceCom || indiceArroba < indiceBr);
 
-        if((tamEmail > 8 && tamEmail < 45) && isEnd && isArroba){
-            isEmailValidado = true;
-            email = emailCorreto;
-        }
+    if((tamEmail < 8 || tamEmail > 45) && !isEnd && !isArroba){
+        return alert("Insira um valor de email válido");
+    }
+
+    isEmailValidado = true;
+    email = emailCorreto;
     
-        return isEmailValidado;
+    return isEmailValidado;
 }
 
 function analisarSenha(){
@@ -50,9 +52,11 @@ function analisarSenha(){
     }
 
     if(tamSenha > 8 && isMinuscula && isMaiuscula && isEspecial && isNum ){
-        isSenhaValidado = true;
-        senha = senhaCorreta;
+        return alert("Insira uma senha válida");
     }
+
+    isSenhaValidado = true;
+    senha = senhaCorreta;
 
     return isSenhaValidado;
 }
@@ -70,5 +74,6 @@ function autenticar(){
         // } else {
         //   retornar uma mensagem ao usuário que não existe esse email cadastrado
         // }
+        return location.href="nike.com";
     }
 }

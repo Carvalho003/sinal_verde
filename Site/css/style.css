@@ -87,8 +87,8 @@
 
 input, textarea{
   outline: none;
- 
 }
+
 #ipt_mensagem{
   font-family: "Poppins", system-ui;
   font-size: 1rem;
@@ -552,8 +552,6 @@ footer{
   color: var(--subtitle-color);
   font-weight: 550;
 }
-
-
 
 .conteudo h3{
   color: var(--label-color);
@@ -1079,6 +1077,7 @@ footer{
   color: grey;
   padding: 30px;
 }
+
 .filho_login span {
   padding: 30px;
   font-size: 27px;

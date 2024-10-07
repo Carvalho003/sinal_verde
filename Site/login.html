@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" href="/Site/img/logos/logo maior.png">
+    <title>Login</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body style="width: 99%; height: 100vh; display: flex; justify-content: center; align-items: center;">
@@ -11,12 +12,11 @@
         <div class="filho_login">
             <h2>LOGIN</h2>
             <span>Email:</span><br>
-            <input placeholder="email" type="text"> <br>
+            <input id="iptEmail" placeholder="email" type="text"> <br>
             <span>Senha:</span><br>
-            <input placeholder="senha" type="password"> <br>
-            <button onclick="">Entrar</button> <br>
+            <input id="iptSenha" placeholder="senha" type="password"> <br>
+            <button onclick="autenticar()">Entrar</button> <br>
             <p>Esqueceu a senha? <a href="#"> Clique aqui</a></p>
-            
         </div>
         <div class="irmao_login">
             <a href="./guia-padrao.html">
@@ -26,6 +26,6 @@
             
         </div>
     </div>
-    
+    <script src="/Site/js/login.js"></script>
 </body>
 </html>
