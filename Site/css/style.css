@@ -986,6 +986,8 @@ footer{
   margin-left: 22.61px !important;
   color: var(--secondary-color) !important;
 
+  z-index: 2 !important;
+
 }
 
 .sep-nxtPrev .swiper-button-prev{
@@ -996,6 +998,7 @@ footer{
   margin-right: 22.61px !important;
   color: var(--secondary-color) !important;
   
+  z-index: 2 !important; 
 }
 
 .box-comentario{
