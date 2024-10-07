@@ -10,6 +10,9 @@
     <script src="https://kit.fontawesome.com/d5ea0dfb99.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/animacao.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 
 <style>
@@ -130,9 +133,9 @@
         </div>
     
     </section>
-    
+     
     <section id="simulador" class="simulador quadrado-pai-column">
-        <div class="content">
+        <div class="fade-in content-simulador">
             <h1 class="title">SIMULADOR</h1>
             <h2 class="subtitle">FIQUE POR DENTRO DE COMO NOSSA SOLUÇÃO PODE CONTRIBUIR PARA A DIMINUIÇÃO DOS ACIDENTES E, CONSEQUENTEMENTE, OS CUSTOS ENVOLVIDOS NELES:</h2>
             <div class="calculadora quadrado-pai">
@@ -186,6 +189,79 @@
                 </div> 
         </div>    
     </main>
+
+    <section class="container-equipe">
+        <div class="fundo-equipe fade-in">
+            <span class="title-equipe ">CONHEÇA A EQUIPE</span>
+            <div class="swiper carrosselEquipe">
+                <div class="swiper-wrapper ">
+                    <div class="swiper-slide fotoEquipe">
+                        <div class="foto1"></div>
+                        <div class="icons-group">
+
+                            <a href="https://github.com/Carvalho003"><i class='bx bxl-github icon-equipe'></i></a>
+                            <a href="https://www.linkedin.com/in/hugo-carvalho-734b19274/"><i class='bx bxl-linkedin icon-equipe'></i></a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide fotoEquipe">
+                        <div class="foto2"></div>
+                        <div class="icons-group">
+
+                            <a href="https://github.com/Carvalho003"><i class='bx bxl-github icon-equipe'></i></a>
+                            <a href="https://www.linkedin.com/in/hugo-carvalho-734b19274/"><i class='bx bxl-linkedin icon-equipe'></i></a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide fotoEquipe">
+                        <div class="foto3"></div>
+                        <div class="icons-group">
+
+                            <a href="https://github.com/Carvalho003"><i class='bx bxl-github icon-equipe'></i></a>
+                            <a href="https://www.linkedin.com/in/hugo-carvalho-734b19274/"><i class='bx bxl-linkedin icon-equipe'></i></a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide fotoEquipe">
+                        <div class="foto4"></div>
+                        <div class="icons-group">
+
+                            <a href="https://github.com/Carvalho003"><i class='bx bxl-github icon-equipe'></i></a>
+                            <a href="https://www.linkedin.com/in/hugo-carvalho-734b19274/"><i class='bx bxl-linkedin icon-equipe'></i></a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide fotoEquipe">
+                        <div class="foto5"></div>
+                        <div class="icons-group">
+
+                            <a href="https://github.com/Carvalho003"><i class='bx bxl-github icon-equipe'></i></a>
+                            <a href="https://www.linkedin.com/in/hugo-carvalho-734b19274/"><i class='bx bxl-linkedin icon-equipe'></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="sep-nxtPrev">
+                <div class="swiper-button-next proximo" onclick="renderizar(1)"></div>
+                <div class="swiper-button-prev anterior" onclick="renderizar(2)"></div>
+            </div>
+            <div class="paginacao-sep">
+            <div class="swiper-pagination paginacao-equipe"></div>
+            </div>
+        </div>
+        <div class="fundo-comentarios fade-in">
+            
+            <span class="title-equipe-green">SINAL VERDE</span>
+
+            <div class="box-comentario fade-in" id="box_comentario">
+                <span id="mensagem-colab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam rerum nisi, repellat voluptatibus dolorem obcaecati quidem, quos natus voluptatem eligendi eius distinctio quibusdam vitae ea fugit illo? Quas, vitae eum?</span>
+                <div class="group-comentario">
+                    <div class="foto-colaborador" id="foto-colab"></div>
+                    <div class="sep-nome-cargo">
+                        <span class="nome-colab" id="nome-colab">Hugo Carvalho</span>
+                        <span class="cargo-colab" id="cargo-colab">Dev Back-End</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
 <footer>
     <div class="footer-container" >
@@ -235,4 +311,26 @@ function teste(){
     
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="./js/animacao.js"></script>
+
+<script>
+    var swiper = new Swiper(".carrosselEquipe", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+
+  <script src="./js/carrossel-equipe.js">
+
+  </script>
+
