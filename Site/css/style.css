@@ -23,8 +23,8 @@
 .titulo-contato{
   font-family: "Poppins", system-ui;
   color: #003519;
-  font-weight: 500;
-  font-size: 4rem;
+  font-weight: 400;
+  font-size: 6em;
 }
 
 .contato-container{
@@ -62,7 +62,8 @@
 #ipt_nome, #ipt_email, #ipt_assunto{
   font-family: "Poppins", system-ui;
   font-size: 1rem;
-  padding: 10px;
+  
+  height: 2.8em;
   border: 1px solid rgba(0, 0, 0, 0.2);
   width: 85%;
   border-radius: 7px;
@@ -480,19 +481,17 @@ footer{
 .quadrado-pai{
     display: flex;
     flex-direction: row;
-    
 }
 
 .quadrado-pai-column{
   display: flex;
   flex-direction: column;
+  gap: 5%;
 }
 
 .quadrado-grande{
     width: 50%;
-    height: 60%;
-    
-    
+    height: 60%; 
 }
 
 .quadrado-com-areas{
@@ -521,24 +520,30 @@ footer{
 /* SIMULADOR */
 .simulador{
   width: 90%;
-  height: 95vh;
-  
+  gap:1.2rem;
+  margin-top:5%
 }
 
 .content-simulador{
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  height: 100%;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 5%;
 }
 
 .coluna{
-  width: 45%;
+  
+  
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   flex-direction: column;
-  gap: 20px
+}
+
+.inputs-simulador{
+  gap: 1.5rem;
+  width: 40%;
+  
 }
 
 .title{
@@ -551,21 +556,44 @@ footer{
 .subtitle{
   color: var(--subtitle-color);
   font-weight: 550;
+  font-size: 2.6rem;
+}
+
+.conteudo{
+  margin-bottom: 4px;
+  
+}
+
+.sep-resultado-sim{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .conteudo h3{
   color: var(--label-color);
 }
 
+.resultado{
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+  justify-content: space-between;
+}
+
 .conteudo input{
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 15px;
-  width: 100%;
+  height: 2.8em;
+  width: 100% !important;
   border: 0.5px solid black;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  font-size: 1em;
+  font-size: 1.4em;
   border-radius: 7px;
+  padding: 5px 0px;
+  
+}
+
+.input-group-simulador{
+  width: 100%;
 }
 
 .divPrejuizo{
@@ -575,9 +603,9 @@ footer{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
   border-radius: 7px;
-  padding: 10px;
+  height: 160px;
+  
 }
 
 .divPrejuizo h1{
@@ -588,19 +616,18 @@ footer{
   color: var(--danger-color);
 }
 
-.resultado{
-  margin-left: 4vw;
-}
-
 .destaque-porem{
   color: var(--complementar-color);
-  font-size: 3em;
+  font-size: 3.3em;
   font-weight: 500;
 }
 
 .output{
   color:var(--subtitle-color);
   font-weight: 500;
+  font-size: 2.2rem;
+  
+  
 }
 
 .destaque{
@@ -675,7 +702,7 @@ footer{
 }
 
 .sectionCaio {
-    height: 225vh;
+    
     width: 85%;
     
     width: 85%;
