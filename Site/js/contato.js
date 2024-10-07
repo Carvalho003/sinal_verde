@@ -15,14 +15,14 @@ function sendEmail() {
     var nome = ipt_nome.value;
     var assunto = ipt_assunto.value;
 
-    if(nome == '' || emailContactado == '' || assunto == '' || ipt_mensagaem.value){
+    if(nome == '' || emailContactado == '' || assunto == '' || ipt_mensagem.value == ''){
         return alert("Preencha TODOS os campos corretamente!");
     }
     
     var mensagem = `
-        Nome Usuário: ${nome}
-        Email: ${emailContactado}
-        Assunto: ${assunto}
+        Nome Usuário: ${nome}<br>
+        Email: ${emailContactado}<br>
+        Assunto: ${assunto}<br>
         Mensagem: ${ipt_mensagem.value}
     `;
 
