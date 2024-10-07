@@ -858,7 +858,7 @@ footer{
     z-index: 1;
 }
 
-<<<<<<< Updated upstream
+
 .container-equipe{
   
   width: 100%;
@@ -1040,7 +1040,7 @@ footer{
 
 .cargo-colab{
   color: #656363;
-=======
+}
 .pai_login {
   display: flex;
 }
@@ -1118,5 +1118,5 @@ footer{
 .filho_login a {
   text-decoration: none;
   color: #003519;
->>>>>>> Stashed changes
+
 }
