@@ -56,7 +56,8 @@
 
 .icon-text-nav{
     width: 90%;
-    
+    text-decoration: none;
+    color: #fff;
     height: 100%;
     display: flex;
     gap: 2%;    
