@@ -145,11 +145,11 @@
             <div class="coluna inputs-simulador">
                 <div class="conteudo input-group-simulador">
                     <h3 for="iptArea">Informe a quantidade de incidentes mensais  da sua área:</h3>
-                    <input id="iptArea" class="input" type="text" placeholder="Exemplo: 50">
+                    <input onkeyup="calcular()" id="iptArea" class="input" type="text" placeholder="Exemplo: 50">
                 </div>
                 <div class="conteudo input-group-simulador">
                     <h3 for="iptGastos">Informe o valor gasto por incidente:</h3>
-                    <input id="iptGastos" class="input" type="text" placeholder="Exemplo: 10000">
+                    <input onkeyup="calcular()" id="iptGastos" class="input" type="text" placeholder="Exemplo: 10000">
                 </div>
                 <div class="divPrejuizo">
                     <h2 class="prejuizo">Prejuízo Final</h2>
@@ -173,9 +173,9 @@
         <span class="titulo-contato fade-in">CONTATO</span>
         </div>
         <div class="pai fade-in">
-                <div class="informacoes-esquerda">
-                    <p>Nome Completo:</p>
-                    <input type="text" id="ipt_nome" placeholder="Nome">
+            <div class="informacoes-esquerda">
+                <p>Nome Completo:</p>
+                <input type="text" id="ipt_nome" placeholder="Nome">
                     <p>Email:</p>
                     <input type="email" id="ipt_email" placeholder="Email">
                     <p>Assunto:</p>
@@ -310,7 +310,7 @@
 </body>
 </html>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script simuladorsrc="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="./js/animacao.js"></script>
 
 <script>
@@ -330,7 +330,8 @@
   </script>
 
 <!-- IMPORT DE SCRIPTS -->
- <script src="js/contato.js"></script>
+<script src="js/contato.js"></script>
+<script src="js/simulador.js"></script>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script src="./js/carrossel-equipe.js"></script>
 
