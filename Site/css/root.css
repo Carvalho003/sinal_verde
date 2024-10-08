@@ -9,5 +9,17 @@
       --label-color:#656363;
       
     /* TAMANHO FONTES */
+    --tamanho-font-input:1.2em;
+
+    --weight-title: 400;
+    --font-size-title: 6em;
+
+    --font-size-subtitle:1.8rem;
+
+    /* OUTRAS */
+    --altura-input: 60px;
+    --padding-input: 0px 10px;
+    --padding-input-mensagem: 5px 10px;
+    --radius-input:7px;
   
   }
