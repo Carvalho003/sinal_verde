@@ -1,0 +1,153 @@
+#modal_adicionar{
+    width: 38%;
+    margin: auto;
+    background-color: #fff;
+    backdrop-filter: blur(2px);
+    border-radius: 11px;
+    filter: drop-shadow(3px 1px 2px rgba(0,0,0,0.7));
+    border: none;
+    outline: none;
+    
+    
+}
+
+.modal-head{
+    width: 99%;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+.title-area span{
+    margin-left:4%;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.top-head{
+    width: 100%;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+#close-modal{
+    font-size: 40px;
+}
+
+.modal-circle-icon{
+    width: 80px;
+    height: 80px;
+    background-color: rgba(217,217,217, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    filter: drop-shadow(2px 3px 0.5px #656363 );
+}
+
+.modal-circle-icon i{
+    font-size: 55px;
+    filter: none !important;
+    color: var(--primary-color)
+}
+
+.modal-content{
+    width: 95%;
+    margin-top: 10px;
+    margin-left: 4%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.input-group-modal{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.input-group-modal input, .input-group-modal select{
+    height: 30px;
+    outline: none;
+    font-size: 18px;
+    border: 1px solid;
+    border-color: #656363;
+    border-radius:5px ;
+}
+
+.input-group-modal label{
+    color: #656363;
+}
+
+.group-meio, .group-fim{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cpf-group{
+    width: 55%;
+}
+
+.dtnasc-group{
+    width: 40%;
+}
+
+.email-senha-group{
+    width: 70%;
+}
+
+.cargo-tipo-group{
+    width: 25%;
+
+}
+
+#ipt_confirme{
+    width: 69%;
+}
+
+
+#ipt_data{
+    height: 30px;
+    
+    padding: 0;
+}
+
+.modal-footer{
+    margin-top: 15px;
+    
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 4%;
+    
+}
+
+.btn-modal{
+    padding: 6px 0px;
+    width: 100px;
+    border: none;
+    font-weight: 400;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-gray{
+ background-color: #D9D9D9;
+}
+
+.btn-green{
+    background-color: var(--primary-color);
+    color: #fff;
+}

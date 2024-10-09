@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../../Site/css/fonts.css">
     <link rel="stylesheet" href="../../Site/css/root.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/modal_usuario.css">
 </head>
 <body>
     <main class="screen-dash">
@@ -27,10 +28,10 @@
                         <span>dashboard</span>
                     </a>
                 </div>
-                <li class="item-nav item-active">
+                <li  class="item-nav item-active">
                     <a href="./colaboradores.html" class="icon-text-nav">
                         <i class='bx bx-user-voice' ></i>
-                        <span>colaboradores</span>
+                        <span >colaboradores</span>
                     </a>
                 </li>
             </ul>
@@ -42,8 +43,80 @@
             </div>
         </nav>
         <main class="main-content">
-
+            <button onclick="abrirModal()">Abrir modal</button>
         </main>
     </main>
+    <dialog id="modal_adicionar">
+            
+            <div class="modal-head">
+                <div class="top-head">
+                    <div class="modal-circle-icon">
+                        <i class='bx bx-user-voice'></i>
+                    </div>
+                    <i class='bx bx-x' onclick="closeModal()" id="close-modal"></i>
+                </div>
+
+                <div class="title-area">
+                    <span>adicionar novo colaborador</span>
+                </div>
+            </div>
+            <div class="modal-content">
+                <!-- DIV CAMPO NOME -->
+                <div class="input-group-modal">
+                    <label for="Nome do colaborador">Nome:</label>
+                    <input type="text">
+                </div>
+
+                <div class="group-meio">
+                    <div class="input-group-modal cpf-group">
+                        <label for="Cpf do colaborador">CPF:</label>
+                        <input type="text">
+                    </div>
+                    <div class="input-group-modal dtnasc-group">
+                        <label for="Data Nasc Colaborador">Data Nascimento:</label>
+                        <input id="ipt_data" type="date">
+                    </div>
+                </div>
+
+                <div class="group-fim">
+                    <div class="input-group-modal email-senha-group">
+                        <label for="Email do colaborador">Email:</label>
+                        <input type="email">
+                    </div>
+                    <div class="input-group-modal cargo-tipo-group">
+                        <label for="Cargo do colaborador ">Cargo:</label>
+                        <input type="text">
+                    </div>
+                </div>
+
+                <div class="group-fim">
+                    <div class="input-group-modal email-senha-group">
+                        <label for="Senha do colaborador">Senha:</label>
+                        <input type="password">
+                    </div>
+                    <div class="input-group-modal cargo-tipo-group">
+                        <label for="Tipo do colaborador ">Tipo:</label>
+                        <select  id="slt_permissao">
+                            <option value="1">Master</option>
+                            <option value="2">Comum</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group-modal">
+                    <label for="Senha do colaborador">Confirme a Senha:</label>
+                    <input id="ipt_confirme" type="password">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn-modal btn-green">Salvar</button>
+                <button class="btn-modal btn-gray">Cancelar</button>
+            </div>
+    </dialog>
+    
+
 </body>
 </html>
+
+<script src="../js/adicionarModal.js"></script>
+
