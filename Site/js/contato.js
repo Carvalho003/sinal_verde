@@ -36,7 +36,7 @@ function sendEmail() {
         Subject:assunto,
         Body: mensagem
     })
-    .then(function (message) {
-        alert(message) 
+    .then(function (resposta) {
+        alert(resposta) 
     });
 }

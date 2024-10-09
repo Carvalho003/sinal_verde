@@ -1,10 +1,20 @@
 var senhaCorreta = '';
 var emailCorreto = '';
 
+const infosColaboradores = [
+    {
+        nome:"admin",
+        senha:"Admin123",
+        nivel_permissao:0,
+        email:"contatosinalverde@outlook.com"
+    }
+];
+
 const CARACTERES_ESPECIAIS = /[^A-Za-z0-9]/;
 
 function analisarEmail(){
     var email = iptEmail.value;
+
     var isEmailValidado = false;
     var tamEmail = email.length;
 
@@ -21,7 +31,7 @@ function analisarEmail(){
     }
 
     isEmailValidado = true;
-    email = emailCorreto;
+    emailCorreto = email;
     
     return isEmailValidado;
 }
@@ -51,18 +61,37 @@ function analisarSenha(){
         }
     }
 
-    if(tamSenha > 8 && isMinuscula && isMaiuscula && isEspecial && isNum ){
+    if(tamSenha < 8 && !isMinuscula && !isMaiuscula && !isEspecial && !isNum ){
         return alert("Insira uma senha válida");
     }
 
     isSenhaValidado = true;
-    senha = senhaCorreta;
+    senhaCorreta = senha;
 
     return isSenhaValidado;
 }
 
 function autenticar(){
     if(analisarEmail() && analisarSenha()){
+        var isEmail = false;
+        var indexColaborador = undefined;
+        for(var i = 0; i<infosColaboradores.length; i++){
+            console.log(infosColaboradores[i].email);
+            if(infosColaboradores[i].email == emailCorreto){
+                isEmail = true;
+                indexColaborador = i;
+            }
+        }
+
+        if(!isEmail){
+            return alert(`Não foi possível encontrar o email ${emailCorreto}`);
+        }
+
+        if(infosColaboradores[indexColaborador].senha != senhaCorreta){
+            return alert(`Senha incorreta`);
+        }
+
+        return location.href="./cliente/colaboradores.html";
         // puxar a api para verificar se o email existe
         // if (isEmail(emailCorreto)){
         //   analisa a senha
@@ -74,6 +103,6 @@ function autenticar(){
         // } else {
         //   retornar uma mensagem ao usuário que não existe esse email cadastrado
         // }
-        return location.href="nike.com";
+        
     }
 }
