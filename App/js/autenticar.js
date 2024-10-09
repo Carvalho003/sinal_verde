@@ -26,7 +26,7 @@ function analisarEmail(){
     var indiceArroba = email.indexOf('@'); 
     var isArroba = email.includes('@') && (indiceArroba < indiceCom || indiceArroba < indiceBr);
 
-    if((tamEmail < 8 || tamEmail > 45) && !isEnd && !isArroba){
+    if((tamEmail < 8 || tamEmail > 45) && !isEnd && !isArroba || email == ''){
         return alert("Insira um valor de email válido");
     }
 
@@ -38,6 +38,7 @@ function analisarEmail(){
 
 function analisarSenha(){
     var senha = iptSenha.value;
+
     var isSenhaValidado = false;
     var tamSenha = senha.length;
 
@@ -61,7 +62,7 @@ function analisarSenha(){
         }
     }
 
-    if(tamSenha < 8 && !isMinuscula && !isMaiuscula && !isEspecial && !isNum ){
+    if(tamSenha < 8 && !isMinuscula && !isMaiuscula && !isEspecial && !isNum || senha == ''){
         return alert("Insira uma senha válida");
     }
 
@@ -75,6 +76,8 @@ function autenticar(){
     if(analisarEmail() && analisarSenha()){
         var isEmail = false;
         var indexColaborador = undefined;
+
+        // pd usar o .find ou o forEach
         for(var i = 0; i<infosColaboradores.length; i++){
             console.log(infosColaboradores[i].email);
             if(infosColaboradores[i].email == emailCorreto){
@@ -92,17 +95,5 @@ function autenticar(){
         }
 
         return location.href="./cliente/colaboradores.html";
-        // puxar a api para verificar se o email existe
-        // if (isEmail(emailCorreto)){
-        //   analisa a senha
-        //   if (verifyPassword(senhaCorreta)){
-        //      retorna o acesso para algum lugar 
-        //   } else {
-        //      fala que a senha está incorreta
-        //   }
-        // } else {
-        //   retornar uma mensagem ao usuário que não existe esse email cadastrado
-        // }
-        
     }
 }
