@@ -1057,6 +1057,8 @@ footer{
 }
 .pai_login {
   display: flex;
+  position: absolute;
+  justify-content: center;
 }
 .filho_login {
   width: 60%;
@@ -1065,6 +1067,8 @@ footer{
   border-top: none;
   border-radius: 12px 0 0 12px; 
   box-shadow: -8px 8px 10px rgba(0, 0, 0, 0.3); 
+  display: flex;
+  flex-direction: column;
 }
 
 .irmao_login {
@@ -1085,57 +1089,86 @@ footer{
   margin-top: -10px;
   
 }
-.filho_login h2 {
+
+.header-filho {
+  width: 100%;
+  margin-left: 3%;
+  margin-top: 4%;
+  display: flex;
+  flex-direction: row;
+}
+.header-filho h2{
+  display: flex;
+  flex-direction: row;
   font-size: 80px;
   font-weight: 400;
-  color: grey;
-  padding: 30px;
+  color: #8A8A8A
 }
 
-.filho_login span {
-  padding: 30px;
-  font-size: 27px;
+.login-inputs{
+  width: 100%;
+  padding: 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
-.filho_login input {
-  margin-left: 3%;
-  margin-bottom: 15px;
-  width: 80%;
-  height: 9%;
-  border: solid 0.1px rgb(129, 129, 129);
-  border-radius: 10px;
-  font-size: 35px;
-  padding-left: 35px;
+.login-inputs label{
+  width: 100%;
+  color: black;
+  font-size: 24px;
+}
+.login-inputs input {
+  width: 90%;
+  height: 8vh;
+  margin-left: 2%;
+  border-radius: 12px;
+  font-size: 30px;
+  padding-left: 15px;
+  border: solid 0.3px var(--subtitle-color);
 }
 
-.filho_login button {
-  margin-left: 29px;
-  margin-top: 30px;
-  width: 84%;
-  height: 9%;
-  cursor: pointer;
-  font-size: 35px;
+.filho-botao {
+  width: 100%;
+  height: 8vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
-  border: solid 0.1px black;
-  color: white;
-  background-color: #003519;
-  font-weight: 500;
-  
+  margin-top: 2%;
 }
 
-.filho_login p {
-  font-size: 20px;
+.filho-botao button{
+  margin-right: 1%;
+  width: 92%;
+  height: 8vh;
+  border-radius: 12px;
+  font-size: 65px;
   display: flex;
   justify-content: center;
-  margin-left: -60px;
-  color: rgb(129, 129, 129);
+  align-items: center;
+  color: white;
+  background-color: var(--primary-color);
+  font-style: italic;
+  cursor: pointer;
 }
-.filho_login a {
+
+.div-esqueceu-senha {
+  height: 3vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.div-esqueceu-senha p {
+  font-size: 20px;
+  color: var(--subtitle-color);
+}
+.div-esqueceu-senha a {
+  font-size: 20px;
   text-decoration: none;
-  color: #003519;
+  color: var(--primary-color);
 }
 
 .background-filho {

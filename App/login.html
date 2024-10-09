@@ -16,13 +16,25 @@
 <body style="width: 99%; height: 100vh; display: flex; justify-content: center; align-items: center;">
     <div class="pai_login" style="height: 70%; width: 80%;">
         <div class="filho_login">
-            <h2>LOGIN</h2>
-            <span>Email:</span><br>
-            <input id="iptEmail" placeholder="email" type="text"> <br>
-            <span>Senha:</span><br>
-            <input id="iptSenha" placeholder="senha" type="password"> <br>
-            <button onclick="autenticar()">Entrar</button> <br>
-            <p>Esqueceu a senha? <a href="#"> Clique aqui</a></p>
+            <div class="header-filho">
+                <h2>LOGIN</h2>
+            </div>
+            <div class="login-inputs">
+                <div class="filho-lab-inp">
+                    <label>Email:</label><br>
+                    <input id="iptEmail" placeholder="email" type="text"> <br>
+                </div>
+                <div class="filho-lab-inp">
+                    <label>Senha:</label><br>
+                    <input id="iptSenha" placeholder="senha" type="password"> <br>
+                </div>
+            </div>
+            <div class="filho-botao">
+                <button onclick="autenticar()">Entrar</button> <br>
+            </div>
+            <div class="div-esqueceu-senha">
+                <p>Esqueceu a senha? <a href="#"> Clique aqui</a></p>
+            </div>
         </div>
         <div class="irmao_login">
             <a href="./guia-padrao.html">

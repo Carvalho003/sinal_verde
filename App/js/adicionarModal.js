@@ -8,4 +8,3 @@ function closeModal(){
     modalAdicionarPassageiro.close();
 }
 
-abrirModal();
