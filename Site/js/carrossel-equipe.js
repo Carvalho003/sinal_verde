@@ -20,10 +20,10 @@ let dadosColaboradores = {
         mensagem: 'Muita midia trabalhar aqui, muito espaço para expressar minhas ideias'
     },
     2:{
-        foto: '14.png',
-        nome: 'Ranier Smith',
-        cargo:'Dev Front-End',
-        mensagem: 'Muita midia trabalhar aqui, muito espaço para expressar minhas ideias'
+        foto: 'raniero.png',
+        nome: 'Ranier Dalton',
+        cargo:'Equipe Desenvolvimento',
+        mensagem: 'Participar desse projeto é muito gratificante, pois pude aprender tanto no aspecto técnico quanto no trabalho em grupo, aprimorando minhas habilidades e a colaboração.'
     },
     3:{
         foto: '14.png',

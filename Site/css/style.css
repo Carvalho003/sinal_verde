@@ -956,7 +956,8 @@ footer{
 }
 
 .foto3{
-  background-image: url('../img/equipe/14.png');
+  background-image: url('../img/equipe/ranier.png');
+  background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
   height: 100%;
