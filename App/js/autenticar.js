@@ -20,11 +20,9 @@ function analisarEmail(){
 
     var isEnd = email.endsWith('.com') || email.endsWith('.br') || email.endsWith('.gov');
 
-    var indiceCom = email.indexOf('.com');
-    var indiceBr = email.indexOf('.br');
-
+    var indiceEnd = email.indexOf('.com') || email.indexOf('.br') || email.indexOf('.gov') ;
     var indiceArroba = email.indexOf('@'); 
-    var isArroba = email.includes('@') && (indiceArroba < indiceCom || indiceArroba < indiceBr);
+    var isArroba = email.includes('@') && indiceArroba < indiceEnd;
 
     if((tamEmail < 8 || tamEmail > 45) && !isEnd && !isArroba || email == ''){
         return alert("Insira um valor de email válido");

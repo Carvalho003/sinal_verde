@@ -64,13 +64,13 @@
                 <!-- DIV CAMPO NOME -->
                 <div class="input-group-modal">
                     <label for="Nome do colaborador">Nome:</label>
-                    <input type="text">
+                    <input id="ipt_nome" type="text">
                 </div>
 
                 <div class="group-meio">
                     <div class="input-group-modal cpf-group">
                         <label for="Cpf do colaborador">CPF:</label>
-                        <input type="text">
+                        <input id="ipt_cpf" type="text">
                     </div>
                     <div class="input-group-modal dtnasc-group">
                         <label for="Data Nasc Colaborador">Data Nascimento:</label>
@@ -81,18 +81,18 @@
                 <div class="group-fim">
                     <div class="input-group-modal email-senha-group">
                         <label for="Email do colaborador">Email:</label>
-                        <input type="email">
+                        <input id="ipt_email" type="email">
                     </div>
                     <div class="input-group-modal cargo-tipo-group">
                         <label for="Cargo do colaborador ">Cargo:</label>
-                        <input type="text">
+                        <input id="ipt_cargo" type="text">
                     </div>
                 </div>
 
                 <div class="group-fim">
                     <div class="input-group-modal email-senha-group">
                         <label for="Senha do colaborador">Senha:</label>
-                        <input type="password">
+                        <input id="ipt_senha" type="password">
                     </div>
                     <div class="input-group-modal cargo-tipo-group">
                         <label for="Tipo do colaborador ">Tipo:</label>
@@ -109,7 +109,7 @@
             </div>
 
             <div class="modal-footer">
-                <button class="btn-modal btn-green">Salvar</button>
+                <button onclick="validarCampos()" class="btn-modal btn-green">Salvar</button>
                 <button class="btn-modal btn-gray">Cancelar</button>
             </div>
     </dialog>
@@ -117,6 +117,6 @@
 
 </body>
 </html>
-
+<script src="../js/validacao_cadastro.js"></script>
 <script src="../js/adicionarModal.js"></script>
 
