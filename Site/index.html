@@ -164,11 +164,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="sep-nxtPrev">
-                    <div class="swiper-button-next next"></div>
-                    <div class="swiper-button-prev back"></div>
+                <div class="sep-nxtPrev-equipamento">
+                    <div onclick="tirarMarca()" class="swiper-button-next next"></div>
+                    <div onclick="tirarMarca()" class="swiper-button-prev back"></div>
                 </div>
-                <div class="paginacao-sep">
+                <div class="paginacao-sep-equipamento">
                     <div class="swiper-pagination paginacao-equipamento"></div>
                     </div>
                 </div>
@@ -383,6 +383,19 @@
         prevEl: ".swiper-button-prev",
       },
     });
+    //função para tirar a marca da agua do spline
+    window.onload = function() {
+    
+        console.log('sss')
+        var splineViews = document.querySelectorAll('spline-viewer');
+        
+        for(var i = 0; i<splineViews.length;i++){
+            console.log('aa')
+            splineViews[i].shadowRoot.querySelector('#logo').remove();
+        }
+        
+    }
+    
   </script>
 
 <!-- IMPORT DE SCRIPTS -->

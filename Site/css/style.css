@@ -1199,7 +1199,7 @@ footer{
 
 .tituloOnde {
   color: white;
-  font-size: 86px;
+  font-size: 70px;
   margin-top: 50px;
   font-weight: 500;
   text-align: left;
@@ -1264,12 +1264,16 @@ footer{
 .parteEsquerdaOnde {
   justify-content: flex-start;
   width: 669px;
-  height: 995px;
+  
 }
 
 .parteDireitaOnde {
   width: 669px;
-  height: 995px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .imagemCheck {
@@ -1306,7 +1310,9 @@ footer{
 .botaoSimular {
   width: 250px;
   height: 80px;
+  margin-bottom: 10%;
   font-size: 30px;
+  border: none;
   border-radius: 12px;
 }
 
@@ -1318,9 +1324,37 @@ footer{
 .corFundoEquipamento {
   background-color: #003519;
   width: 100%;
-  height: 125vh;
+  
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+.paginacao-sep-equipamento .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+  width: 30px;
+  height: 30px;
+  border: 1.5px solid;
+  border-color: #fff;
+}
+
+.paginacao-sep-equipamento .swiper-pagination{
+  bottom: 10% !important;
+  left: 50%;
+}
+
+.paginacao-sep-equipamento .swiper-pagination-bullet-active{
+  background-color: #fff;
+}
+
+
+
+.sep-nxtPrev-equipamento .swiper-button-next:after{
+  color: #fff;
+
+}
+
+
+.sep-nxtPrev-equipamento .swiper-button-prev:after{
+  color: #fff;
 }
