@@ -1242,7 +1242,7 @@ footer{
 }
 
 .irmao_login {
-  width: 40%;
+  width: 45%;
   height: 100%;
   
   border: solid 0.3px black;
@@ -1332,7 +1332,7 @@ footer{
   background-image: url('../img/logos/logo\ maior.png');
   background-size: cover;
   width: 87%;
-  height: 50%;
+  height: 72%;
   
 }
 
@@ -1342,4 +1342,67 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.container-feedback {
+  width: 90%;
+  height: 70vh;
+  border: solid;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+}
+.content-feedback {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+}
+.header-feedback {
+
+  width: 100%;
+  height: 55%;
+}
+.header-feedback span {
+  font-size: 95px;
+  color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.subtexto-feedbacks{
+  margin-top: 3%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+.subtexto-feedbacks span {
+  height: 100%;
+  width: 100%;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--subtitle-color);
+
+}
+.container-carrossel-feedback{
+  display: flex;
+}
+.div-feedback-carrossel {
+  margin-top: 3%;
+  margin-left: 1%;
+  width: 398px;
+  height: 298px;
+  border: solid;
+  display: flex;
+  flex-direction: row;
+}
+
+.content-carrossel-feed {
+  width: 85%;
+  height: 65%;
+  border: solid;
+  margin-top: 3%;
+  margin-left: 5%;
 }

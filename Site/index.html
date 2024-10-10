@@ -166,8 +166,8 @@
                     </div>
                 </div>
                 <div class="sep-nxtPrev-equipamento">
-                    <div onclick="tirarMarca()" class="swiper-button-next next"></div>
-                    <div onclick="tirarMarca()" class="swiper-button-prev back"></div>
+                    <div onclick="tirarMarca()" class="swiper-button-next next next-equipamento"></div>
+                    <div onclick="tirarMarca()" class="swiper-button-prev back prev-equipamento"></div>
                 </div>
                 <div class="paginacao-sep-equipamento">
                     <div class="swiper-pagination paginacao-equipamento"></div>
@@ -176,8 +176,47 @@
             </div>
         </div>
     </section>
-     <div id="_simulador" class="esconder"></div>
-    <section class="fade-in simulador quadrado-pai-column">
+
+    <section id="feedbacks-testemunhas" class="container-feedback">
+        <div class="content-feedback">
+            <div class="header-feedback">
+                <span>FEEDBACKS E TESTEMUNHAS<span>
+            </div>
+            <div class="subtexto-feedbacks">
+                <span>Confira o que alguns de nossos clientes dizem sobre a solução</span>
+            </div>
+        </div>
+        <div class="carrossel-feedback">
+            <div class="container-carrossel-feedback" id="feed_carrossel">
+
+                <div class="div-feedback-carrossel" >
+                    <div class="content-carrossel-feed">
+                        <div>
+                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quo iure voluptatum quae commodi repellat fuga quasi porro accusamus, dicta eius deleniti libero expedita saepe vel blanditiis. Illo, at libero.</span>
+                        </div>
+                        <div>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="div-feedback-carrossel" >
+
+                </div>
+                <div class="div-feedback-carrossel" >
+
+                </div>
+                <div class="div-feedback-carrossel" >
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+     
+
+
+
+    <section id="simulador" class="fade-in simulador quadrado-pai-column">
         <div class="header-simulador">
             <h1 class="title">SIMULADOR</h1>
             <h2 class="subtitle">FIQUE POR DENTRO DE COMO NOSSA SOLUÇÃO PODE CONTRIBUIR PARA A DIMINUIÇÃO DOS ACIDENTES E, CONSEQUENTEMENTE, OS CUSTOS ENVOLVIDOS NELES:</h2>
@@ -285,8 +324,8 @@
                 
             </div>
             <div class="sep-nxtPrev">
-                <div class="swiper-button-next proximo" onclick="renderizar(1)"></div>
-                <div class="swiper-button-prev anterior" onclick="renderizar(2)"></div>
+                <div class="swiper-button-next proximo next-equipe" onclick="renderizar(1)"></div>
+                <div class="swiper-button-prev anterior prev-equipe" onclick="renderizar(2)"></div>
             </div>
             <div class="paginacao-sep">
             <div class="swiper-pagination paginacao-equipe"></div>
@@ -365,8 +404,8 @@
       },
       
       navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: ".next-equipe",
+        prevEl: ".prev-equipe",
       },
     });
   </script>
@@ -380,8 +419,8 @@
       },
       
       navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: ".next-equipamento",
+        prevEl: ".prev-equipamento",
       },
     });
     //função para tirar a marca da agua do spline
