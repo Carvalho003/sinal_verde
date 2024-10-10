@@ -1057,23 +1057,32 @@ footer{
 }
 .pai_login {
   display: flex;
-  position: absolute;
+  
+  flex-direction: row;
   justify-content: center;
 }
+
+.pai_formulario{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 55%;
+}
 .filho_login {
-  width: 60%;
+  width: 100%;
   height: 100%;
   border: solid px black;
   border-top: none;
   border-radius: 12px 0 0 12px; 
   box-shadow: -8px 8px 10px rgba(0, 0, 0, 0.3); 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .irmao_login {
   width: 40%;
   height: 100%;
+  
   border: solid 0.3px black;
   border-radius: 12px;
   background-color: var(--primary-color);
@@ -1141,8 +1150,9 @@ footer{
   margin-right: 1%;
   width: 92%;
   height: 8vh;
+  border: none;
   border-radius: 12px;
-  font-size: 65px;
+  font-size: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
