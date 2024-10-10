@@ -14,9 +14,16 @@ function validarCampos(){
     }
 
     var data = ipt_data.value;
+    var hoje = new Date();
 
-    if(data == '' || data < Date.now()){
+    var dia = hoje.getDate();
+    var mes = hoje.getMonth() + 1;
+    var ano = hoje.getFullYear();
 
+    hoje = `${ano}-${mes}-${dia}`;
+
+    if(data == '' || data >= hoje){
+        return alert("Data inválida");
     }
 
     var email = ipt_email.value;
@@ -36,6 +43,11 @@ function validarCampos(){
 
     var cargo = ipt_cargo.value;
 
+    if(cargo == ''){
+        return alert("Insira um cargo válido");
+    }
+
+    var permissao = Number(slt_permissao.value);
     var senha = ipt_senha.value;
 
     
@@ -61,7 +73,7 @@ function validarCampos(){
         }
     }
 
-    if(tamSenha < 8 && !isMinuscula && !isMaiuscula && !isEspecial && !isNum || senha == ''){
+    if(tamSenha < 8 || !isMinuscula || !isMaiuscula || !isEspecial || !isNum || senha == ''){
         return alert("Insira uma senha válida");
     }
 
@@ -71,5 +83,15 @@ function validarCampos(){
         return alert("As senhas não batem");
     }
 
-
+    colaborador = {
+        nome:nome,
+        cpf:cpf,
+        nivel_permissao:permissao,
+        cargo: cargo,
+        email:email,
+        senha:senha,
+        data_nascimento:data
+    }
+    console.log(colaborador);
+    return alert("cadastrado com sucesso!");
 }
