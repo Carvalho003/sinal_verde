@@ -128,9 +128,54 @@
                 </div>
             </div>
         </div>
-    
     </section>
-     
+    <section class="corFundoEquipamento fade-in">
+        <div class="sectionCaio2">
+        <div class="ondeFundo">
+            <div id="parteEsquerdaOnde">
+                <div class="tituloOnde">ONDE O <br>EQUIPAMENTO <br>PODE SER <br>POSICIONADO</div>
+                <div class="textoOnde">
+                    <div class="conferes">
+                        <img src="/Site/img/icons/checklist.png" alt="" class="imagemCheck">
+                        <img src="/Site/img/icons/checklist.png" alt="" class="imagemCheck">
+                        <img src="/Site/img/icons/checklist.png" alt="" class="imagemCheck">
+                    </div>
+                    <div class="bullets_grupo">
+                        <div class="bullets1">Equipamentos Compactos</div>
+                        <div class="bullets2">Flexibilidade</div>
+                        <div class="bullets3">Estratégias de mapeamento</div>
+                    </div>
+                </div>
+                <div class="botaoOnde">
+                    <button class="btn-secondary botaoSimular">SIMULAR <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="swiper parteDireitaOnde">
+                <div class="carrosselEquipamento">
+                    <div class="swiper-wrapper">
+                        <div id="poste" class="swiper-slide">
+                            <spline-viewer url="https://prod.spline.design/huJTMZ8uTvGLSwZU/scene.splinecode"></spline-viewer>
+                        </div>
+                        <div id="cone" class="swiper-slide modelagens">
+                            <spline-viewer url="https://prod.spline.design/RlKix9YTXFTvtClX/scene.splinecode"></spline-viewer>
+                        </div>
+                        <div class="swiper-slide modelagens">
+                            <spline-viewer url="https://prod.spline.design/JHNldMQedttyFU6U/scene.splinecode"></spline-viewer>
+                        </div>
+                    </div>
+                </div>
+                <div class="sep-nxtPrev">
+                    <div class="swiper-button-next next"></div>
+                    <div class="swiper-button-prev back"></div>
+                </div>
+                <div class="paginacao-sep">
+                    <div class="swiper-pagination paginacao-equipamento"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <div class="esconder"></div>
     <section id="simulador" class="fade-in simulador quadrado-pai-column">
         <div class="header-simulador">
             <h1 class="title">SIMULADOR</h1>
@@ -314,7 +359,22 @@
       slidesPerView: 1,
       spaceBetween: 30,
       pagination: {
-        el: ".swiper-pagination",
+        el: ".paginacao-equipe",
+        clickable: true,
+      },
+      
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+  <script>
+    var swiperEquipamento = new Swiper(".carrosselEquipamento", {
+      slidesPerView: 1,
+      spaceBetween: 70,
+      pagination: {
+        el: ".paginacao-equipamento",
         clickable: true,
       },
       
@@ -331,3 +391,5 @@
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script src="./js/carrossel-equipe.js"></script>
 
+
+<script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.29/build/spline-viewer.js"></script>
