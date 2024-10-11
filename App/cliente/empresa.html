@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colaboradores</title>
+    <title>Empresas</title>
     <link rel="icon" href="../../Site/img/logos/logo maior.png">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,8 +13,7 @@
     <link rel="stylesheet" href="../../Site/css/fonts.css">
     <link rel="stylesheet" href="../../Site/css/root.css">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/modal_usuario.css">
-    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/modal_empresa.css">
 </head>
 <body>
     <main class="screen-dash">
@@ -29,13 +28,13 @@
                         <span>dashboard</span>
                     </a>
                 </div>
-                <li  class="item-nav item-active">
+                <li  class="item-nav">
                     <a href="./colaboradores.html" class="icon-text-nav">
                         <i class='bx bx-user-voice' ></i>
                         <span >colaboradores</span>
                     </a>
                 </li>
-                <li class="item-nav">
+                <li class="item-nav item-active">
                     <a href="./empresa.html" class="icon-text-nav">
                         <i class='bx bxs-business'></i>
                         <span>Empresas</span>
@@ -50,25 +49,7 @@
             </div>
         </nav>
         <main class="main-content">
-            <header class="header-colab">
-                <div class="header-content-aside">
-                    <div class="options-box">
-                        <span>Olá, Bisque</span>
-                        <i onclick="toggleMenu(this)" class='bx bxs-chevron-down'></i>
-                        <div class="menu hide">
-                            <ul>
-                                <li>
-                                    <span>Meus Dados</span>
-                                </li>
-                                <li>
-                                    <span>Sair</span>
-                                </li>
-                            </ul>
-                            <i class='bx bxs-up-arrow seta-header'></i>
-                        </div>
-                    </div>
-                </div>
-            </header>
+            <button onclick="abrirModal()">Abrir modal</button>
         </main>
     </main>
     <dialog id="modal_adicionar">
@@ -76,60 +57,63 @@
             <div class="modal-head">
                 <div class="top-head">
                     <div class="modal-circle-icon">
-                        <i class='bx bx-user-voice'></i>
+                        <i class='bx bxs-business'></i>
                     </div>
-                    <i class='bx bx-x' onclick="closeModal()" id="close-modal"></i>
+                    <i class='bx bx-x xzao' onclick="closeModal()" id="close-modal"></i>
                 </div>
 
                 <div class="title-area">
-                    <span>adicionar novo colaborador</span>
+                    <span>adicionar nova empresa</span>
                 </div>
             </div>
             <div class="modal-content">
                 <!-- DIV CAMPO NOME -->
-                <div class="input-group-modal">
-                    <label for="Nome do colaborador">Nome:</label>
-                    <input id="ipt_nome" type="text">
+                <div class="inicio-modal">
+                    <div class="input-group-modal nome-group">
+                        <label for="Nome da empresa">Nome:</label>
+                        <input id="ipt_nome" type="text">
+                    </div>
+                    <div class="input-group-modal bairro-group">
+                        <label for="Bairro da empresa">Bairro:</label>
+                        <input id="ipt_bairro" type="text">
+                    </div>
                 </div>
 
                 <div class="group-meio">
-                    <div class="input-group-modal cpf-group">
-                        <label for="Cpf do colaborador">CPF:</label>
-                        <input id="ipt_cpf" type="text">
+                    <div class="input-group-modal cnpj-group">
+                        <label for="Cpf do colaborador">CNPJ:</label>
+                        <input id="ipt_sede" type="text">
                     </div>
-                    <div class="input-group-modal dtnasc-group">
-                        <label for="Data Nasc Colaborador">Data Nascimento:</label>
-                        <input id="ipt_data" type="date">
+                    <div class="input-group-modal sede-group">
+                        <label for="Sede empresa">CEP SEDE:</label>
+                        <input id="ipt_cep_sede" type="text">
                     </div>
-                </div>
-
-                <div class="group-fim">
-                    <div class="input-group-modal email-senha-group">
-                        <label for="Email do colaborador">Email:</label>
-                        <input id="ipt_email" type="email">
-                    </div>
-                    <div class="input-group-modal cargo-tipo-group">
-                        <label for="Cargo do colaborador ">Cargo:</label>
-                        <input id="ipt_cargo" type="text">
+                    <div class="input-group-modal regiao-group">
+                        <label for="Sede empresa">Região Cidade:</label>
+                        <input id="ipt_regiao" type="text">
                     </div>
                 </div>
 
-                <div class="group-fim">
-                    <div class="input-group-modal email-senha-group">
-                        <label for="Senha do colaborador">Senha:</label>
-                        <input id="ipt_senha" type="password">
+                <div class="group-fim alinhamento_group">
+                    <div class="input-group-modal logradouro-modal">
+                        <label for="Logradouro da empresa">Logradouro:</label>
+                        <input id="ipt_logradouro" type="text">
                     </div>
-                    <div class="input-group-modal cargo-tipo-group">
-                        <label for="Tipo do colaborador ">Tipo:</label>
-                        <select  id="slt_permissao">
-                            <option value="1">Master</option>
-                            <option value="2">Comum</option>
-                        </select>
+                    <div class="input-group-modal numero-group">
+                        <label for="Numero do logradouro">N° logr:</label>
+                        <input id="ipt_numero_logr" type="text">
                     </div>
                 </div>
-                <div class="input-group-modal">
-                    <label for="Senha do colaborador">Confirme a Senha:</label>
-                    <input id="ipt_confirme" type="password">
+
+                <div class="group-fim alinhamento_group">
+                    <div class="input-group-modal cidade-group">
+                        <label for="Cidade da empresa">Cidade:</label>
+                        <input id="ipt_cidade" type="text">
+                    </div>
+                    <div class="input-group-modal uf-group">
+                        <label for="UF da empresa ">UF:</label>
+                        <input id="ipt_uf" type="text">
+                    </div>
                 </div>
             </div>
 
@@ -143,7 +127,5 @@
 </body>
 </html>
 <script src="../js/validacao_cadastro.js"></script>
-<script src="../js/adicionarModal.js"></script>
-
-<script src="../js/togglemenu.js"></script>
+<script src="../js/adicionarModalEmpresa.js"></script>
 
