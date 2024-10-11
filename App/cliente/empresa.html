@@ -66,7 +66,7 @@
                     <span>adicionar nova empresa</span>
                 </div>
             </div>
-            <div class="modal-content">
+            <form class="modal-content" action="#">
                 <!-- DIV CAMPO NOME -->
                 <div class="inicio-modal">
                     <div class="input-group-modal nome-group">
@@ -115,11 +115,11 @@
                         <input id="ipt_uf" type="text">
                     </div>
                 </div>
-            </div>
+            </form>
 
             <div class="modal-footer">
                 <button onclick="validarCampos()" class="btn-modal btn-green">Salvar</button>
-                <button class="btn-modal btn-gray">Cancelar</button>
+                <button onclick="cancelar()" class="btn-modal btn-gray">Cancelar</button>
             </div>
     </dialog>
     
@@ -128,4 +128,6 @@
 </html>
 <script src="../js/validacao_cadastro.js"></script>
 <script src="../js/adicionarModalEmpresa.js"></script>
+
+<script src="../js/adicionarModal.js"></script>
 

@@ -7,4 +7,7 @@ function abrirModal() {
 function closeModal(){
     modalAdicionarPassageiro.close();
 }
-
+function cancelar(){
+    document.querySelector('.modal-content').reset()
+    modalAdicionarPassageiro.close()
+}
