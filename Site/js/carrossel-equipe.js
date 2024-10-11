@@ -26,10 +26,10 @@ let dadosColaboradores = {
         mensagem: 'Participar desse projeto é muito gratificante, pois pude aprender tanto no aspecto técnico quanto no trabalho em grupo, aprimorando minhas habilidades e a colaboração.'
     },
     3:{
-        foto: 'felipe.jpg',
+        foto: 'felipebranco.jpg',
         nome: 'Felipe Barbosa',
         cargo:'Dev Front-End',
-        mensagem: 'Temos uma equipe bem estruturada e comprometida!'
+        mensagem: 'Desenvolver com essa equipe fez com que eu evoluisse muito como front-end, time muito responsável e interativo, todos bem focados.'
     },
     4:{
         foto: 'matheus.png',
