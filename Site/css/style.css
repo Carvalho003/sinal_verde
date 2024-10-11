@@ -18,6 +18,9 @@ body{
   position: fixed;
   top: 0;
 }
+button {
+  font-style: italic;
+}
 
 .header-filho {
 width: 100%;
@@ -624,16 +627,21 @@ font-weight: 700;
 .bullets1 {
   color: white;
   font-size: 35px;
+  font-weight: 300;
 }
 
 .bullets2 {
   color: white;
   font-size: 35px;
+  font-weight: 300;
+
 }
 
 .bullets3 {
   color: white;
   font-size: 35px;
+  font-weight: 300;
+
 }
 
 .conferes {
@@ -820,6 +828,7 @@ font-weight: 700;
 
 .contato-container{
   width: 100%;
+  margin-top: 5%;
   display: flex;
   justify-content: center;
   
@@ -1221,6 +1230,9 @@ footer{
     margin-right: -5px;
     padding: 10px;
     font-size: 60px;
+    width: 64px;
+    height: 64px;
+    margin-top: 5%;
   }
   
   .icon-sv {
