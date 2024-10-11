@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../../Site/css/root.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/modal_usuario.css">
+    <link rel="stylesheet" href="../css/header.css">
 </head>
 <body>
     <main class="screen-dash">
@@ -43,7 +44,25 @@
             </div>
         </nav>
         <main class="main-content">
-            <button onclick="abrirModal()">Abrir modal</button>
+            <header class="header-colab">
+                <div class="header-content-aside">
+                    <div class="options-box">
+                        <span>Olá, Bisque</span>
+                        <i onclick="toggleMenu(this)" class='bx bxs-chevron-down'></i>
+                        <div class="menu hide">
+                            <ul>
+                                <li>
+                                    <span>Meus Dados</span>
+                                </li>
+                                <li>
+                                    <span>Sair</span>
+                                </li>
+                            </ul>
+                            <i class='bx bxs-up-arrow seta-header'></i>
+                        </div>
+                    </div>
+                </div>
+            </header>
         </main>
     </main>
     <dialog id="modal_adicionar">
@@ -119,4 +138,6 @@
 </html>
 <script src="../js/validacao_cadastro.js"></script>
 <script src="../js/adicionarModal.js"></script>
+
+<script src="../js/togglemenu.js"></script>
 
