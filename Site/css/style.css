@@ -1105,11 +1105,23 @@ label{
 }
 
 #cariri {
-  background-image: url('../img/feedback/peao.jpeg ');
+  background-image: url('../img/feedback/empresario1.jpg ');
 }
 
 #sebastiao {
-  background-image: url('../img/feedback/peao.jpeg ');
+  background-image: url('../img/feedback/empresaria2.jpg ');
+}
+#joaozin {
+  background-image: url('../img/feedback/empresario3.jpg');
+}
+#fernandinha {
+  background-image: url('../img/feedback/empresaria4.jpg');
+}
+#jeffinho {
+  background-image: url('../img/feedback/empresario5.jpg');
+} 
+#nolan{
+  background-image: url('../img/feedback/empresario6.jpg');
 }
 
 
@@ -1223,7 +1235,6 @@ footer{
     margin-top: -25px;
     margin-left: -25px;
   }
-
   /* LOGIN */
 .pai_login {
   display: flex;
