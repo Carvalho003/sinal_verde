@@ -186,31 +186,87 @@
                 <span>Confira o que alguns de nossos clientes dizem sobre a solução</span>
             </div>
         </div>
-        <div class="carrossel-feedback">
-            <div class="container-carrossel-feedback" id="feed_carrossel">
-
-                <div class="div-feedback-carrossel" >
-                    <div class="content-carrossel-feed">
-                        <div>
-                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quo iure voluptatum quae commodi repellat fuga quasi porro accusamus, dicta eius deleniti libero expedita saepe vel blanditiis. Illo, at libero.</span>
-                        </div>
-                        <div>
-                        
+        <div class="swiper carrosselFeedback">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slides-feed">
+                    <div class="box-comentario box-feed fade-in" >
+                        <span >1Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam rerum nisi, repellat voluptatibus dolorem obcaecati quidem, quos natus voluptatem eligendi eius distinctio quibusdam vitae ea fugit illo? Quas, vitae eum?</span>
+                        <div class="group-comentario">
+                            <div class="foto-colaborador" id="cariri" ></div>
+                            <div class="sep-nome-cargo">
+                                <span class="nome-colab">Hugo Carvalho</span>
+                                <span class="cargo-colab">Dev Back-End</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="div-feedback-carrossel" >
-
+                <div class="swiper-slide slides-feed">
+                      <div class="box-comentario box-feed fade-in">
+                <span >2Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam rerum nisi, repellat voluptatibus dolorem obcaecati quidem, quos natus voluptatem eligendi eius distinctio quibusdam vitae ea fugit illo? Quas, vitae eum?</span>
+                <div class="group-comentario">
+                    <div class="foto-colaborador" id="sebastiao"></div>
+                    <div class="sep-nome-cargo">
+                        <span class="nome-colab" >Hugo Carvalho</span>
+                        <span class="cargo-colab">Dev Back-End</span>
+                    </div>
                 </div>
-                <div class="div-feedback-carrossel" >
-
+            </div>  
                 </div>
-                <div class="div-feedback-carrossel" >
-
+                <div class="swiper-slide slides-feed">
+                      <div class="box-comentario box-feed fade-in">
+                <span >3Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam rerum nisi, repellat voluptatibus dolorem obcaecati quidem, quos natus voluptatem eligendi eius distinctio quibusdam vitae ea fugit illo? Quas, vitae eum?</span>
+                <div class="group-comentario">
+                    <div class="foto-colaborador"></div>
+                    <div class="sep-nome-cargo">
+                        <span class="nome-colab" >Hugo Carvalho</span>
+                        <span class="cargo-colab" >Dev Back-End</span>
+                    </div>
+                </div>
+            </div>  
+                </div>
+                <div class="swiper-slide slides-feed">
+                    <div class="box-comentario box-feed fade-in" id="box_comentario">
+                        <span>4Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam rerum nisi, repellat voluptatibus dolorem obcaecati quidem, quos natus voluptatem eligendi eius distinctio quibusdam vitae ea fugit illo? Quas, vitae eum?</span>
+                        <div class="group-comentario">
+                            <div class="foto-colaborador" ></div>
+                            <div class="sep-nome-cargo">
+                                <span class="nome-colab">Hugo Carvalho</span>
+                                <span class="cargo-colab">Dev Back-End</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide slides-feed">
+                      <div class="box-comentario box-feed fade-in">
+                <span>5Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam rerum nisi, repellat voluptatibus dolorem obcaecati quidem, quos natus voluptatem eligendi eius distinctio quibusdam vitae ea fugit illo? Quas, vitae eum?</span>
+                <div class="group-comentario">
+                    <div class="foto-colaborador"></div>
+                    <div class="sep-nome-cargo">
+                        <span class="nome-colab">Hugo Carvalho</span>
+                        <span class="cargo-colab">Dev Back-End</span>
+                    </div>
+                </div>
+            </div>  
+                </div>
+                <div class="swiper-slide slides-feed">
+                      <div class="box-comentario box-feed fade-in">
+                <span>6Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam rerum nisi, repellat voluptatibus dolorem obcaecati quidem, quos natus voluptatem eligendi eius distinctio quibusdam vitae ea fugit illo? Quas, vitae eum?</span>
+                <div class="group-comentario">
+                    <div class="foto-colaborador"></div>
+                    <div class="sep-nome-cargo">
+                        <span class="nome-colab">Hugo Carvalho</span>
+                        <span class="cargo-colab">Dev Back-End</span>
+                    </div>
+                </div>
+            </div>  
                 </div>
             </div>
         </div>
-
+        <div class="paginacao_feed">
+            <div class="swiper-pagination paginacao-feed"></div>
+            <span class="afs"></span>
+        </div>
+ 
     </section>
      
 
@@ -336,6 +392,8 @@
             <span class="title-equipe-green">SINAL VERDE</span>
 
             <div class="box-comentario fade-in" id="box_comentario">
+                
+                     
                 <span id="mensagem-colab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam rerum nisi, repellat voluptatibus dolorem obcaecati quidem, quos natus voluptatem eligendi eius distinctio quibusdam vitae ea fugit illo? Quas, vitae eum?</span>
                 <div class="group-comentario">
                     <div class="foto-colaborador" id="foto-colab"></div>
@@ -345,6 +403,8 @@
                     </div>
                 </div>
             </div>
+            
+          
         </div>
     </section>
     
@@ -408,6 +468,20 @@
         prevEl: ".prev-equipe",
       },
     });
+
+    // carrossel-feedback
+    var swiper_feedback = new Swiper(".carrosselFeedback", {
+      slidesPerView: 3,
+      loop:true,
+      allowTouchMove: false,
+      spaceBetween: 100,
+      pagination: {
+        el: ".paginacao_feed",
+        clickable: true,
+      },
+      
+    });
+
   </script>
   <script>
     var swiperEquipamento = new Swiper(".carrosselEquipamento", {
@@ -434,6 +508,8 @@
             splineViews[i].shadowRoot.querySelector('#logo').remove();
         }
         
+    
+  
     }
     
   </script>
@@ -446,3 +522,5 @@
 
 
 <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.29/build/spline-viewer.js"></script>
+
+<script src="./js/feedbacks.js"></script>
