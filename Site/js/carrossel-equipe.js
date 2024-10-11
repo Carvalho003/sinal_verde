@@ -14,10 +14,10 @@ let dadosColaboradores = {
         mensagem: 'Trabalhar nesse projeto para mim é muito especial, me sinto confortável e livre para compartilhar minhas ideias com os colaboradores.'
     },
     1:{
-        foto: '14.png',
-        nome: 'Felipe Smith',
+        foto: 'fotoCaio.png',
+        nome: 'Caio Visconti',
         cargo:'Dev Front-End',
-        mensagem: 'Muita midia trabalhar aqui, muito espaço para expressar minhas ideias'
+        mensagem: 'Muito divertido e legal, a equipe é boa'
     },
     2:{
         foto: 'raniero.png',
@@ -26,13 +26,13 @@ let dadosColaboradores = {
         mensagem: 'Participar desse projeto é muito gratificante, pois pude aprender tanto no aspecto técnico quanto no trabalho em grupo, aprimorando minhas habilidades e a colaboração.'
     },
     3:{
-        foto: '14.png',
-        nome: 'Caio Smith',
+        foto: 'felipe.jpg',
+        nome: 'Felipe Barbosa',
         cargo:'Dev Front-End',
-        mensagem: 'Muita midia trabalhar aqui, muito espaço para expressar minhas ideias'
+        mensagem: 'Temos uma equipe bem estruturada e comprometida!'
     },
     4:{
-        foto: '14.png',
+        foto: 'matheus.png',
         nome: 'Matheus Smith',
         cargo:'Dev Front-End',
         mensagem: 'Muita midia trabalhar aqui, muito espaço para expressar minhas ideias'
