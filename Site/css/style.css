@@ -20,6 +20,9 @@ body{
 }
 button {
   font-style: italic;
+  font-size: 27px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
 }
 
 .header-filho {
@@ -920,7 +923,7 @@ label{
 
 .btn-enviar{
   cursor: pointer;
-  width: 35%;
+  width: 45%;
   height: 60px;
   border-radius: 11px;
   border: none;
@@ -1154,7 +1157,7 @@ label{
 footer{
   margin-top: 5%;
   width: 100%;
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-color); /*#0e2f35*/
   display: flex; 
   justify-content: center;
   align-items: center;
@@ -1229,7 +1232,7 @@ footer{
   .column i {
     margin-right: -5px;
     padding: 10px;
-    font-size: 60px;
+    font-size: 45px;
     width: 64px;
     height: 64px;
     margin-top: 5%;
@@ -1247,133 +1250,9 @@ footer{
     margin-top: -25px;
     margin-left: -25px;
   }
-  /* LOGIN */
-.pai_login {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.pai_formulario{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 55%;
-}
-
-.filho_login {
-  width: 100%;
-  height: 100%;
-  border: solid px black;
-  border-top: none;
-  border-radius: 12px 0 0 12px; 
-  box-shadow: -8px 8px 10px rgba(0, 0, 0, 0.3); 
-  display: flex;
-  flex-direction: row;
-}
-
-.irmao_login {
-  width: 45%;
-  height: 100%;
   
-  border: solid 0.3px black;
-  border-radius: 12px;
-  background-color: var(--primary-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.irmao_login img {
-  width: 1000px;
-  height: 600px;
-  margin-left: -210px;
-  margin-top: -10px;
   
-}
-
-.login-inputs{
-  width: 100%;
-  padding: 11px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.login-inputs label{
-  width: 100%;
-  color: black;
-  font-size: 24px;
-}
-.login-inputs input {
-  width: 90%;
-  height: 8vh;
-  margin-left: 2%;
-  border-radius: 12px;
-  font-size: 30px;
-  padding-left: 15px;
-  border: solid 0.3px var(--subtitle-color);
-}
-
-.filho-botao {
-  width: 100%;
-  height: 8vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2%;
-}
-
-.filho-botao button{
-  margin-right: 1%;
-  width: 92%;
-  height: 8vh;
-  border: none;
-  border-radius: 12px;
-  font-size: 45px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  background-color: var(--primary-color);
-  font-style: italic;
-  cursor: pointer;
-}
-
-.div-esqueceu-senha {
-  height: 3vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.div-esqueceu-senha p {
-  font-size: 20px;
-  color: var(--subtitle-color);
-}
-.div-esqueceu-senha a {
-  font-size: 20px;
-  text-decoration: none;
-  color: var(--primary-color);
-}
-
-.background-filho {
-  background-image: url('../img/logos/logo\ maior.png');
-  background-size: cover;
-  width: 87%;
-  height: 72%;
-  
-}
-
-.irmao_login a{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  /* FEEDBACKS  */
 
 .container-feedback {
   width: 90%;
@@ -1402,7 +1281,7 @@ footer{
   text-align: center;
 }
 .subtexto-feedbacks{
-  margin-top: 3%;
+  margin-top: 1%;
   height: 100%;
   width: 100%;
   display: flex;
