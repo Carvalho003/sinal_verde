@@ -1,0 +1,57 @@
+.carrossel{
+    border: 1px solid black;
+    width: 70%;
+}
+
+.swiper-slide{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.swiper-slide p{
+    width: 60%;
+    min-height: 200px;
+}
+
+.div_controladora{
+    position: absolute;
+    width: 100%;
+    bottom: -20%;
+
+}
+
+.div_controladora .swiper-pagination-bullet{
+    width: 20px;
+    height: 20px;
+    
+}
+
+.div_controladora .swiper-pagination-bullet-active{
+    background-color: red;
+}
+
+.div_btns{
+    position: absolute;
+    width: 100%;
+    bottom: -20%;
+
+}
+
+.div_btns .swiper-button-next{
+    position: absolute;
+    right: 30%;
+    margin-left: 22.61px;
+}
+
+.div_btns .swiper-button-prev{
+    position: absolute;
+    left: 30%;
+    margin-right: 22.61px;
+}
+
+.div_btns .swiper-button-next:after, .swiper-button-prev:after{
+    color: red;
+}

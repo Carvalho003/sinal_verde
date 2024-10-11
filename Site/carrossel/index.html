@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrossel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div style="position: relative;display: flex; gap: 20px;align-items: center;">
+        <div class="swiper carrossel">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide ">
+                    <i>ICONE</i>
+                    <div class="caixa">
+                        <p>asndjasndjkanskjd ajsdnbakjsbdjkansjd jasndjasndjkasnd</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <i>ICONE</i>
+                    <div class="caixa">
+                        <p>asndjasndjkanskjd ajsdnbakjsbdjkansjd jasndjasndjkasnd</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <i>ICONE</i>
+                    <div class="caixa">
+                        <p>asndjasndjkanskjd ajsdnbakjsbdjkansjd jasndjasndjkasnd</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <i>ICONE</i>
+                    <div class="caixa">
+                        <p>asndjasndjkanskjd ajsdnbakjsbdjkansjd jasndjasndjkasnd</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <i>ICONE</i>
+                    <div class="caixa">
+                        <p>asndjasndjkanskjd ajsdnbakjsbdjkansjd jasndjasndjkasnd</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <i>ICONE</i>
+                    <div class="caixa">
+                        <p>asndjasndjkanskjd ajsdnbakjsbdjkansjd jasndjasndjkasnd</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="div_controladora">
+            <div class="swiper-pagination paginacao_especifica">
+        </div>
+
+        <div class="sep-nxtPrev">
+            <div class="swiper-button-next proximo next-equipe" onclick="renderizar(1)"></div>
+            <div class="swiper-button-prev anterior prev-equipe" onclick="renderizar(2)"></div>
+        </div>
+
+    </div>
+</body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+    var swiper = new Swiper(".carrossel", {
+      slidesPerView: 3,
+      spaceBetween: 70,
+      loop:true,
+      allowTouchMove:false,
+      pagination: {
+        el: ".paginacao_especifica",
+        clickable: true,
+      },
+      
+      navigation: {
+        nextEl: ".next-equipe",
+        prevEl: ".prev-equipe",
+      },
+    });
+</script>

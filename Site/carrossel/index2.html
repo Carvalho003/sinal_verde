@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrossel 2</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./carrossel.css">
+
+</head>
+<body>
+    <div style="position: relative;">
+    <div class="swiper carrossel">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <i>ICONE1</i>
+                <p>Com algumas coisas escritars so para visualização
+
+                    Com algumas coisas escritars so para visualizaçãoCom algumas coisas escritars so para visualizaçãoCom algumas coisas escritars so para visualizaçãoCom algumas coisas escritars so para visualizaçãoCom algumas coisas escritars so para visualização
+                </p>
+            </div>
+            <div class="swiper-slide">
+                <i>ICONE2</i>
+                <p>Com algumas coisas escritars so para visualização</p>
+            </div>
+            <div class="swiper-slide">
+                <i>ICONE3</i>
+                <p>Com algumas coisas escritars so para visualização</p>
+            </div>
+            <div class="swiper-slide">
+                <i>ICONE4</i>
+                <p>Com algumas coisas escritars so para visualização</p>
+            </div>
+            <div class="swiper-slide">
+                <i>ICONE5</i>
+                <p>Com algumas coisas escritars so para visualização</p>
+            </div>
+            <div class="swiper-slide">
+                <i>ICONE6</i>
+                <p>Com algumas coisas escritars so para visualização</p>
+            </div>
+        </div>
+    </div>
+    <div class="div_controladora">
+    <div class="swiper-pagination page-especifico">
+    </div>
+    </div>
+
+    <div class="div_btns">
+        <div class="swiper-button-next destaque"></div>
+        <div class="swiper-button-prev bisque"></div>
+    </div>
+    </div>
+</body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+    var swiper = new Swiper(".carrossel", {
+      slidesPerView: 3,
+      spaceBetween: 70,
+      loop:true,
+      allowTouchMove:false,
+      pagination: {
+        el: ".page-especifico",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".destaque",
+        prevEl: ".bisque",
+      },
+      
+      
+    });
+</script>

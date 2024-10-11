@@ -1,0 +1,60 @@
+.carrossel{
+    border: 1px solid black;
+    width: 80%;
+}
+
+.swiper-wrapper{
+    border: 1px solid red;
+}
+
+.swiper-slide{
+    border: 1px solid green;
+    display: flex;
+    min-height: 250px;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center ;
+}
+
+.caixa{
+    width: 80%;
+}
+
+.div_controladora {
+    position: absolute;
+    width: 100%;
+    bottom: -20%;
+}
+
+.div_controladora .swiper-pagination-bullet{
+    width: 20px;
+    height: 20px;
+    background-color: black;
+}
+
+.sep-nxtPrev .swiper-button-next:after, .swiper-button-prev:after{
+    color: red;
+  }
+
+  .sep-nxtPrev{
+    border: 1px solid black;
+    
+    
+
+  }
+
+  .sep-nxtPrev .swiper-button-next{
+    position: absolute;
+    right: 30%;
+    margin-left: 22.61px;
+
+  }
+
+  .sep-nxtPrev .swiper-button-prev{
+    position: absolute;
+    left: 30%;
+    margin-right: 22.61px;
+
+  }
+  
+
