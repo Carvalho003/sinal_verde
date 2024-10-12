@@ -275,7 +275,7 @@
     <section id="simulador" class="fade-in simulador quadrado-pai-column">
         <div class="header-simulador">
             <h1 class="title">SIMULADOR</h1>
-            <h2 class="subtitle">FIQUE POR DENTRO DE COMO NOSSA SOLUÇÃO PODE CONTRIBUIR PARA A DIMINUIÇÃO DOS ACIDENTES E, CONSEQUENTEMENTE, OS CUSTOS ENVOLVIDOS NELES:</h2>
+            <span class="subtitle">FIQUE POR DENTRO DE COMO NOSSA SOLUÇÃO PODE CONTRIBUIR PARA A DIMINUIÇÃO DOS ACIDENTES E, CONSEQUENTEMENTE, OS CUSTOS ENVOLVIDOS NELES:</span>
         </div>
         <div class="content-simulador">
             <div class="coluna inputs-simulador">
@@ -358,7 +358,7 @@
                 <div class="swiper-button-prev anterior prev-equipe" onclick="renderizar(2)"></div>
             </div>
             <div class="paginacao-sep">
-                <div class="swiper-pagination paginacao-equipe"></div>
+                <div id="_equipe" class="swiper-pagination paginacao-equipe"></div>
             </div>
         </div>
         <div class="fundo-comentarios fade-in">
@@ -369,7 +369,7 @@
                 <span id="mensagem-colab">Trabalhar nesse projeto para mim é muito especial, me sinto confortável e livre para compartilhar minhas ideias com os colaboradores.</span>
                 <div class="group-comentario">
                     <div class="foto-colaborador" id="foto-colab"></div>
-                    <div class="sep-nome-cargo">
+                    <div   class="sep-nome-cargo">
                         <span class="nome-colab" id="nome-colab">Hugo Carvalho</span>
                         <span class="cargo-colab" id="cargo-colab">Dev Back-End</span>
                     </div>
@@ -402,7 +402,7 @@
                         <input type="checkbox" id="ipt_mensagem1">
                         <label for="ipt_mensagem1">Concordo em receber respostas pelo e-mail</label>
                     </div>
-                    <button id="_equipe" class="btn-enviar" onclick="sendEmail()">Enviar <i class="fa-solid fa-arrow-right"></i></button> 
+                    <button class="btn-enviar" onclick="sendEmail()">Enviar <i class="fa-solid fa-arrow-right"></i></button> 
                 </div>
             </div> 
         </div>    

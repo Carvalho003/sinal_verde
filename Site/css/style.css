@@ -18,11 +18,14 @@ body{
   position: fixed;
   top: 0;
 }
+
 button {
   font-style: italic;
-  font-size: 27px !important;
+  font-size: var(--font-size-button) !important;
   font-weight: 600 !important;
   cursor: pointer !important;
+  height: var(--altura-button) !important;
+  width: var(--width-button) !important;
 }
 
 .header-filho {
@@ -63,7 +66,7 @@ position: relative;
 
 .nav-list .nav-item a{
 text-decoration: none;
-color: #fff;
+color: var(--white-color);
 font-weight: 600;
 font-size: 18px;
 }
@@ -85,7 +88,7 @@ width: 100%;
 
 .nav-list .nav-item a{
 text-decoration: none;
-color: #fff;
+color: var(--white-color);
 font-weight: 600;
 }
 
@@ -114,7 +117,7 @@ justify-content: space-between;
   width: 100%;
   background-color: var(--primary-color);
   height: 70vh;
-  color: #fff;
+  color: var(--white-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -172,27 +175,24 @@ gap: 10px;
 .home-buttons-group button{
 cursor: pointer;
 
-width: 48%;
-height: 60px;
+/* width: 48%;
+height: 60px; */
+
 border-radius: 11px;
 border: none;
-font-size: 22px;
-font-weight: 600;
 }
-
-
 
 .btn-secondary{
 background-color: var(--secondary-color);
-color: #fff;
-filter: drop-shadow(2px 1.5px 2px #ffffff);
+color: var(--white-color);
+filter: drop-shadow(2px 1.5px 2px var(--white-color));
 transition: 1s all;
 }
 
 .btn-secondary:hover{
 filter: drop-shadow(2px 1.5px 2px var(--complementar-color));
 color: var(--secondary-color);
-background-color: #fff;
+background-color: var(--white-color);
 }
 
 .btn-white{
@@ -203,8 +203,8 @@ transition: 1s all;
 
 .btn-white:hover{
 background-color: var(--secondary-color);
-color: #fff;
-filter: drop-shadow(2px 1.5px 2px #ffffff);
+color: var(--white-color);
+filter: drop-shadow(2px 1.5px 2px var(--white-color));
 }
 
 .box-arte{
@@ -237,7 +237,7 @@ position: absolute;
   height: 350px;
   border-top-left-radius: 100%;
   border-top-right-radius: 100%;
-  border: 10px dotted #FFF;
+  border: 10px dotted var(--white-color);
   border-left: none;
   border-right: none;
   border-bottom: none;
@@ -256,7 +256,7 @@ position: absolute;
   border-top-left-radius: 120%;
   border-top-right-radius: 120%;
   border: 10px solid ;
-  filter: drop-shadow(2px 1.5px 2px #ffffff);
+  filter: drop-shadow(2px 1.5px 2px var(--white-color));
   border-left: none;
   border-right: none;
   border-bottom: none;
@@ -276,7 +276,7 @@ position: absolute;
   border-top-left-radius: 120%;
   border-top-right-radius: 120%;
   border: 10px solid ;
-  filter: drop-shadow(2px 1.5px 2px #ffffff);
+  filter: drop-shadow(2px 1.5px 2px var(--white-color));
   border-left: none;
   border-right: none;
   border-bottom: none;
@@ -365,7 +365,7 @@ font-weight: 700;
 }
 
 .textoCCaio1 {
-  color: #717774;
+  color: var(--subtitle-color);
   font-size: var(--font-size-subtitle);
   display: flex;
   flex-direction: column;
@@ -385,7 +385,7 @@ font-weight: 700;
 .cardCaio {
     width: 299px;
     height: 200px;
-    background-color: #FFFFFF;
+    background-color: var(--white-color)FFF;
     border-radius: 20px;
     border: 3px solid rgba(0, 53, 25, 0.16);
     display: flex;
@@ -434,14 +434,14 @@ font-weight: 700;
 }
 
 .textoACaio {
-    color: #1D6975;
+    color: var(--secondary-color);
     font-size: 32px;
     display: flex;
     flex-direction: column;
 }
 
 .tituloC2{
-    color: #1D6975;
+    color: var(--secondary-color);
     font-size: 90px;
     display: flex;
     font-weight: 600;
@@ -451,7 +451,7 @@ font-weight: 700;
 }
 
 .textoCCaio2 {
-    color: #717774;
+    color: var(--subtitle-color);
     font-size: var(--font-size-subtitle);
     display: flex;
     flex-direction: column;
@@ -462,77 +462,75 @@ font-weight: 700;
 }
 
 .buttonEquipe {
-    width: 304px;
-    height: 82px;
     border-radius: 20px;
     background-color: #1D6975;
     border: none;
-    
-    color: #FFFFFF;
+    color: var(--white-color);
     text-align: center;
-    font-weight: 300;
-    font-size: 32px;
+    filter: drop-shadow(2px 1.5px 2px var(--complementar-color));
+    transition: 1s all;
+}
+  
+.buttonEquipe:hover{
+  background-color: var(--complementar-color);
+  filter: drop-shadow(2px 1.5px 2px var(--white-color));
 }
 
 .textoQuemSomos {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 }
 
 .segundaParteCaio {
-    display: flex;
-    flex-direction: row;
-    
-    justify-content: space-between;
-    
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
 }
 
 .cardsjustificativa {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    
+  display: flex;
+  flex-direction: column;
+  width: 50%; 
 }
 
 .cardjustificativaum {
-    width: 300px;
-    height: 276px;
-    border-radius: 20px;
-    border: 3px solid rgba(0, 53, 25, 0.16);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    background-color: white;
-    z-index: 2;
+  width: 300px;
+  height: 276px;
+  border-radius: 20px;
+  border: 3px solid rgba(0, 53, 25, 0.16);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  background-color: white;
+  z-index: 2;
 }
 
 .tituloJustificativa {
-    color: #044125;
-    font-size: 90px;
-    font-weight: 600;
-    margin-top: 30px;
+  color: #044125;
+  font-size: 90px;
+  font-weight: 600;
+  margin-top: 30px;
 }
 
 .textoJustificativa {
-    text-align: center;
-    font-size: 32px;
+  text-align: center;
+  font-size: 32px;
 }
 
 .cardjustificativadois {
-    width: 300px;
-    height: 276px;
-    border-radius: 20px;
-    border: 3px solid rgba(0, 53, 25, 0.16);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 240px;
-    margin-top: 220px;
-    position: absolute;
-    z-index: 1;
+  width: 300px;
+  height: 276px;
+  border-radius: 20px;
+  border: 3px solid rgba(0, 53, 25, 0.16);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 240px;
+  margin-top: 220px;
+  position: absolute;
+  z-index: 1;
 }
 
 /* CARROSSEL EQUIPAMENTO */
@@ -667,7 +665,7 @@ font-weight: 700;
 }
 
 .corFundoEquipamento {
-  background-color: #003519;
+  background-color: var(--primary-color);
   width: 100%;
   
   display: flex;
@@ -680,7 +678,7 @@ font-weight: 700;
   width: 30px;
   height: 30px;
   border: 1.5px solid;
-  border-color: #fff;
+  border-color: var(--white-color);
 }
 
 .paginacao-sep-equipamento .swiper-pagination{
@@ -689,16 +687,16 @@ font-weight: 700;
 }
 
 .paginacao-sep-equipamento .swiper-pagination-bullet-active{
-  background-color: #fff;
+  background-color: var(--white-color);
 }
 
 .sep-nxtPrev-equipamento .swiper-button-next:after{
-  color: #fff;
+  color: var(--white-color);
 
 }
 
 .sep-nxtPrev-equipamento .swiper-button-prev:after{
-  color: #fff;
+  color: var(--white-color);
 }
 
 /* SIMULADOR */
@@ -739,8 +737,7 @@ font-weight: 700;
 
 .subtitle{
   color: var(--subtitle-color);
-  font-weight: 550;
-  font-size: 1.8rem;
+  font-size: var(--font-size-subtitle);
 }
 
 .conteudo{
@@ -858,7 +855,7 @@ font-weight: 700;
   flex-direction: column;
   justify-content: flex-start;
   font-weight: 500;
-  color: #003519;
+  color: var(--primary-color);
   height: 100%;
   gap: 10px;
   width: 50%;  
@@ -923,25 +920,19 @@ label{
 
 .btn-enviar{
   cursor: pointer;
-  width: 45%;
-  height: 60px;
   border-radius: 11px;
   border: none;
-  font-size: 22px;
-  font-weight: 600;
   align-self: flex-end;
   background-color: var(--primary-color);
-  color: #fff;
-  filter: drop-shadow(2px 1.5px 2px #ffffff);
+  color: var(--white-color);
+  filter: drop-shadow(2px 1.5px 2px var(--complementar-color));
   transition: 1s all;
 }
 
-
 .btn-enviar:hover{
-  background-color: #003519;
-  transform: scale(1.1);
   cursor: pointer;
-  transition: 0.2;
+  background-color: var(--complementar-color);
+  filter: drop-shadow(2px 1.5px 2px var(--white-color));
 }
 
 .check{
@@ -978,7 +969,7 @@ label{
   right: 3%;
   top: 0;
   font-size: 5rem;
-  color: #fff;
+  color: var(--white-color);
 }
 
 .fundo-comentarios{
@@ -1021,7 +1012,7 @@ label{
 
 .icon-equipe{
   font-size: 4rem;
-  color: #fff;
+  color: var(--white-color);
 }
 
 .foto1{
@@ -1096,7 +1087,7 @@ label{
   flex-direction: column;
   padding: 14px;
   gap: 1.2rem;
-  background-color: #fff;
+  background-color: var(--white-color);
   filter: drop-shadow(-2px 4px  2px rgba(0,0,0,0.7));
 }
 
@@ -1149,7 +1140,7 @@ label{
 }
 
 .cargo-colab{
-  color: #656363;
+  color: var(--label-color);
 }
 
 /* FOOTER */
@@ -1187,9 +1178,9 @@ footer{
 }
 
 .quadrado-70{
-    height: 70%;
-    width: 90%;
-    border: 1px solid red;
+  height: 70%;
+  width: 90%;
+  border: 1px solid red;
 }
 
 .quadrado-20{
@@ -1269,12 +1260,12 @@ footer{
   flex-direction: column;
 }
 .header-feedback {
-
   width: 100%;
   height: 55%;
 }
 .header-feedback span {
-  font-size: 95px;
+  font-size: var(--font-size-title);
+  font-weight: var(--weight-title);
   color: var(--primary-color);
   display: flex;
   justify-content: center;
@@ -1286,16 +1277,17 @@ footer{
   width: 100%;
   display: flex;
 }
+
 .subtexto-feedbacks span {
   height: 100%;
   width: 100%;
-  font-size: 30px;
+  font-size: var(--font-size-subtitle);
   display: flex;
   justify-content: center;
   align-items: center;
   color: var(--subtitle-color);
-
 }
+
 .container-carrossel-feedback{
   display: flex;
 }

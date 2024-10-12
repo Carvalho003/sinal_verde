@@ -1,25 +1,30 @@
 :root{
-    /* CORES*/
-      --primary-color:#003519;
-      --complementar-color: #34751D;
-      --secondary-color: #1D6975;
-      --danger-color: #C53015;
+  /* CORES*/
+  --primary-color:#003519;
+  --complementar-color: #34751D;
+  --secondary-color: #1D6975;
+  --danger-color: #C53015;
+  --white-color: #FFF;
   
-      --subtitle-color:#717774;
-      --label-color:#656363;
+  --subtitle-color:#717774;
+  --label-color:#656363;
       
-    /* TAMANHO FONTES */
-    --tamanho-font-input:1.2em;
+  /* TAMANHO FONTES */
+  --tamanho-font-input:1.2em;
 
-    --weight-title: 400;
-    --font-size-title: 6em;
+  --weight-title: 400;
+  --font-size-title: 6em;
+  --font-size-subtitle:1.8rem;
 
-    --font-size-subtitle:1.8rem;
+  --font-size-button: 1.8em;
 
-    /* OUTRAS */
-    --altura-input: 60px;
-    --padding-input: 0px 10px;
-    --padding-input-mensagem: 5px 10px;
-    --radius-input:7px;
+  /* OUTRAS */
+  --altura-input: 60px;
+  --padding-input: 0px 10px;
+  --padding-input-mensagem: 5px 10px;
+  --radius-input:7px;
+
+  --altura-button: 80px;
+  --width-button: 250px;
   
-  }
+}
