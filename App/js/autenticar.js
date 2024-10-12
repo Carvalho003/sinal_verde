@@ -1,6 +1,3 @@
-var senhaCorreta = '';
-var emailCorreto = '';
-
 const infosColaboradores = [
     {
         nome:"admin",
@@ -10,12 +7,7 @@ const infosColaboradores = [
     }
 ];
 
-const CARACTERES_ESPECIAIS = /[^A-Za-z0-9]/;
-
-function analisarEmail(){
-    var email = iptEmail.value;
-
-    var isEmailValidado = false;
+function analisarEmail(email){
     var tamEmail = email.length;
 
     var isEnd = email.endsWith('.com') || email.endsWith('.br') || email.endsWith('.gov');
@@ -27,69 +19,37 @@ function analisarEmail(){
     if((tamEmail < 8 || tamEmail > 45) && !isEnd && !isArroba || email == ''){
         return alert("Insira um valor de email válido");
     }
-
-    isEmailValidado = true;
-    emailCorreto = email;
     
-    return isEmailValidado;
+    return true;
 }
 
-function analisarSenha(){
-    var senha = iptSenha.value;
-
-    var isSenhaValidado = false;
-    var tamSenha = senha.length;
-
-    var isEspecial = CARACTERES_ESPECIAIS.test(senha);
-
-    var isMinuscula = false;
-    var isMaiuscula = false;
-    var isNum = false;        
-
-    for(var i = 0; i < tamSenha; i++){
-        if(senha[i] == senha[i].toUpperCase()){
-            isMaiuscula = true;
-        }
-
-        if(senha[i] == senha[i].toLowerCase()){
-            isMinuscula = true;
-        }
-
-        if(Number(parseFloat(senha[i])) == senha[i]){
-            isNum = true;
-        }
+function analisarSenha(senha){
+    if(senha == ''){
+        return alert("Insira um valor de senha válido");
     }
 
-    if(tamSenha < 8 && !isMinuscula && !isMaiuscula && !isEspecial && !isNum || senha == ''){
-        return alert("Insira uma senha válida");
-    }
-
-    isSenhaValidado = true;
-    senhaCorreta = senha;
-
-    return isSenhaValidado;
+    return true;
 }
 
 function autenticar(){
-    if(analisarEmail() && analisarSenha()){
+    var email = iptEmail.value;
+    var senha = iptSenha.value;
+
+    if(analisarEmail(email) && analisarSenha(senha)){
         var isEmail = false;
         var indexColaborador = undefined;
 
         // pd usar o .find ou o forEach
         for(var i = 0; i<infosColaboradores.length; i++){
             console.log(infosColaboradores[i].email);
-            if(infosColaboradores[i].email == emailCorreto){
+            if(infosColaboradores[i].email == email){
                 isEmail = true;
                 indexColaborador = i;
             }
         }
 
-        if(!isEmail){
-            return alert(`Não foi possível encontrar o email ${emailCorreto}`);
-        }
-
-        if(infosColaboradores[indexColaborador].senha != senhaCorreta){
-            return alert(`Senha incorreta`);
+        if(!isEmail || infosColaboradores[indexColaborador].senha != senha){
+            return alert(`Senha ou email incorretos`);
         }
 
         return location.href="./cliente/colaboradores.html";
