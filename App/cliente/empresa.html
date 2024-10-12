@@ -82,11 +82,11 @@
                 <div class="group-meio">
                     <div class="input-group-modal cnpj-group">
                         <label for="Cpf do colaborador">CNPJ:</label>
-                        <input id="ipt_sede" type="text">
+                        <input id="ipt_cnpj" type="text">
                     </div>
                     <div class="input-group-modal sede-group">
                         <label for="Sede empresa">CEP SEDE:</label>
-                        <input id="ipt_cep_sede" type="text">
+                        <input onblur="pesquisarCEP(this.value);" id="ipt_cep_sede" type="text">
                     </div>
                     <div class="input-group-modal regiao-group">
                         <label for="Sede empresa">Região Cidade:</label>
@@ -118,7 +118,7 @@
             </form>
 
             <div class="modal-footer">
-                <button onclick="validarCampos()" class="btn-modal btn-green">Salvar</button>
+                <button onclick="cadastrarEmpresa()" class="btn-modal btn-green">Salvar</button>
                 <button onclick="cancelar()" class="btn-modal btn-gray">Cancelar</button>
             </div>
     </dialog>
@@ -126,7 +126,7 @@
 
 </body>
 </html>
-<script src="../js/validacao_cadastro.js"></script>
+<script src="../js/cadastrar.js"></script>
 <script src="../js/adicionarModalEmpresa.js"></script>
 
 <script src="../js/adicionarModal.js"></script>
