@@ -34,17 +34,17 @@
                 
                 <div class="nav-div ">
                     <ul class="nav-list">
-                    <li class="nav-item active">
+                    <li id="navHome" class="nav-item active">
                         <a href="#">Home</a>
                     </li>
-                    <li class="nav-item ">
+                    <li id="navSimulador" class="nav-item ">
                         <a href="#_simulador">Simulador</a>
                     </li>
-                    <li class="nav-item ">
-                        <a href="#_equipe">Contato</a>
+                    <li id="navEquipe" class="nav-item ">
+                        <a href="#_equipe">Equipe</a>
                     </li>
-                    <li class="nav-item ">
-                        <a href="#_contato">Equipe</a>
+                    <li id="navContato" class="nav-item ">
+                        <a href="#_contato">Contato</a>
                     </li>
                     </ul>
                 </div>
@@ -289,7 +289,7 @@
                 </div>
                 <div class="divPrejuizo">
                     <h2 class="prejuizo">Prejuízo Final</h2>
-                    <h1 id="_contato">R$175.000,00</h1>
+                    <h1 id="_equipe" >R$175.000,00</h1>
                 </div>
             </div>
                 
@@ -358,7 +358,7 @@
                 <div class="swiper-button-prev anterior prev-equipe" onclick="renderizar(2)"></div>
             </div>
             <div class="paginacao-sep">
-                <div id="_equipe" class="swiper-pagination paginacao-equipe"></div>
+                <div class="swiper-pagination paginacao-equipe"></div>
             </div>
         </div>
         <div class="fundo-comentarios fade-in">
@@ -482,6 +482,27 @@
       
     });
 
+    // Atribuir a tag verde para a navbar
+    document.addEventListener('click', (e) => {    
+        var href = e.target.closest('a').href || '';
+        href = href.split("/");
+
+        navAnterior = this.document.getElementsByClassName('active');
+        console.log(navAnterior[0].id);
+        var nav = navHome
+
+        if (href[href.length - 1] == 'index.html#_simulador') {
+            nav = navSimulador;
+        } else if(href[href.length - 1] == 'index.html#_equipe'){
+            nav = navEquipe;
+        } else if(href[href.length - 1] == 'index.html#_contato'){
+            nav = navContato;
+        }
+        navAnterior = this.document.getElementById(navAnterior[0].id);
+        navAnterior.classList.value = "nav-item";
+        nav.classList.add("active");
+    }, false);
+
   </script>
   <script>
     var swiperEquipamento = new Swiper(".carrosselEquipamento", {
@@ -497,6 +518,7 @@
         prevEl: ".prev-equipamento",
       },
     });
+
     //função para tirar a marca da agua do spline
     window.onload = function() {
     
@@ -507,9 +529,6 @@
             console.log('aa')
             splineViews[i].shadowRoot.querySelector('#logo').remove();
         }
-        
-    
-  
     }
     
   </script>

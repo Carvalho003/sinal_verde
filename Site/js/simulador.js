@@ -21,6 +21,6 @@ function calcular() {
             <p>Você tem um <b>gasto total</b> de <b style='color:red;'>R$${calculo_prejuizo}</b> por mês.</p>
             <p>Com a nossa solução, você irá previnir até <b style='color: limegreen;'>40%</b>, ou seja,</p>
             <p>você irá economizar até <b style='color:limegreen;'>R$${calculo_valor_prevencao}</b> mensalmente.</p>
-            `;
+      `;
     }
   }
