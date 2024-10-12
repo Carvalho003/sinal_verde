@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../../Site/css/fonts.css">
     <link rel="stylesheet" href="../../Site/css/root.css">
     <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <main class="screen-dash">
@@ -48,8 +49,194 @@
             </div>
         </nav>
         <main class="main-content">
-
+            <div class="dashboard">
+                <div class="cabecalho">Olá</div>
+                <div class="container-dashboard">
+                    <div class="painel-dashboard">
+                        <div class="superior-dashboard">
+                            <div id="horario_mais_movimentado">
+                                <div class="texto_explicativo">
+                                    Horário Com Mais Movimento
+                                </div>
+                                <div id="caixaGrande">
+                                    <div id="valor_hmais">
+                                        18:00H
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="parte_superior_meio">
+                                <div id="horario_mais_movimentado2">
+                                    <div class="texto_explicativo caso2">
+                                        Horário mais <br>movimentado
+                                    </div>
+                                    <div id="caixaPequena">
+                                        <div class="valor_hmais2">
+                                            18:00:00
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="fluxo_medio">
+                                    <div class="texto_explicativo caso2">
+                                    Fluxo médio de <br>carros por hora
+                                    </div>
+                                    <div id="caixaPequena" class="fluxo">
+                                        <div class="valor_hmais2">
+                                            50
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="parte_superior_direita">
+                                <div id="horario_menos_movimentado">
+                                    <div class="texto_explicativo caso2">
+                                        Horário mais <br>movimentado
+                                    </div>
+                                    <div id="caixaPequena">
+                                        <div class="valor_hmais2">
+                                            18:00:00
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="velocidade_media">
+                                    <div class="texto_explicativo caso2">
+                                        Fluxo médio de <br>carros por hora
+                                    </div>
+                                    <div id="caixaPequena" class="fluxo">
+                                        <div class="valor_hmais2">
+                                            50
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="parte_superior_direita2">
+                                <div id="kpi1">
+                                    <div class="texto_explicativo caso2">Horário mais <br>movimentado
+                                    </div>
+                                    <div id="caixaPequena">
+                                        <div class="valor_hmais2">valor_kpi
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="kpi2">
+                                    <div class="texto_explicativo caso2">Fluxo médio de <br>carros por hora
+                                    </div>
+                                    <div id="caixaPequena" class="fluxo">
+                                        <div class="valor_hmais2">valor_kpi
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="parte-baixo">
+                            <div class="parte-esquerda-baixo">
+                                <div class="grafico">
+                                    <canvas id="distanciamedia"></canvas>
+                                </div>
+                                <div class="grafico">
+                                    <canvas id="fluxoruas"></canvas>
+                                </div>
+                            </div>
+                            <div class="parte-direita-baixo">
+                                <div class="ranking">
+                                    <div class="titulo_ranking">
+                                        Ranking dos logradouros com <br>maior incidência de trânsito por dia
+                                    </div>
+                                    <div class="ranking_texto">
+                                        <div id="ladoesquerdo_ranking">
+                                            <b>Automóveis: </b><br>
+                                            1º - <br> 2º - <br>3º - <br>4º - <br>5º - <br>6º - <br>7º - <br>8º - <br>9º - <br>10º - <br>11º - <br>12º - <br>13º - <br>14º - <br>15º - <br>
+                                        </div>
+                                        <div id="divisoria"></div>
+                                        <div id="ladodireito_ranking">
+                                            <b>Pedestres: </b><br>
+                                            1º - <br> 2º - <br>3º - <br>4º - <br>5º - <br>6º - <br>7º - <br>8º - <br>9º - <br>10º - <br>11º - <br>12º - <br>13º - <br>14º - <br>15º - <br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
     </main>
 </body>
 </html>
+
+<script>
+    const graficoLinha = document.getElementById('distanciamedia'); // const == variável constante
+
+    // se tiver [] é vetor, se tiver {} é json = juntar inúmeras propriedades dentro de um grupo
+
+    new Chart(graficoLinha, {
+        type: 'line', // tipo do gráfico 
+        data: { // data = todos os valores que serão colocados
+        labels: ['00:00:00', '01:00:00', '02:00:00', '03:00:00', '04:00:00', '05:00:00', '06:00:00', '07:00:00', '08:00:00', '09:00:00', '10:00:00', '11:00:00', '12:00:00', '13:00:00', '14:00:00', '15:00:00', '16:00:00', '17:00:00', '18:00:00', '19:00:00', '20:00:00', '21:00:00', '22:00:00', '23:00:00'], // array = vetores que serão utilizados na label
+        datasets: [{ // métricas do gráfico = linha
+        label: 'Semáforo S1', // nome da linha
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: [70, 80, 77, 66, 40, 50, 53, 59, 40, 33, 25, 22, 70, 80, 77, 66, 40, 50, 53, 59, 40, 33, 25, 22], // valores do gráfico
+        borderWidth: 1 // largura da borda do gráfico
+        }, {
+        label: 'Semáforo S2',
+        backgroundColor: 'rgb(54, 162, 235)',
+        borderColor: 'rgb(54, 162, 235)',
+        data: [66, 71, 65, 56, 43, 44, 39, 41, 37, 30, 22, 23, 66, 71, 65, 56, 43, 44, 39, 41, 37, 30, 22, 23],
+        borderWidth: 1
+        }, {
+        label: 'Semáforo P1',
+        backgroundColor: 'rgb(234,135,2)',
+        borderColor: 'rgb(234,135,2)',
+        data: [15, 12, 13, 10, 16, 20, 22, 23, 25, 30, 32, 27, 15, 12, 13, 10, 16, 20, 22, 23, 25, 30, 32, 27],
+        borderWidth: 1
+        }]
+    },
+    options: { // opções do formato do gráfico
+        scales: {
+        y: {
+            beginAtZero: true
+      }
+    }
+  }
+});
+</script>
+
+<script>
+    const graficoBarras = document.getElementById('fluxoruas'); // const == variável constante
+
+    // se tiver [] é vetor, se tiver {} é json = juntar inúmeras propriedades dentro de um grupo
+
+    new Chart(graficoBarras, {
+        type: 'bar', // tipo do gráfico 
+        data: { // data = todos os valores que serão colocados
+        labels: ['00:00:00', '01:00:00', '02:00:00', '03:00:00', '04:00:00', '05:00:00', '06:00:00', '07:00:00', '08:00:00', '09:00:00', '10:00:00', '11:00:00', '12:00:00', '13:00:00', '14:00:00', '15:00:00', '16:00:00', '17:00:00', '18:00:00', '19:00:00', '20:00:00', '21:00:00', '22:00:00', '23:00:00'], // array = vetores que serão utilizados na label
+        datasets: [{ // métricas do gráfico = linha
+        label: 'Semáforo S1', // nome da linha
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: [70, 80, 77, 66, 40, 50, 53, 59, 40, 33, 25, 22, 70, 80, 77, 66, 40, 50, 53, 59, 40, 33, 25, 22], // valores do gráfico
+        borderWidth: 1 // largura da borda do gráfico
+        }, {
+        label: 'Semáforo S2',
+        backgroundColor: 'rgb(54, 162, 235)',
+        borderColor: 'rgb(54, 162, 235)',
+        data: [66, 71, 65, 56, 43, 44, 39, 41, 37, 30, 22, 23, 66, 71, 65, 56, 43, 44, 39, 41, 37, 30, 22, 23],
+        borderWidth: 1
+        }, {
+        label: 'Semáforo P1',
+        backgroundColor: 'rgb(234,135,2)',
+        borderColor: 'rgb(234,135,2)',
+        data: [15, 12, 13, 10, 16, 20, 22, 23, 25, 30, 32, 27, 15, 12, 13, 10, 16, 20, 22, 23, 25, 30, 32, 27],
+        borderWidth: 1
+        }]
+    },
+    options: { // opções do formato do gráfico
+        scales: {
+        y: {
+            beginAtZero: true
+      }
+    }
+  }
+});
+</script>

@@ -2,12 +2,10 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-
 }
 
 .side-bar{
     width: 20%;
-    
     height: 100vh;
     color: #fff;
     background-color: var(--primary-color);
@@ -45,7 +43,6 @@
 
 .item-nav{
     width: 100%;
-    
     height: 10%;
     display: flex;
     justify-content: flex-end;
@@ -97,6 +94,279 @@
     
 }
 
+
 .main-content{
     width: 80%;
+}
+
+.container-dashboard {
+    width: 100%;
+    height: 88vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cabecalho {
+    width: 1100px;
+    height: 10vh;
+}
+
+.painel-dashboard {
+    width: 76vw;
+    height: 82vh;
+    background-color: #656363;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 10px;
+    padding:30px 0px 30px 0px;
+}
+
+.superior-dashboard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-right: 40px;
+}
+
+#horario_mais_movimentado {
+    width: 250px;
+    height: 140px;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#parte_superior_meio {
+    width: 250px;
+    height: 156px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#parte_superior_direita {
+    width: 250px;
+    height: 156px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#parte_superior_direita2 {
+    width: 250px;
+    height: 156px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.texto_explicativo {
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+}
+
+#caixaGrande {
+    width: 250px;
+    height: 110px;
+    background-color: #D9D9D9;
+    padding: 0px 8px 15px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-top: 27px;
+}
+
+#valor_hmais {
+    color: black;
+    font-size: 50px;
+    font-weight: 400;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#horario_mais_movimentado2 {
+    height: 76px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#fluxo_medio {
+    height: 76px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#caixaPequena {
+    width: 150px;
+    height: 76px;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-left: 150px;
+    margin-bottom: 20px;
+}
+
+.valor_hmais2 {
+    color: black;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.caso2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 8px 0px 0px;
+}
+
+.fluxo {
+    position: absolute;
+    margin-left: 130px;
+}
+
+#horario_menos_movimentado {
+    height: 76px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#velocidade_media {
+    height: 76px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#kpi1 {
+    height: 76px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#kpi2 {
+    height: 76px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.parte-baixo {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.parte-esquerda-baixo {
+    width: 66%;
+    height: 625px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 55px;
+}
+
+.parte-direita-baixo {
+    width: 34%;
+    height: 625px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 60px;
+}
+
+.grafico {
+    width: 65%;
+    height: 90%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: 25px;
+}
+
+.ranking {
+    width: 95%;
+    height: 90%;
+    background-color: white;
+}
+
+.titulo_ranking{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: grey;
+    font-size: 18px;
+}
+
+.ranking_texto {
+    width: 100%;
+    height: 80%;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#ladoesquerdo_ranking {
+    width: 49.5%;
+    height: 100%;
+    margin-left: 2px;
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#ladodireito_ranking {
+    width: 49.5%;
+    height: 100%;
+    margin-left: 2px;
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#divisoria {
+    width: 1%;
+    height: 100%;
+    background-color: black;
 }
