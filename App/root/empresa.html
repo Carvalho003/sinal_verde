@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../../Site/css/root.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/modal_empresa.css">
+    <link rel="stylesheet" href="../css/header.css">
 </head>
 <body>
     <main class="screen-dash">
@@ -42,13 +43,61 @@
                     <span>sair</span>
                 </div>
             </div>
-        </nav>
-        <main class="main-content">
-            <button onclick="abrirModal()">Abrir modal</button>
         </main>
+    </nav>
+    <main class="main-content">
+        <header class="header-colab">
+            <div class="header-content-aside">
+                <div class="options-box">
+                    <span>Olá, Bisque</span>
+                    <i onclick="toggleMenu(this)" class='bx bxs-chevron-down'></i>
+                    <div class="menu hide">
+                        <ul>
+                            <li>
+                                <span>Meus Dados</span>
+                            </li>
+                            <li>
+                                <span>Sair</span>
+                            </li>
+                        </ul>
+                        <i class='bx bxs-up-arrow seta-header'></i>
+                    </div>
+                </div>
+            </div>
+        </header>
     </main>
+
+    <section class="table">
+        <div class="header-table">
+            <div class="head-table">
+                <h3>EMPRESAS</h3>
+                <span>EMPRESAS UTILIZANDO SINAL VERDE</span>
+            </div>
+            <div class="icone-header">
+                <i onclick="abrirModal()" class="fa-solid fa-plus closee"></i>
+            </div>
+        </div>
+        <div class="tab-inicio">
+            <table>
+                <tr class="comeco-tr">
+                    <td>Nome</td>
+                    <td>Localidade</td>
+                    <td>Colaboradores</td>
+                    <td>Editar</td>
+                    <td>Excluir</td>
+                </tr>
+                <tr class="usuario-tab">
+                    <td>CET</td>
+                    <td>São Paulo</td>
+                    <td>33</td>
+                    <td><i onclick="kk()"  class='bx bx-edit-alt' ></i></td>
+                    <td><i onclick="kk()" class='bx bx-trash'></i></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    
     <dialog id="modal_adicionar">
-            
             <div class="modal-head">
                 <div class="top-head">
                     <div class="modal-circle-icon">
@@ -125,4 +174,5 @@
 <script src="../js/adicionarModalEmpresa.js"></script>
 
 <script src="../js/adicionarModal.js"></script>
+<script src="../js/togglemenu.js"></script>
 

@@ -174,3 +174,90 @@
     background-color: var(--primary-color);
     color: #fff;
 }
+
+
+/* tab empresa */
+
+.header-table {
+    width: 94%;
+    border-radius: 14px;
+    padding: 8px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    background-color: #fafafa;
+}
+.header-table h3 {
+    font-size: 40px;
+    font-weight: 550;
+}
+.header-table span {
+    font-size: 20px;
+    font-weight: 550;
+    color: #656363;
+
+}
+.head-table {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.closee {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 40px;
+    margin-right: 10%;
+    cursor: pointer;
+}
+
+.table {
+    margin-left: 21%;
+}
+
+.tab-inicio {
+    width: 95.6%;
+    height: 5vh;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    padding: 0;
+}
+.tab-inicio table i {
+    cursor: pointer;
+}
+
+tr:hover {background-color: #D6EEEE;}
+
+tr {
+    border: 1px solid black;
+    border-top: 1px solid rgba(0,0,0,0.3);
+}
+td {
+padding: 5px;
+}
+td, tr {
+    text-align: center;
+}
+.tab-inicio table {
+    width: 98%;
+    font-size: 30px;
+    font-weight: 500;
+    border-collapse: collapse;
+}
+.comeco-tr {
+    color: var(--subtitle-color);
+}
+
+.icone-header {
+    width: 60%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.usuario-tab {
+    color: black;
+}

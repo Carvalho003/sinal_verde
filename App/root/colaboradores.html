@@ -17,55 +17,102 @@
     <link rel="stylesheet" href="../css/header.css">
 </head>
 <body>
-    <main class="screen-dash">
-        <nav class="side-bar">
-            <div class="nav-logo">
-                <img src="../../Site/img/logos/logo sinal verde- nome e cores ajustadas.png"  alt="">
-            </div>
-            <ul class="list-nav">
-                
-                <li  class="item-nav item-active">
-                    <a href="./colaboradores.html" class="icon-text-nav">
-                        <i class='bx bx-user-voice' ></i>
-                        <span >colaboradores</span>
-                    </a>
-                </li>
-                <li class="item-nav">
-                    <a href="./empresa.html" class="icon-text-nav">
-                        <i class='bx bxs-business'></i>
-                        <span>Empresas</span>
-                    </a>
-                </li>
-            </ul>
-            <div class="item-nav logout-sec">
-                <div class="icon-text-nav">
-                    <i class='bx bx-log-out' ></i>
-                    <span>sair</span>
+    <div class="div_papai">
+        <main class="screen-dash">
+            <nav class="side-bar">
+                <div class="nav-logo">
+                    <img src="../../Site/img/logos/logo sinal verde- nome e cores ajustadas.png"  alt="">
                 </div>
-            </div>
-        </nav>
-        <main class="main-content">
-            <header class="header-colab">
-                <div class="header-content-aside">
-                    <div class="options-box">
-                        <span>Olá, Bisque</span>
-                        <i onclick="toggleMenu(this)" class='bx bxs-chevron-down'></i>
-                        <div class="menu hide">
-                            <ul>
-                                <li>
-                                    <span>Meus Dados</span>
-                                </li>
-                                <li>
-                                    <span>Sair</span>
-                                </li>
-                            </ul>
-                            <i class='bx bxs-up-arrow seta-header'></i>
-                        </div>
+                <ul class="list-nav">
+                    <li  class="item-nav item-active">
+                        <a href="./colaboradores.html" class="icon-text-nav">
+                            <i class='bx bx-user-voice' ></i>
+                            <span >colaboradores</span>
+                        </a>
+                    </li>
+                    <div class="item-nav ">
+                        <a href="./empresa.html" class="icon-text-nav">
+                            <i class='bx bxs-business'></i>
+                            <span>Empresas</span>
+                        </a>
+                    </div>
+        
+                </ul>
+                <div class="item-nav logout-sec">
+                    <div class="icon-text-nav">
+                        <i class='bx bx-log-out' ></i>
+                        <span>sair</span>
                     </div>
                 </div>
-            </header>
+            </nav>
+            <main class="main-content">
+                <header class="header-colab">
+                    <div class="header-content-aside">
+                        <div class="options-box">
+                            <span>Olá, Bisque</span>
+                            <i onclick="toggleMenu(this)" class='bx bxs-chevron-down'></i>
+                            <div class="menu hide">
+                                <ul>
+                                    <li>
+                                        <span>Meus Dados</span>
+                                    </li>
+                                    <li>
+                                        <span>Sair</span>
+                                    </li>
+                                </ul>
+                                <i class='bx bxs-up-arrow seta-header'></i>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </main>
         </main>
-    </main>
+        <section class="table">
+            <div class="header-table">
+                <div class="head-table">
+                    <h3>COLABORADORES</h3>
+                    <span>Goinfra - GOIAS</span>
+                </div>
+                <div class="icone-header">
+                    <i onclick="abrirModal()" class="fa-solid fa-plus closee"></i>
+                </div>
+            </div>
+            <div class="tab-inicio">
+                <table>
+                    <tr class="comeco-tr">
+                        <td>Nome</td>
+                        <td>Cargo</td>
+                        <td>Permissão</td>
+                        <td>Editar</td>
+                        <td>Excluir</td>
+                    </tr>
+                    <tr class="usuario-tab">
+                        <td>Hugo</td>
+                        <td>Supervisor</td>
+                        <td>Todas</td>
+                        <td><i onclick="kk()"  class='bx bx-edit-alt' ></i></td>
+                        <td><i onclick="kk()" class='bx bx-trash'></i></td>
+                    </tr>
+                    <tr class="usuario-tab">
+                        <td>Ranier</td>
+                        <td>Supervisor</td>
+                        <td>Todas</td>
+                        <td><i onclick="kk()" class='bx bx-edit-alt' ></i></td>
+                        <td><i onclick="kk()" class='bx bx-trash'></i></td>
+
+                    </tr>
+                    <tr class="usuario-tab">
+                        <td>Caio</td>
+                        <td>Supervisor</td>
+                        <td>Todas</td>
+                        <td><i class='bx bx-edit-alt' ></i></td>
+                        <td><i class='bx bx-trash'></i></td>
+
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </div>
     <dialog id="modal_adicionar">
             
             <div class="modal-head">
@@ -130,7 +177,7 @@
 
             <div class="modal-footer">
                 <button onclick="cadastrarColaborador()" class="btn-modal btn-green">Salvar</button>
-                <button class="btn-modal btn-gray">Cancelar</button>
+                <button class="btn-modal btn-gray" onclick="closeModal()" >Cancelar</button>
             </div>
     </dialog>
     
