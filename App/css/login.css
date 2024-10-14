@@ -76,11 +76,11 @@
 
 .filho-botao button {
   margin-right: 1%;
-  width: 92%;
-  height: 8vh;
+  width: 92% !important;
+  height: 8vh !important;
   border: none;
   border-radius: 12px;
-  font-size: 45px;
+  font-size: 45px !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,6 +89,7 @@
   font-style: italic;
   cursor: pointer;
 }
+button:hover {background-color: var( --secondary-color);}
 
 .div-esqueceu-senha {
   height: 3vh;
