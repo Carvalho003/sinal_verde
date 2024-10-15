@@ -402,10 +402,22 @@ font-weight: 700;
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
-    padding-bottom: 200px;
+    justify-content: flex-start;
+    
     z-index: 2;
     position: relative;
+}
+
+
+
+
+.cardCaio i{
+  font-size: 80px;
+  color: var(--primary-color);
+}
+
+.cardCaio .inverte :first-child{
+  transform: rotate(90deg);
 }
 
 .circuloCaio{
@@ -449,6 +461,52 @@ font-weight: 700;
     font-size: 32px;
     display: flex;
     flex-direction: column;
+    margin-top: 134px;
+    /* 82 */
+}
+
+
+.equipamento-foto{
+  width: 100%;
+  height: 80%;
+  
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagem-3d{
+  
+  height: 400px;
+  width: 400px;
+  background-size: cover;
+}
+
+.semaforo{
+  background-image: url(../img/equipamentos/trafficlight1a.png);
+}
+
+.cone{
+  background-image: url('../img/equipamentos/cone.png');
+}
+
+.poste{
+  background-image: url('../img/equipamentos/poste.png');
+}
+
+.cardCaio p{
+  width: 80%;
+  animation: paragrafo 1s linear;
+  text-align: center;
+}
+
+
+
+.cardAtivo{
+  animation: expandir 1s linear ease-in;
+
+  color: #fff;
 }
 
 .tituloC2{
@@ -565,10 +623,10 @@ font-weight: 700;
 }
 
 .carrosselEquipamento{
-  padding-top: 10px;
-  width: 90%;
-  height: 65%;
-  margin-top: 15%;
+  
+  width: 100%;
+  height: 100%;
+  
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
@@ -580,7 +638,7 @@ font-weight: 700;
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  gap: 10px;
+  
 }
 
 .modelagemsemaforo {

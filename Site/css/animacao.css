@@ -21,3 +21,48 @@
         transform: rotate(-20deg);
     }
 }
+
+@keyframes expandir{
+    from{
+        height: 0;
+        background-color: #fff;
+    }
+    to{
+        min-height: 500px;
+        background-color: var(--primary-color);
+    }
+}
+
+@keyframes encolher{
+    from{
+        min-height: 500px;
+        background-color: var(--primary-color);
+    }
+    to{
+        height: 200px;
+        background-color: #fff;
+    }
+}
+
+@keyframes paragrafo{
+    from{
+        opacity: 0;
+        height: 0px;
+        
+    }to{
+        opacity: 1;
+        height: fit-content;
+    }
+}
+
+
+@keyframes paragrafoSumir{
+    from{
+        opacity: 1;
+        height: 0px;
+        
+    }to{
+        opacity: 0;
+        height: fit-content;
+    }
+}
