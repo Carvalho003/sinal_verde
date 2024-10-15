@@ -52,7 +52,7 @@
             </ul>
         </nav>
     </header>
-    <main class="home " >
+    <main class="home" id="home" >
         <div class="home-container fade-in">
         <div class="box controle-home">
             <article id="home-escrita">
@@ -520,18 +520,7 @@
     });
 
     //função para tirar a marca da agua do spline
-    window.onload = function() {
-    
-        console.log('sss')
-        var splineViews = document.querySelectorAll('spline-viewer');
-        
-        for(var i = 0; i<splineViews.length;i++){
-            console.log('aa')
-            splineViews[i].shadowRoot.querySelector('#logo').remove();
-        }
-    }
-    
-  </script>
+   </script>
 
 <!-- IMPORT DE SCRIPTS -->
 <script src="js/contato.js"></script>
@@ -544,20 +533,4 @@
 
 <script src="./js/feedbacks.js"></script>
 
-<script>
-    let vetor1 = ['a','b','c']
-    let vetor2 = ['d','e','f'];
-
-    let matriz = [vetor1, vetor2];
-
-    console.log(matriz)
-
-    for(var contadorI = 0; contadorI < matriz.length;contadorI++){
-        //correndo o I
-        for(var contadorJ =0; contadorJ < matriz[contadorI].length;contadorJ++ ){
-            console.log(matriz[contadorI][contadorJ]);
-        }
-
-        console.log("separar")
-    }
-</script>
+<script src="./js/navActives.js"></script>

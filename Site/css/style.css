@@ -86,6 +86,17 @@ position: absolute;
 width: 100%;
 }
 
+.nav-list .nav-item.active  ::after{
+  background-color: var(--complementar-color);
+width: 100%;
+content: "";
+height: 3px;
+left: 0;
+bottom: 0;
+transition: width 0.35s ease 0s;
+position: absolute;
+}
+
 .nav-list .nav-item a{
 text-decoration: none;
 color: var(--white-color);

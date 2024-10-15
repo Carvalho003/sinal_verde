@@ -7,8 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+        console.log(entries);
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                console.log(entry)
                 entry.target.classList.add('visible');
             } else {
                 entry.target.classList.remove('visible');
@@ -16,6 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, appearOptions);
 
+
+   
     faders.forEach(fader => {
         appearOnScroll.observe(fader);
     });
