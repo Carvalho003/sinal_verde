@@ -1,14 +1,22 @@
 .header-colab{
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-end;
+    align-items: flex-end;
 }
 .header-content-aside{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-right: 2%;
     margin-top: 2%;
+    
+}
+
+.date-section span{
+    font-size: 22px;
 }
 
 .options-box{
@@ -17,6 +25,21 @@
     justify-content: center;
     align-items: center;
     gap: 4px;
+}
+
+.title-section{
+    align-self: flex-start;
+    margin-left: 3%;
+}
+
+.title-section h1{
+    font-size: 24px;
+    font-weight: 450;
+    text-transform: uppercase;
+}
+
+.title-section span{
+    color: var(--subtitle-color);
 }
 
 .options-box i{
@@ -29,7 +52,8 @@
     width: 100%;
     background-color: #fff;
     filter: drop-shadow(1px 1px 1px black);
-    bottom: -60px;
+    bottom: -65px;
+    padding: 5px;
     
 }
 
