@@ -17,7 +17,7 @@ let dadosColaboradores = {
         foto: 'fotoCaio.png',
         nome: 'Caio Visconti',
         cargo:'Dev Front-End',
-        mensagem: 'Muito divertido e legal, a equipe é boa'
+        mensagem: 'Operar nesse projeto é algo muito significante para mim, trabalho bem feito e uma equipe muito prática e criativa. Um ótimo ambiente para produzir.'
     },
     2:{
         foto: 'raniero.png',

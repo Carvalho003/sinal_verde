@@ -99,21 +99,21 @@
                                 <div class="kpi-item" id="parte_superior_meio">
                                     <div class="box-kpi" id="horario_mais_movimentado2">
                                         <div class="texto_explicativo caso2">
-                                            Horário menos movimentado
+                                            Horário Com Menos movimento
                                         </div>
                                         <div id="caixaPequena">
                                             <div class="valor_hmais2">
-                                                04:00:00
+                                                02:00H
                                             </div>
                                         </div>
                                     </div>
                                     <div class="box-kpi" id="fluxo_medio">
                                         <div class="texto_explicativo caso2">
-                                            Fluxo médio de <br>carros por hora
+                                            Dia mais movimentado
                                         </div>
                                         <div id="caixaPequena" class="fluxo">
                                             <div class="valor_hmais2">
-                                                50
+                                                Terça
                                             </div>
                                         </div>
                                     </div>
@@ -121,21 +121,21 @@
                                 <div class="kpi-item" id="parte_superior_direita">
                                     <div class="box-kpi" id="horario_menos_movimentado">
                                         <div class="texto_explicativo caso2 ">
-                                            LOREM IPSUM
+                                            Número de congestionamentos
                                         </div>
                                         <div id="caixaPequena">
                                             <div class="valor_hmais2">
-                                                18:99:99
+                                                13
                                             </div>
                                         </div>
                                     </div>
                                     <div class="box-kpi" id="velocidade_media">
                                         <div class="texto_explicativo caso2">
-                                            Fluxo médio de <br>carros por hora
+                                            Número de vias livres
                                         </div>
                                         <div id="caixaPequena" class="fluxo">
                                             <div class="valor_hmais2">
-                                                50
+                                                6
                                             </div>
                                         </div>
                                     </div>
@@ -161,7 +161,7 @@
                                     </div>
                                     <div class="ranking_texto">
                                         <div id="ladoesquerdo_ranking">
-                                            <div class="legenda">Automóveis:</div>
+                                            <div class="legenda">Mais movimentado:</div>
                                             <div class="impares">1º - <br> nome da rua, número - bairro</div>
                                             <div class="pares">2º - <br> nome da rua, número - bairro</div>
                                             <div class="impares">3º - <br> nome da rua, número - bairro </div>
@@ -178,7 +178,7 @@
                                         </div>
                                         <div id="divisoria"></div>
                                         <div id="ladodireito_ranking">
-                                            <div class="legenda">Pedestres: </div>
+                                            <div class="legenda">Menos movimentado: </div>
                                             <div class="impares">1º - <br> nome da rua, número - bairro </div>
                                             <div class="pares">2º - <br> nome da rua, número - bairro </div>
                                             <div class="impares">3º - <br> nome da rua, número - bairro </div>
@@ -273,7 +273,7 @@
     new Chart(graficoBarras, {
         type: 'bar', // tipo do gráfico 
         data: { // data = todos os valores que serão colocados
-            labels: [ '07H', '08H', '09H', '10H', '11H', '12H'], // array = vetores que serão utilizados na label
+            labels: [ 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo'], // array = vetores que serão utilizados na label
             datasets: [{ // métricas do gráfico = linha
                 label: 'Semáforo S1', // nome da linha
                 backgroundColor: '#1D6975',
@@ -302,7 +302,7 @@
             },
             plugins:{
                 title:{
-                    text: 'FLUXO OBTIDO EM UM INTERVALO DE SEIS HORAS',
+                    text: 'FLUXO OBTIDO EM UM INTERVALO DE UMA SEMANA',
                     display:true
                 },
                 legend:{

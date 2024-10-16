@@ -1,23 +1,23 @@
 // importa os bibliotecas necessários
-const serialport = require('serialport');
+const serialport = require('serialport'); /* biblioteca utilizada para acessar a porta serial*/
+const mysql = require('mysql2'); /* biblioteca utilizada para acessar o servidor do banco de dados MySQL*/
 const express = require('express');
-const mysql = require('mysql2');
 
 // constantes para configurações
-const SERIAL_BAUD_RATE = 9600;
-const SERVIDOR_PORTA = 3300;
+const SERIAL_BAUD_RATE = 9600; /*variável responsável por armazenar a taxa de sincronização utilizada para sincronizar o arduino com o dispositivo*/
+const SERVIDOR_PORTA = 3300; /*variável responsável por armazenar o número da porta serial que será utilizada pelo arduino para a passagem dos dados*/
 
 // habilita ou desabilita a inserção de dados no banco de dados
-const HABILITAR_OPERACAO_INSERIR = true;
+const HABILITAR_OPERACAO_INSERIR = true; /*variável responsável por ligar o sistema de captura e plot dos dados no banco de dados*/
 
 // função para comunicação serial
-const serial = async (
+const serial = async ( /*variável responsável por encaminhar em loop os dados obtidos na variável "valoresSensorAnalogico" */
     valoresSensorAnalogico
     
 ) => {
 
     // conexão com o banco de dados MySQL
-    let poolBancoDados = mysql.createPool(
+    let poolBancoDados = mysql.createPool( /*variável responsável por armazenar os dados do usuário e servidor do banco de dados em que fará a inserção dos dados*/
         {
             host: 'localhost',
             user: 'inseridor',
