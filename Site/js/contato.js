@@ -19,7 +19,7 @@ function sendEmail() {
     var assunto = ipt_assunto.value;
 
     if(nome == '' || emailContactado == '' || assunto == '' || ipt_mensagem.value == ''){
-        modal.showModal()
+        modal.showModal();
         return span_erro.innerText = "Preencha TODOS os campos corretamente!";
     }
     
