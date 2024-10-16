@@ -1,3 +1,5 @@
+let modal = modal_contato;
+
 const infosColaboradores = [
     {
         nome:"admin",
@@ -17,7 +19,8 @@ function analisarEmail(email){
     var isArroba = email.includes('@') && indiceArroba < indiceEnd;
 
     if((tamEmail < 8 || tamEmail > 45) && !isEnd && !isArroba || email == ''){
-        return alert("Insira um valor de email válido");
+        modal.showModal()
+        return span_erro.innerText = "Insira um valor de email válido";
     }
     
     return true;
@@ -25,7 +28,8 @@ function analisarEmail(email){
 
 function analisarSenha(senha){
     if(senha == ''){
-        return alert("Insira um valor de senha válido");
+        modal.showModal()
+        return span_erro.innerText = "Insira um valor de senha válido";
     }
 
     return true;
@@ -49,9 +53,15 @@ function autenticar(){
         }
 
         if(!isEmail || infosColaboradores[indexColaborador].senha != senha){
-            return alert(`Senha ou email incorretos`);
+            modal.showModal()
+            return span_erro.innerText = `Senha ou email incorretos`;
         }
 
-        return location.href="./cliente/colaboradores.html";
+        return location.href="./cliente/dashboard.html";
     }
 }
+
+function closeModal(){
+    modal.close()
+}
+

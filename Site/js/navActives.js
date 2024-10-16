@@ -1,16 +1,16 @@
 
 const mudarActiveNavBar = section =>{
-    console.log('buceta')
+    
     let itensDaNav = document.querySelector('.nav-list').querySelectorAll('.nav-item');
     console.log(itensDaNav);
     for(var i = 0; i < itensDaNav.length; i++){
-        console.log('entrou no for')
+        
         if(i == section){
             itensDaNav[i].classList.add('active')
         }else {
             itensDaNav[i].classList.remove('active')
         }
-        console.log('ddsdasd')
+        
     }
 }
 document.addEventListener('DOMContentLoaded', function() {

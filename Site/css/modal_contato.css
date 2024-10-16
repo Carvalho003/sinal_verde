@@ -1,0 +1,124 @@
+#modal_contato{
+    width: 30%;
+    margin: auto;
+    background-color: #fff;
+    backdrop-filter: blur(2px);
+    border-radius: 11px;
+    filter: drop-shadow(3px 1px 2px rgba(0,0,0,0.7));
+    border: none;
+    outline: none;
+}
+
+#modal_contato .modal-head{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#modal_contato .modal-head .top-head i{
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#modal_contato .modal-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+
+#modal_contato .modal-content i {
+    font-size: 80px;
+    color: #C53015;
+}
+
+#modal_contato .modal-content span{
+    font-size: 24px;
+    font-weight: 450;
+    text-align: center;
+
+}
+
+#modal_contato .modal-footer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#modal_contato .modal-footer button{
+    height: 40px !important;
+    width: 50% !important;
+    font-size: 22px !important;
+    outline: none;
+    border: none;
+    border-radius: 11px;
+    background-color: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+}
+
+
+#modal_sucesso{
+    width: 30%;
+    margin: auto;
+    background-color: #fff;
+    backdrop-filter: blur(2px);
+    border-radius: 11px;
+    filter: drop-shadow(3px 1px 2px rgba(0,0,0,0.7));
+    border: none;
+    outline: none;
+}
+
+#modal_sucesso .modal-head{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#modal_sucesso .modal-head .top-head i{
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#modal_sucesso .modal-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+
+#modal_sucesso .modal-content i {
+    font-size: 80px;
+    color: var(--complementar-color);
+}
+
+#modal_sucesso .modal-content span{
+    font-size: 24px;
+    font-weight: 450;
+    text-align: center;
+
+}
+
+#modal_sucesso .modal-footer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#modal_sucesso .modal-footer button{
+    height: 40px !important;
+    width: 50% !important;
+    font-size: 22px !important;
+    outline: none;
+    border: none;
+    border-radius: 11px;
+    background-color: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+}

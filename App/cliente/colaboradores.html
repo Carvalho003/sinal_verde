@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/modal_usuario.css">
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../../Site/css/modal_contato.css">
 </head>
 <body>
     <div class="div_papai">
@@ -38,12 +39,14 @@
                     </li>
         
                 </ul>
-                <div class="item-nav logout-sec">
-                    <div class="icon-text-nav">
-                        <i class='bx bx-log-out' ></i>
-                        <span>sair</span>
+                <a class="item-nav" href="../login.html" style="text-decoration: none;">
+                    <div class="item-nav logout-sec">
+                        <div class="icon-text-nav">
+                            <i class='bx bx-log-out' ></i>
+                            <span>sair</span>
+                        </div>
                     </div>
-                </div>
+                </a>
             </nav>
             <main class="main-content">
                 <header class="header-colab">
@@ -127,7 +130,7 @@
                     <span>adicionar novo colaborador</span>
                 </div>
             </div>
-            <div class="modal-content">
+            <form id="form_colaborador" action="#" class="modal-content">
                 <!-- DIV CAMPO NOME -->
                 <div class="input-group-modal">
                     <label for="Nome do colaborador">Nome:</label>
@@ -173,12 +176,55 @@
                     <label for="Senha do colaborador">Confirme a Senha:</label>
                     <input id="ipt_confirme" type="password">
                 </div>
-            </div>
+            </form>
 
             <div class="modal-footer">
                 <button onclick="cadastrarColaborador()" class="btn-modal btn-green">Salvar</button>
                 <button class="btn-modal btn-gray" onclick="closeModal()" >Cancelar</button>
             </div>
+    </dialog>
+
+    <dialog  id="modal_contato">
+            
+        <div class="modal-head">
+            <div class="top-head">
+                
+                <i class='bx bx-x' onclick="closeModal()" id="close-modal"></i>
+            </div>
+    
+            
+        </div>
+        <div class="modal-content">
+            
+            <i class='bx bxs-comment-error'></i>
+            <span id="span_erro">Erro Teste!</span>
+        </div>
+    
+        <div class="modal-footer">
+            <button onclick="closeModalErro()">OK</button>
+        </div>
+    </dialog>
+
+
+    <dialog  id="modal_sucesso">
+            
+        <div class="modal-head">
+            <div class="top-head">
+                
+                <i class='bx bx-x' onclick="closeModal()" id="close-modal"></i>
+            </div>
+    
+            
+        </div>
+        <div class="modal-content">
+            
+            <i class='bx bxs-message-check'></i>
+            <span id="span_sucesso">Erro Teste!</span>
+        </div>
+    
+        <div class="modal-footer">
+            <button onclick="closeModalSucesso()">OK</button>
+        </div>
     </dialog>
     
 

@@ -1,8 +1,11 @@
+let modal = modal_contato;
+
 function sendEmail() {
     var checkResposta = ipt_mensagem1.checked;
 
     if(!checkResposta){
-        return alert("Você precisa concordar com o envio da mensagem para enviar!");
+        modal.showModal()
+        return span_erro.innerText = "Você precisa concordar com o envio da mensagem para enviar!";
     }
     // dps guardar isso em um .env
     // https://app.elasticemail.com/login?_gl=1*6r0n63*_gcl_au*MTMzOTQzNzY2NC4xNzI4MzM3NDkw*FPAU*MTMzOTQzNzY2NC4xNzI4MzM3NDkw*_ga*MTg3Nzk0OTg0MS4xNzI4MzM3NDUz*_ga_9GFVDHZ5M5*MTcyODMzNzQ1My4xLjEuMTcyODMzNzkzOS41Mi4wLjA.*_ga_MZLQS12D2G*MTcyODMzNzQ1Mi4xLjEuMTcyODMzNzkzOS4wLjAuMTE5MzI1NDQxNg..
@@ -16,7 +19,8 @@ function sendEmail() {
     var assunto = ipt_assunto.value;
 
     if(nome == '' || emailContactado == '' || assunto == '' || ipt_mensagem.value == ''){
-        return alert("Preencha TODOS os campos corretamente!");
+        modal.showModal()
+        return span_erro.innerText = "Preencha TODOS os campos corretamente!";
     }
     
     var mensagem = `
@@ -37,6 +41,13 @@ function sendEmail() {
         Body: mensagem
     })
     .then(function (resposta) {
-        alert(resposta) 
+        span_erro.innerText = resposta;
+        modal.showModal();
     });
+}
+
+
+
+function closeModal(){
+    modal.close();
 }

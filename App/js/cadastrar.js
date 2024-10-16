@@ -1,3 +1,7 @@
+let modalErro = modal_contato;
+
+let modalSucesso = document.getElementById('modal_sucesso');
+
 const CARACTERES_ESPECIAIS = /[^A-Za-z0-9]/;
 const CARACTERES_CEP = /^[0-9]{8}$/;
 
@@ -26,7 +30,9 @@ var dadosEmpresa = {
 function validarNome(nome){
     nome = nome.split(" ");
     if(nome.length < 2){
-        return alert("Valor do nome inválido");
+        modalErro.showModal()
+        span_erro.innerText ="Valor do nome inválido";
+        return false;
     }
 
     return true;
@@ -34,7 +40,9 @@ function validarNome(nome){
 
 function validarCPF(cpf){
     if(cpf.length != 11){
-        return alert("Valor do cpf inválido");
+        modalErro.showModal()
+        span_erro.innerText = "Valor do cpf inválido";
+        return false;
     }
 
     return true;
@@ -50,13 +58,16 @@ function validarData(data){
     hoje = `${ano}-${mes}-${dia}`;
 
     if(data == '' || data >= hoje){
-        return alert("Data inválida");
+        modalErro.showModal()
+        span_erro.innerText = "Data inválida";
+        return false;
     }
 
     return true;
 }
 
 function validarEmail(email){
+    console.log(email)
     var tamEmail = email.length;
     var isEnd = email.endsWith('.com') || email.endsWith('.br') || email.endsWith('.gov');
     var indiceEnd = email.indexOf('.com') || email.indexOf('.br') || email.indexOf('.gov') ;
@@ -64,7 +75,10 @@ function validarEmail(email){
     var isArroba = email.includes('@') && indiceArroba < indiceEnd;
 
     if((tamEmail < 8 || tamEmail > 45) && !isEnd && !isArroba || email == ''){
-        return alert("Insira um valor de email válido");
+        modalErro.showModal()
+        span_erro.innerText = "Insira um valor de email válido";
+        return false;
+
     }
 
     return true;
@@ -72,13 +86,15 @@ function validarEmail(email){
 
 function validarCargo(cargo){
     if(cargo == ''){
-        return alert("Insira um cargo válido");
+        modalErro.showModal()
+        span_erro.innerText = "Insira um cargo válido";
+        return false;
     }
 
     return true;
 }
 
-function validarSenha(senha, confimacao){
+function validarSenha(senha, confirmacao){
     var tamSenha = senha.length;
     var isEspecial = CARACTERES_ESPECIAIS.test(senha);
 
@@ -102,11 +118,15 @@ function validarSenha(senha, confimacao){
     }
 
     if(tamSenha < 8 || !isMinuscula || !isMaiuscula || !isEspecial || !isNum || senha == ''){
-        return alert("Insira uma senha válida");
+        modalErro.showModal()
+        span_erro.innerText = "Insira uma senha válida";
+        return false;
     }
 
     if(senha !== confirmacao){
-        return alert("As senhas não batem");
+        modalErro.showModal()
+        span_erro.innerText = "As senhas não batem";
+        return false;
     }
 
     return true;
@@ -133,21 +153,27 @@ function cadastrarColaborador(){
             senha:senha,
             data_nascimento:data
         };
-        alert("Cadastro do Colaborador feito com sucesso!");
+        document.getElementById('form_colaborador').reset()
+        modalSucesso.showModal()
+        span_sucesso.innerText = "Cadastro do Colaborador feito com sucesso!";
     }
 }
 
 function validarEndereco(cep, num, regiao){
     if(cep == '' || !CARACTERES_CEP.test(cep)){
-        return alert("Valor do CEP inválido");
+        modalErro.showModal()
+        return span_erro.innerText = "Valor do CEP inválido";
     }
 
     if(isNaN(num) || num == 0){
-        return alert("Valor do Número inválido");
+        modalErro.showModal()
+        return span_erro = "Valor do Número inválido";
     }
 
     if(regiao == ''){
-        return alert("Valor do Número inválido");
+        modalErro.showModal()
+        span_erro.innerText = "Valor do Número inválido"
+        return false;
     }
 
     return true;
@@ -156,7 +182,9 @@ function validarEndereco(cep, num, regiao){
 
 function validarCNPJ(cnpj){
     if(cnpj.length != 14 || cnpj == ''){
-        return alert("Valor de CNPJ inválido");
+        modalErro.showModal()
+        span_erro.innerText = "Valor de CNPJ inválido";
+        return false;
     }
 
     return true;
@@ -186,6 +214,10 @@ function cadastrarEmpresa(){
             cidade: cidade,
             uf: uf
         }
+
+        modalSucesso.showModal()
+        span_sucesso.innerText = "Empresa Cadastrada com Sucesso!";
+        document.getElementById('form_empresa').reset();
     }
 }
 
@@ -197,7 +229,7 @@ function limparEndereco(){
 }
 
 function pesquisarCEP(cep){
-    if(validarCEP){
+    if(true){
         var script = document.createElement('script');
 
         script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=callbackCEP';
@@ -215,8 +247,17 @@ function callbackCEP(conteudo) {
         ipt_bairro.value = (conteudo.bairro);
     } 
     else {
-        alert("CEP não encontrado.");
+        modalErro.showModal()
+        span_erro.innerText = "CEP não encontrado.";
         limparEndereco();
     }
+}
+
+function closeModalErro(){
+    modalErro.close()
+}
+
+function closeModalSucesso(){
+    modalSucesso.close()
 }
   
