@@ -49,8 +49,6 @@ CREATE TABLE equipamento_sensor(
     ,CONSTRAINT fkLogradouroSensor FOREIGN KEY(logradouro_id) REFERENCES logradouro(id)
 );
 
-
-
 CREATE TABLE dados_sensor(
 	id INT AUTO_INCREMENT 
     ,sensor_id INT 
@@ -62,23 +60,18 @@ CREATE TABLE dados_sensor(
     ,CONSTRAINT fkSensor FOREIGN KEY (sensor_id) REFERENCES equipamento_sensor(id)
 );
 
-select * from equipamento_sensor;
 
-
-insert into equipamento_sensor values
-(default, 1, 2, 'veículo');
 -- COMANDO PARA CADASTRO DO USUARIO ROOT 
 
 
 INSERT INTO usuario VALUES 
-(DEFAULT, 'Root', 'Root', '2000-01-01', '12343532123', 'root@sinalverde.com', 'Root#2024', 2, NULL);
+(DEFAULT, 'Root', 'Root', '2000-01-01', '11111111111', 'root@sinalverde.com', 'Root#2024', 2, NULL);
 
 
 -- INSERT DOS LOGRADOUROS, NÃO TERA INTERFACE PARA ESSE CADASTRO SERA APENAS SIMLUAÇÃO DE UM BANCO REAL
 
 INSERT INTO logradouro (cep, estado, cidade, bairro, logradouro, numLogradouro, uf, regiao_cidade)
 VALUES 
-
 ('01310-200', 'São Paulo', 'São Paulo', 'Centro', 'Avenida Paulista', '1578', 'SP', 'Central'),
 ('01046-000', 'São Paulo', 'São Paulo', 'Santa Ifigênia', 'Rua dos Timbiras', '360', 'SP', 'Central'),
 ('30110-028', 'Minas Gerais', 'Belo Horizonte', 'Centro', 'Avenida Afonso Pena', '1500', 'MG', 'Central'),
@@ -111,7 +104,7 @@ INSERT INTO usuario (nome, cargo, dataNasc, cpf, email, senha, nivel_permissao, 
 VALUES
 -- DETRAN São Paulo
 ('João Silva', 'Gerente de TI', '1980-05-15', '11111111111', 'joao.silva@detran.sp.gov.br', 'senha123', 1, 1), -- Master
-('Maria Santos', 'Analista de Sistemas', '1985-03-22', '22222322222', 'maria.santos@detran.sp.gov.br', 'senha123', 0, 1), -- Comum
+('Maria Santos', 'Analista de Sistemas', '1985-03-22', '22222222222', 'maria.santos@detran.sp.gov.br', 'senha123', 0, 1), -- Comum
 ('Carlos Lima', 'Suporte Técnico', '1990-07-10', '33333333333', 'carlos.lima@detran.sp.gov.br', 'senha123', 0, 1), -- Comum
 
 -- CET São Paulo
@@ -187,7 +180,7 @@ WHERE id = 2;
 -- COMANDO PARA DAR UPDATE EM UM USUARIO, TANTO PARA O PROPRIO ALTERAR SEUS DADOS COMO OS USUARIOS COM PERMISSOES ALTERAREM
 
 UPDATE usuario SET nome = 'Raniele Moreira', cargo = 'SCRUM MASTER', dataNasc = '2003-09-30',
-cpf = '99999990999', email = 'raniele@email.com'
+cpf = '99999999999', email = 'raniele@email.com'
 WHERE id =2;
 
 -- COMANDO PARA ALTERAR SENHA, SOMENTE PELO USUARIO 
@@ -229,11 +222,8 @@ SET nome = 'SINAL VERDE',
  regiao_cidade = 'Zona Leste'
  WHERE id =1;
  
-select * from equipamento_sensor;
-select * from dados_sensor as d
-join equipamento_sensor e 
-on e.id = d.sensor_id
-order by d.id desc limit 10;
+
+
  
  -- comando de login 
 
