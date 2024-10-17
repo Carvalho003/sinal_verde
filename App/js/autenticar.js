@@ -6,6 +6,12 @@ const infosColaboradores = [
         senha:"Admin123",
         nivel_permissao:0,
         email:"contatosinalverde@outlook.com"
+    },
+    {
+        nome:"Carlos",
+        senha:"Urubu#100",
+        nivel_permissao:1,
+        email:"carlos@email.com"
     }
 ];
 
@@ -55,6 +61,10 @@ function autenticar(){
         if(!isEmail || infosColaboradores[indexColaborador].senha != senha){
             modal.showModal()
             return span_erro.innerText = `Senha ou email incorretos`;
+        }
+
+        if(infosColaboradores[indexColaborador].nivel_permissao == 0){
+            return location.href="./root/colaboradores.html";
         }
 
         return location.href="./cliente/dashboard.html";

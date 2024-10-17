@@ -19,11 +19,11 @@ function simular(){
 
     let emissao_gas_semana = (tempo_ocioso * 60) * 150
 
-    span_emissao_semana.innerText = emissao_gas_semana + 'g';
+    span_emissao_semana.innerText = emissao_gas_semana/1000 + 'kg';
 
-    span_horas_economizadas.innerText = tempo_semana - tempo_economizado_semana + " Horas";
+    span_horas_economizadas.innerText = tempo_semana - tempo_economizado_semana + " horas";
 
-    span_novo_gas.innerText = emissao_gas_semana - emissao_gas_economizado_semana + 'g';
+    span_novo_gas.innerText = (emissao_gas_semana - emissao_gas_economizado_semana)/1000 + 'kg';
 
     div_resultado.style.animation = 'showResult 1s linear';
     div_tempo_gasto.style.animation = 'showResult 1s linear';
