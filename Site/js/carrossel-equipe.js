@@ -33,9 +33,9 @@ let dadosColaboradores = {
     },
     4:{
         foto: 'matheus.png',
-        nome: 'Matheus Smith',
+        nome: 'Matheus Marques',
         cargo:'Dev Front-End',
-        mensagem: 'Muita midia trabalhar aqui, muito espaço para expressar minhas ideias'
+        mensagem: 'Participar deste projeto é muito especial para mim. Sinto-me à vontade e com liberdade para compartilhar minhas ideias com a equipe, o que torna a experiência ainda mais enriquecedora.'
     }
 }
 
