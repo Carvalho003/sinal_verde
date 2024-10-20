@@ -14,7 +14,7 @@ let dadosColaboradores = {
         mensagem: 'Trabalhar nesse projeto para mim é muito especial, me sinto confortável e livre para compartilhar minhas ideias com os colaboradores.'
     },
     1:{
-        foto: 'fotoCaio.png',
+        foto: 'Caio.png',
         nome: 'Caio Visconti',
         cargo:'Dev Front-End',
         mensagem: 'Operar nesse projeto é algo muito significante para mim, trabalho bem feito e uma equipe muito prática e criativa. Um ótimo ambiente para produzir.'
@@ -39,14 +39,18 @@ let dadosColaboradores = {
     }
 }
 
-const renderizar = operacao =>{
+// SE A OPERAÇÃO FOR 1 É PARA PASSAR PRO PRÓXIMO, SE FOR 2 É PARA VOLTAR
+const renderizar = operacao => {
+    //ESTRUTURA DE IF TERNARIO
     counterCarrossel = operacao == 1 && counterCarrossel < 4 ? counterCarrossel + 1 : counterCarrossel >=0 ? counterCarrossel -1 : counterCarrossel;
     
-    console.log(counterCarrossel)
-
-    let infosAtual = dadosColaboradores[counterCarrossel]
     
+    //BUSCANDO AS INFORMAÇÕES CORRESPONDENTES AO SLIDE QUE ESTÁ SENDO MOSTRADO
+    let infosAtual = dadosColaboradores[counterCarrossel]
+    //COLOCA O BOX COMO VISIVEL
     boxComentario.classList.toggle('visible');
+
+    //TROCANDO AS INFORMAÇÕES DAS BOX
     setTimeout(() => {
 
         fotoColab.style.backgroundImage = `url('./img/equipe/${infosAtual.foto}')`;

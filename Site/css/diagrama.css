@@ -1,0 +1,101 @@
+.sobreONegocio{
+    width: 100%;
+}
+
+.sobreONegocio h1{
+    text-align: center;
+    font-family: 'Poppins';
+    color: #003519;
+    font-size: var(--font-size-title);
+    font-weight: 400;
+}
+
+.carrossel-diagrama{
+    width: 80%;
+    
+    margin-top: 5%;
+    margin-bottom: 8%;
+}
+.slide-diagrama{
+    
+    background-color: #003519;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    position: relative;
+}
+
+.slide-diagrama p{
+    width: 90%;
+    min-height: 150px;
+    color: white;
+    font-family: 'Poppins';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-diagrama i{
+    color: white;
+    font-size: 70px;
+    margin-top: 20%;
+}
+
+.div_control{
+    position: absolute;
+    width: 100%;
+    bottom: -20%;
+}
+
+.div_control .swiper-pagination-bullet{
+    width: 80px;
+    height: 10px;
+    border-radius: 11px;
+    background-color: #717774;
+}
+.div_control .swiper-pagination-bullet-active{
+    width: 80px;
+    height: 10px;
+    border-radius: 11px;
+    background-color: #003519;
+}
+
+.div_botoes{
+    position: absolute;
+    width: 100%;
+    bottom: -15%;
+}
+
+.div_botoes .swiper-button-next{
+    position: absolute;
+    color: #003519;
+    right: 20%;
+}
+
+.div_botoes .swiper-button-prev{
+    position: absolute;
+    left: 20%;
+    color: #003519;
+}
+
+.descricao{
+    margin-top: -20%;
+}
+
+.subtitulo{
+    font-weight: 700;
+    text-align: center;
+}
+
+.identificador{
+    font-family: 'Poppins';
+    position: absolute;
+    top: 5px;
+    left: 5%;
+    z-index: 8 !important;
+    color: white;
+    font-size: 22px;
+    visibility: hidden;
+}

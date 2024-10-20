@@ -1,21 +1,26 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-
+    //PEGANDO OS BOTOES DE PAGINAÇÃO
     let divPaginacao = document.querySelector('.paginacao_feed');
     let btns_page = divPaginacao.querySelectorAll('span');
-     // Isso deve funcionar corretamente após o DOM carregar.
-
+     
+    //PEGANDO OS SLIDES DO CARROSSEL
     let slides = document.querySelectorAll('.box-feed');
     let opacidadeBaixa = '0.2'
     let opacidadeNormal = '1'
+    //DEFININDO OS VALORES DAS OPACIDADES
 
+    //COMO ESSES SERÃO OS PRIMEIROS SLIDES A APARECER NA TELA JÁ DEFINIMOS SEM NENHUMA CONDIÇÃO
     slides[0].style.opacity= opacidadeBaixa;
     slides[2].style.opacity = opacidadeBaixa
-    console.log(slides)
-
+    
+        //EM CADA FUNÇÃO SERÁ TROCADO OS DOIS SLIDES DA PONTA E O DO MEIO
         btns_page[0].addEventListener('click', () =>{
+            //PRIMEIRO OS DOIS SLIDES COM A BAIXA OPACIDADE
             slides[0].style.opacity= opacidadeBaixa;
-            slides[2].style.opacity = opacidadeBaixa
+            slides[2].style.opacity = opacidadeBaixa;
+
+            //DEPOIS O SLIDE EM DESTAQUE
             slides[1].style.opacity = opacidadeNormal;
         })
 

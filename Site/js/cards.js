@@ -18,7 +18,7 @@ function hoverCard(element){
   setTimeout(() => {
       element.style.minHeight = '420px'
       element.style.height = 'fit-content'
-      console.log('trocou')
+      
       element.style.backgroundColor = 'var(--primary-color)'
       paragrafo.style.animation = '';
       statusCard = true;
@@ -29,7 +29,7 @@ function hoverCard(element){
 
 
 function notHoverCard(element) {
-    console.log('saiu')
+    
     let paragrafo = element.querySelector('p');
     let titulo = element.querySelector('.textoACaio');
     if(statusCard){

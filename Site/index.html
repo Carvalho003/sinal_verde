@@ -21,6 +21,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./css/root.css">
     <link rel="stylesheet" href="./css/modal_contato.css">
+    <link rel="stylesheet" href="./css/diagrama.css">
 
 </head>
 <body>
@@ -134,6 +135,59 @@
             </div>
         </div>
     </section>
+
+    <section class="sobreONegocio">
+        <div>
+            <h1>SOBRE O NEGÓCIO</h1>
+        </div>
+        <div style="position: relative; width: 100%;">
+        <div class="swiper carrossel-diagrama">
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide slide-diagrama">
+                    <span class="identificador">.5</span>
+                    <i class='bx bxs-car'></i>
+                    <p class="subtitulo">OTIMIZAÇÃO DO FLUXO</p>
+                    <p class="descricao">A tomada de decisão gerará um controle maior do transito, gerando menos ociosidade </p>
+                </div>
+    
+                <div class="swiper-slide slide-diagrama ">
+                    <span class="identificador">.1</span>
+                    <i class='bx bxs-volume-full'></i>
+                    <p class="subtitulo">CONFIGURAÇÃO DOS SENSORES</p>
+                    <p  class="descricao">Os sensores estarão configurados e posiciondos corretamente</p>
+                </div>
+                <div class="swiper-slide slide-diagrama">
+                    <span class="identificador">.2</span>
+                    <i class='bx bxs-data'></i>
+                    <p class="subtitulo">REQUISIÇÃO DE DADOS</p>
+                    <p  class="descricao">Captação dos dados vindo dos sensores para o nosso sistema </p>
+                </div>
+                <div class="swiper-slide slide-diagrama">
+                    <span class="identificador">.3</span>
+                    <i class='bx bx-key'></i>
+                    <p class="subtitulo">COLABORADOR REALIZA SEU LOGIN</p>
+                    <p  class="descricao">O colaborador entra em nosso sistema para acessar a dashboard e o CRUD </p>
+                </div>
+                <div class="swiper-slide slide-diagrama">
+                    <span class="identificador">.4</span>
+                    <i class='bx bx-line-chart' ></i>
+                    <p class="subtitulo">ACESSOS ÀS INFORMAÇÕES</p>
+                    <p  class="descricao">Uma parte do sistema é responsável por gerar gráficos e KPI’s com base nos dados coletados </p>
+                </div>
+            </div>
+    
+        </div>
+        <div class="div_control">
+            <div class="swiper-pagination page-diagrama"></div>
+            </div>
+        <div class="div_botoes">
+            <div class="swiper-button-next next-diagrama" onclick="move('proximo')"></div>
+            <div class="swiper-button-prev prev-diagrama" onclick="move('anterior')"></div>
+        </div>
+        </div>
+    </section>
+
     <section class="corFundoEquipamento fade-in">
         <div class="sectionCaio2">
         <div class="ondeFundo">
@@ -511,6 +565,23 @@
       
     });
 
+    var swiperDiagrama = new Swiper(".carrossel-diagrama", {
+      slidesPerView: 3,
+      spaceBetween: 100,
+      allowTouchMove: false,
+      loop: true,
+      pagination: {
+        el: ".page-diagrama",
+        clickable: true,
+      },
+
+      navigation: {
+        nextEl: ".next-diagrama",
+        prevEl: ".prev-diagrama",
+      },
+      }
+);
+
     // Atribuir a tag verde para a navbar
     document.addEventListener('click', (e) => {    
         var href = e.target.closest('a').href || '';
@@ -565,3 +636,5 @@
 <script src="./js/navActives.js"></script>
 
 <script src="./js/cards.js"></script>
+
+<script src="./js/diagrama.js"></script>
