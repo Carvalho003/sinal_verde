@@ -174,11 +174,11 @@ WHERE id = 2;
 
 -- COMANDO PARA DAR UPDATE EM UM USUARIO, TANTO PARA O PROPRIO ALTERAR SEUS DADOS COMO OS USUARIOS COM PERMISSOES ALTERAREM
 UPDATE usuario SET nome = 'Raniele Moreira', cargo = 'SCRUM MASTER', dataNasc = '2003-09-30',
-cpf = '99999999999', email = 'raniele@email.com'
+cpf = '99999999998', email = 'raniele@email.com'
 WHERE id =2;
 
 -- COMANDO PARA ALTERAR SENHA, SOMENTE PELO USUARIO 
-UPDATE usuario SET senha = 'novasenha123'  WHERE id =2;
+UPDATE usuario SET senha = 'novasenha123' WHERE id =2;
 
 -- SELECT DE LISTAGEM DE EMPRESAS COM COUNT E GROUP BY PARA CONTAR O NUMERO DE COLABORADORES
 SELECT e.nome AS Nome, l.cidade AS Localidade, COUNT(c.id) AS Colaboradores, e.id as 'Id empresa' FROM empresa AS e
