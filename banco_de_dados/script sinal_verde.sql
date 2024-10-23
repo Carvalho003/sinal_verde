@@ -190,8 +190,6 @@ GROUP BY e.id
 ORDER BY nome ASC LIMIT 15 OFFSET 0;
 
 -- COMANDO CLICAR EM EDITAR OS DADOS DA EMPRESA
-
-
 SELECT nome, bairro, cnpj, cep, regiao_cidade, logradouro, numLogradouro, cidade, uf, logradouro.id AS 'Id Logradouro' FROM empresa
 JOIN logradouro 
 ON logradouro_id = logradouro.id
@@ -199,9 +197,8 @@ WHERE empresa.id =1;
 
 -- comando para realmente atualizar os dados da empresa
 UPDATE empresa 
-SET nome = 'SINAL VERDE',
- cnpj = '11111111111111'
- WHERE id = 1;
+SET nome = 'SINAL VERDE', cnpj = '11111111111111'
+WHERE id = 1;
  
  desc logradouro;
  -- atualizar dados de um logradouro, sera utilizado tambem se os dados do logradouro sede de uma empresa forem alterados

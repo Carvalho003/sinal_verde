@@ -8,10 +8,10 @@ const infosColaboradores = [
         email:"contatosinalverde@outlook.com"
     },
     {
-        nome:"Carlos",
+        nome:"Bisque",
         senha:"Urubu#100",
         nivel_permissao:1,
-        email:"carlos@email.com"
+        email:"bisque@email.com"
     }
 ];
 
