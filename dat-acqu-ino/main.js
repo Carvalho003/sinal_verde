@@ -23,7 +23,7 @@ const serial = async ( /*variável responsável por encaminhar em loop os dados 
             user: 'inseridor',
             password: 'Urubu100#',
             database: 'sinal_verde',
-            port: 3306
+            port: 3307
         }
     ).promise();
 
@@ -63,8 +63,8 @@ const serial = async ( /*variável responsável por encaminhar em loop os dados 
 
             // este insert irá inserir os dados na tabela "medida"
             await poolBancoDados.execute(
-                'INSERT INTO dados_sensor (distancia, sensor_id, status) VALUES (?, ?, ?)',
-                [sensorAnalogico, 1, 0]
+                'INSERT INTO dados_sensor (distancia) VALUES (?)',
+                [sensorAnalogico]
             );
             console.log("valores inseridos no banco: ", sensorAnalogico );
 
