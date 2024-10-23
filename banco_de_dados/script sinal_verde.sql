@@ -2,7 +2,6 @@ CREATE DATABASE sinal_verde;
 USE sinal_verde;
 
 -- CRIAÇÃO DA TABELA LOGRADOURO
-
 CREATE TABLE logradouro(
 	id INT PRIMARY KEY AUTO_INCREMENT 
     ,cep CHAR(9) 
@@ -62,14 +61,11 @@ CREATE TABLE dados_sensor(
 
 
 -- COMANDO PARA CADASTRO DO USUARIO ROOT 
-
-
 INSERT INTO usuario VALUES 
 (DEFAULT, 'Root', 'Root', '2000-01-01', '11111111111', 'root@sinalverde.com', 'Root#2024', 2, NULL);
 
 
 -- INSERT DOS LOGRADOUROS, NÃO TERA INTERFACE PARA ESSE CADASTRO SERA APENAS SIMLUAÇÃO DE UM BANCO REAL
-
 INSERT INTO logradouro (cep, estado, cidade, bairro, logradouro, numLogradouro, uf, regiao_cidade)
 VALUES 
 ('01310-200', 'São Paulo', 'São Paulo', 'Centro', 'Avenida Paulista', '1578', 'SP', 'Central'),
@@ -103,8 +99,8 @@ VALUES
 INSERT INTO usuario (nome, cargo, dataNasc, cpf, email, senha, nivel_permissao, empresa_id)
 VALUES
 -- DETRAN São Paulo
-('João Silva', 'Gerente de TI', '1980-05-15', '11111111111', 'joao.silva@detran.sp.gov.br', 'senha123', 1, 1), -- Master
-('Maria Santos', 'Analista de Sistemas', '1985-03-22', '22222222222', 'maria.santos@detran.sp.gov.br', 'senha123', 0, 1), -- Comum
+('João Silva', 'Gerente de TI', '1980-05-15', '11111111122', 'joao.silva@detran.sp.gov.br', 'senha123', 1, 1), -- Master
+('Maria Santos', 'Analista de Sistemas', '1985-03-22', '22222222221', 'maria.santos@detran.sp.gov.br', 'senha123', 0, 1), -- Comum
 ('Carlos Lima', 'Suporte Técnico', '1990-07-10', '33333333333', 'carlos.lima@detran.sp.gov.br', 'senha123', 0, 1), -- Comum
 
 -- CET São Paulo
@@ -165,7 +161,6 @@ SELECT id,nome, cargo,
 FROM usuario
 ORDER BY nome ASC LIMIT 15 OFFSET 0;
 
-
 -- SELECT PARA FAZER QUANDO FOR EDITAR UM USUARIO
 SELECT id,nome, cargo, DATE_FORMAT(dataNasc, '%d/%m/%Y') AS 'Data de Nascimento', cpf, email,
     CASE 
@@ -178,14 +173,12 @@ FROM usuario
 WHERE id = 2;
 
 -- COMANDO PARA DAR UPDATE EM UM USUARIO, TANTO PARA O PROPRIO ALTERAR SEUS DADOS COMO OS USUARIOS COM PERMISSOES ALTERAREM
-
 UPDATE usuario SET nome = 'Raniele Moreira', cargo = 'SCRUM MASTER', dataNasc = '2003-09-30',
 cpf = '99999999999', email = 'raniele@email.com'
 WHERE id =2;
 
 -- COMANDO PARA ALTERAR SENHA, SOMENTE PELO USUARIO 
 UPDATE usuario SET senha = 'novasenha123'  WHERE id =2;
-
 
 -- SELECT DE LISTAGEM DE EMPRESAS COM COUNT E GROUP BY PARA CONTAR O NUMERO DE COLABORADORES
 SELECT e.nome AS Nome, l.cidade AS Localidade, COUNT(c.id) AS Colaboradores, e.id as 'Id empresa' FROM empresa AS e
@@ -222,11 +215,6 @@ SET nome = 'SINAL VERDE',
  regiao_cidade = 'Zona Leste'
  WHERE id =1;
  
-
-
- 
  -- comando de login 
-
  SELECT COUNT(id) AS Logou FROM usuario
  WHERE email = 'root@sinalverde.com' AND senha = 'Root#2024';
- 
