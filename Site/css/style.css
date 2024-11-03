@@ -552,6 +552,7 @@ font-weight: 700;
 }
 
 .segundaParteCaio {
+  padding-top: 5%;
   display: flex;
   flex-direction: row;
   justify-content: space-between; 
@@ -581,6 +582,9 @@ font-weight: 700;
   font-size: 90px;
   font-weight: 600;
   margin-top: 30px;
+}
+.tituloJustificativa2 {
+  font-size: 80px !important;
 }
 
 .textoJustificativa {
