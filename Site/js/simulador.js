@@ -35,3 +35,32 @@ function simular(){
         div_tempo_gasto.style.animation = 'none';
     },1000)
 }
+
+
+
+
+
+// parte nova 
+
+
+// Qual o valor anual que é investido no combate ao congestionamento, em reais? gastoAnual
+
+// Qual a quantidade média de tempo gasto no deslocamento casa-trabalho, em minutos? tempoMedioDeslocamento
+
+// const valorDeixouProduzirMedioTempoDeslocamento = (111 000 000 000 * tempoMedioDeslocamento)/114;
+// 			             10%
+// var economiaAnual = gastoAnual * (10/100);
+
+// var economiaTempoMedioDeslocamento = tempoMedioDeslocamento - (tempoMedioDeslocamento * (25/100)); 
+
+// var valorProduziuMedio = valorDeixouProduzirMedioTempoDeslocamento - ((111 000 000 000 * tempoMedioDeslocamento)/114);
+
+// var totalEconomia = economiaAnual + valorProduziuMedio;
+
+// - Informar a economia do valor que seria investido: economiaAnual
+
+// - Informar o valor que deixaria de ser produzido para a economia que se tem o tempo de deslocamento casa-trabalho: valorDeixouProduzirMedioTempoDeslocamento, tempoMedioDeslocamento
+
+// - Informar valor que seria produzido por nossa solução e o novo tempo de deslocamento: valorProduziuMedio, economiaTempoMedioDeslocamento
+
+// - Informar total da economia: totalEconomia

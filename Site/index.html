@@ -127,7 +127,7 @@
             <div class="cardsjustificativa">
                 <div class="cardjustificativaum">
                     <span class="tituloJustificativa">25%</span>
-                    <span class="textoJustificativa"><b>Redução ociosidade</b></span>
+                    <span class="textoJustificativa"><b>Redução ociosidade do trânsito</b></span>
                 </div>
                 <div class="cardjustificativadois">
                     <span class="tituloJustificativa tituloJustificativa2">MAIOR</span>
@@ -146,7 +146,7 @@
             <div class="swiper-wrapper">
                 
                 <div class="swiper-slide slide-diagrama">
-                    <span class="identificador">.5</span>
+                    <span class="identificador">5.</span>
                     <i class='bx bxs-car'></i>
                     <p class="subtitulo">OTIMIZAÇÃO DO FLUXO</p>
                     <!-- <p class="descricao">A tomada de decisão gerará um controle maior do transito, gerando menos ociosidade </p> -->
@@ -154,28 +154,28 @@
                 </div>
     
                 <div class="swiper-slide slide-diagrama ">
-                    <span class="identificador">.1</span>
+                    <span class="identificador">1.</span>
                     <i class='bx bxs-volume-full'></i>
                     <p class="subtitulo">CONFIGURAÇÃO DOS SENSORES</p>
                     <!-- <p  class="descricao">Os sensores estarão configurados e posiciondos corretamente</p> -->
                     <p  class="descricao">Os sensores serão instalados e ajustados corretamente para garantir o melhor desempenho.</p>
                 </div>
                 <div class="swiper-slide slide-diagrama">
-                    <span class="identificador">.2</span>
+                    <span class="identificador">2.</span>
                     <i class='bx bxs-data'></i>
                     <p class="subtitulo">REQUISIÇÃO DE DADOS</p>
                     <!-- <p  class="descricao">Captação dos dados vindo dos sensores para o nosso sistema </p> -->
-                    <p  class="descricao">Os sensores coletarão dados em tempo real sobre o trânsito para análise.</p>
+                    <p  class="descricao">Um sistema irá armazenar os dados em tempo real sobre o trânsito para análise.</p>
                 </div>
                 <div class="swiper-slide slide-diagrama">
-                    <span class="identificador">.3</span>
+                    <span class="identificador">3.</span>
                     <i class='bx bx-key'></i>
                     <p class="subtitulo">ACESSO AO COLABORADOR</p>
                     <!-- <p  class="descricao">O colaborador entra em nosso sistema para acessar a dashboard e o CRUD </p> -->
                     <p  class="descricao">Os colaboradores poderão fazer login no sistema para acessar informações e relatórios.</p>
                 </div>
                 <div class="swiper-slide slide-diagrama">
-                    <span class="identificador">.4</span>
+                    <span class="identificador">4.</span>
                     <i class='bx bx-line-chart' ></i>
                     <p class="subtitulo">ANÁILSE DE INFORMAÇÕES</p>
                     <!-- <p  class="descricao">Uma parte do sistema é responsável por gerar gráficos e KPI’s com base nos dados coletados </p> -->
@@ -246,66 +246,6 @@
             </div>
         </div>
     </section>
-
-    <div id="_simulador"></div>
-    <section id="simulador" class="fade-in simulador quadrado-pai-column">
-        <div class="header-simulador">
-            <h1 class="title">SIMULADOR</h1>
-            <span class="subtitle">FIQUE POR DENTRO DE COMO NOSSA SOLUÇÃO PODE CONTRIBUIR PARA A DIMINUIÇÃO DOS ACIDENTES E, CONSEQUENTEMENTE, OS CUSTOS ENVOLVIDOS NELES:</span>
-        </div>
-        <div class="content-simulador">
-            <div class="coluna inputs-simulador">
-                <div class="conteudo input-group-simulador">
-                    <h3 for="iptArea">Informe o tempo ocioso médio que você passa no trânsito em um dia:</h3>
-                    <input onkeyup="simular()" id="ipt_tempo_ocioso" class="input" type="text" placeholder="Exemplo: 2">
-                </div>
-                <div class="conteudo input-group-simulador">
-                    <h3 for="iptGastos">Quantidade de dias que você costuma ficar no trânsito em uma semana:</h3>
-                    <input max="7" min="1" onkeyup="simular()" id="ipt_dias_semana" class="input" type="number" placeholder="Exemplo: 4">
-                </div>
-                <div id="div_tempo_gasto" style="visibility: hidden;" class="divPrejuizo">
-                    <h2 class="prejuizo">Tempo Gasto Na Semana</h2>
-                    <h1 class="h1_tempo_gasto" >R$175.000,00</h1>
-                </div>
-            </div>
-                
-            <div id="div_resultado" class=" resultado conteudo" style="visibility: hidden;">
-                <div class="sep-resultado-sim">
-                    <h1 class="destaque-porem">PORÉM,</h1>
-                    <h2 class="output">Com a nossa solução, você irá <span class="destaque">economizar</span> até <span id="span_horas_economizadas" class="destaque">40%</span>, além disso,</h2>
-                </div>
-                <h2 class="output conteudo">A emissão de gás<span class="destaque">(CO²)</span> <span class="destaque" >diminuiria</span> em <span class="destaque">15%</span></h2>
-                <h2 class="output conteudo">Caindo de <span class="destaque" id="span_emissao_semana" style="color: var(--danger-color)"></span>, para <span id="span_novo_gas" class="destaque"></span> na semana.</h2>
-            </div>
-        </div>  
-    </section>
-    <div id="_contato"></div>
-    <main id="contato" class="contato-container">
-        <div class="pai">
-        <span class="titulo-contato fade-in">CONTATO</span>
-        </div>
-        <div class="pai fade-in">
-            <div class="informacoes-esquerda">
-                <h3>Nome Completo:</h3>
-                <input type="text" id="ipt_nome" placeholder="Nome">
-                <h3>Email:</h3>
-                <input type="email" id="ipt_email" placeholder="Email">
-                <h3>Assunto:</h3>
-                <input type="text" id="ipt_assunto" placeholder="Assunto">
-            </div>  
-            <div class="informacoes-direita">
-                <h3 class="mensagem">Mensagem:</h3>
-                <textarea type="text" id="ipt_mensagem" name="ipt_mensagem" placeholder="Mensagem"></textarea>
-                <div class="button-group">
-                    <div class="check">
-                        <input type="checkbox" id="ipt_mensagem1">
-                        <label for="ipt_mensagem1">Concordo em receber respostas pelo e-mail</label>
-                    </div>
-                    <button class="btn-enviar" onclick="sendEmail()">Enviar <i class="fa-solid fa-arrow-right"></i></button> 
-                </div>
-            </div> 
-        </div>    
-    </main>
     <section id="feedbacks-testemunhas" class="container-feedback">
         <div class="content-feedback">
             <div class="header-feedback">
@@ -397,7 +337,66 @@
         </div>
  
     </section>
-    <div id="_equipe"></div>
+    <div id="_simulador"></div>
+    <section id="simulador" class="fade-in simulador quadrado-pai-column">
+        <div class="header-simulador">
+            <h1 class="title">SIMULADOR</h1>
+            <span class="subtitle">FIQUE POR DENTRO DE COMO NOSSA SOLUÇÃO PODE CONTRIBUIR PARA A DIMINUIÇÃO DOS ACIDENTES E, CONSEQUENTEMENTE, OS CUSTOS ENVOLVIDOS NELES:</span>
+        </div>
+        <div class="content-simulador">
+            <div class="coluna inputs-simulador">
+                <div class="conteudo input-group-simulador">
+                    <h3 for="iptArea">Informe o tempo ocioso médio que você passa no trânsito em um dia:</h3>
+                    <input onkeyup="simular()" id="ipt_tempo_ocioso" class="input" type="text" placeholder="Exemplo: 2">
+                </div>
+                <div class="conteudo input-group-simulador">
+                    <h3 for="iptGastos">Quantidade de dias que você costuma ficar no trânsito em uma semana:</h3>
+                    <input max="7" min="1" onkeyup="simular()" id="ipt_dias_semana" class="input" type="number" placeholder="Exemplo: 4">
+                </div>
+                <div id="div_tempo_gasto" style="visibility: hidden;" class="divPrejuizo">
+                    <h2 class="prejuizo">Tempo Gasto Na Semana</h2>
+                    <h1 class="h1_tempo_gasto" >R$175.000,00</h1>
+                </div>
+            </div>
+                
+            <div id="div_resultado" class=" resultado conteudo" style="visibility: hidden;">
+                <div class="sep-resultado-sim">
+                    <h1 class="destaque-porem">PORÉM,</h1>
+                    <h2 class="output">Com a nossa solução, você irá <span class="destaque">economizar</span> até <span id="span_horas_economizadas" class="destaque">40%</span>, além disso,</h2>
+                </div>
+                <h2 class="output conteudo">A emissão de gás<span class="destaque">(CO²)</span> <span class="destaque" >diminuiria</span> em <span class="destaque">15%</span></h2>
+                <h2 class="output conteudo">Caindo de <span class="destaque" id="span_emissao_semana" style="color: var(--danger-color)"></span>, para <span id="span_novo_gas" class="destaque"></span> na semana.</h2>
+            </div>
+        </div>  
+    </section>
+    <div id="_contato"></div>
+    <main id="contato" class="contato-container">
+        <div class="pai">
+        <span class="titulo-contato fade-in">ALGUMA DÚVIDA?</BR></span>
+        </div>
+        <div class="pai fade-in">
+            <div class="informacoes-esquerda">
+                <h3>Nome Completo:</h3>
+                <input type="text" id="ipt_nome" placeholder="Nome">
+                <h3>Email:</h3>
+                <input type="email" id="ipt_email" placeholder="Email">
+                <h3>Assunto:</h3>
+                <input type="text" id="ipt_assunto" placeholder="Assunto">
+            </div>  
+            <div class="informacoes-direita">
+                <h3 class="mensagem">Mensagem:</h3>
+                <textarea type="text" id="ipt_mensagem" name="ipt_mensagem" placeholder="Mensagem"></textarea>
+                <div class="button-group">
+                    <div class="check">
+                        <input type="checkbox" id="ipt_mensagem1">
+                        <label for="ipt_mensagem1">Concordo em receber respostas pelo e-mail</label>
+                    </div>
+                    <button class="btn-enviar" onclick="sendEmail()">Enviar <i class="fa-solid fa-arrow-right"></i></button> 
+                </div>
+            </div> 
+        </div>    
+    </main>
+    <!-- <div id="_equipe"></div>
     <section id="equipe" class="container-equipe">
         <div class="fundo-equipe fade-in">
             <span class="title-equipe ">CONHEÇA A EQUIPE</span>
@@ -471,7 +470,7 @@
             
             
         </div>
-    </section>
+    </section> -->
     
 
 <footer>
