@@ -1434,4 +1434,13 @@ footer{
   background-color: var(--primary-color);
 }
 
-
+.descricao-contato{
+  color: var(--subtitle-color);
+  font-size: var(--font-size-subtitle);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+  margin-bottom: 20px;
+  margin-left: 5%;
+}
