@@ -1,2 +1,8 @@
 # Pasta aleatória que aparece por causa do live server
 .vscode/
+/node_modules
+.env
+.env.dev
+package-lock.json
+
+.github

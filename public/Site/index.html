@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- CONFIGURAÇÕES BÁSICAS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ICON E TITULO DA PÁGINA -->
+    <link rel="icon" href="img/logos/logo maior.png">
+    <title>Sinal Verde</title>
+
+    <!-- IMPORTAÇÕES DE CSS E LIBS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/d5ea0dfb99.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/animacao.css">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/root.css">
+    <link rel="stylesheet" href="./css/modal_contato.css">
+    <link rel="stylesheet" href="./css/diagrama.css">
+
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            
+                <div class="div-logo">
+                    <a href="#">
+                        <img src="./img/logos/logo-maior.png" width="100px" height="60px" id="logo" alt="">
+                    </a>
+                </div>
+                
+                <div class="nav-div ">
+                    <ul class="nav-list">
+                    <li id="navHome" class="nav-item active">
+                        <a href="#">Home</a>
+                    </li>
+                    <li id="navSimulador" class="nav-item ">
+                        <a href="#_simulador">Simulador</a>
+                    </li>
+                    <li id="navEquipe" class="nav-item ">
+                        <a href="#_segmento">Segmento</a>
+                    </li>
+                    <li id="navContato" class="nav-item ">
+                        <a href="#_contato">Contato</a>
+                    </li>
+                    </ul>
+                </div>
+                
+            </ul>
+        </nav>
+    </header>
+    <main class="home" id="home" >
+        <div class="home-container fade-in">
+        <div class="box controle-home">
+            <article id="home-escrita">
+                <h1>Sinal Verde</h1>
+                <h3>controle de trânsito inteligente </h3>
+                <p><i>Nosso objetivo é melhorar o fluxo de carros nas ruas <span>diminuindo</span> estresse e acidentes</i></p>
+            </article>
+            <div class="home-buttons-group">
+                <button onclick="location.href='#_solucao'" class="btn-secondary"><i>SAIBA MAIS</i></button>
+                <button id="_solucao" onclick="location.href='#_simulador'" class="btn-white"><i>SIMULAR</i> <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+        <div class="box controle-arte ">
+                <div class="box-arte">
+                    <div class="quinas esquerda-top">
+
+                    </div>
+                    <div class="quinas direita-top">
+
+                    </div>
+                    <div class="quinas direita-bottom">
+
+                    </div>
+                    <div class="quinas esquerda-bottom">
+
+                    </div>
+                    <div class="raios"></div>
+                    <div class="raios raio-2"></div>
+                    <div class="raios raio-3"></div>
+                    <div class="arte-sensor">
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+    <section id="solucao" class="sectionCaio fade-in">
+        <h1 class="tituloC1">O QUE OFERECEMOS?</h1>
+        <span class="textoCCaio1"> Oferecemos uma solução inovadora de Internet das Coisas (IoT) que utiliza sensores de distância para monitorar o fluxo de veículos em tempo real. Nosso sistema web apresenta uma dashboard intuitiva (em tempo real), permitindo que as agências de trânsito visualizem dados importantes instantaneamente. Com essa tecnologia, você poderá tomar decisões informadas para otimizar o tráfego, reduzir congestionamentos e melhorar a mobilidade urbana.</span>
+        <!-- <span class="textoCCaio1">Uma solução IOT, utilizando de sensores de distância, para monitorar fluxo <br>de carros em trânsito, acoplado a um sistema web com uma dashboard <br> que possibilita a visualização tempo real do fluxo e os dados captados.</span> -->
+        <div class="cardsCaio">
+            
+    
+            <div onmouseover="hoverCard(this)" onmouseleave="notHoverCard(this)" class="cardCaio sensores-card">
+                <div class="textoACaio titulosensores">SENSORES</div>
+                <div class="circuloCaio inverte"><i class='bx bx-wifi-2'></i></div>
+                <p style="display: none;" class="fade-in-p" >Nossa solução se baseia no uso do sensor HC-SR04, também conhecido como sensor ultrassônico, que capta a distância de um objeto próximo, esses sensores serão instalados em pontos estratégicos das vias para medir a distância de veículos e pedestres, para que seja possível fazer uma análise.</p>
+            </div>
+    
+            <div onmouseover="hoverCard(this)" onmouseleave="notHoverCard(this)" class="cardCaio">
+                <div class="textoACaio titulosuporte">ADMINISTRAÇÃO</div>
+                <div class="circuloCaio "><i class='bx bxs-group'></i></div>
+                <p style="display: none;">A aplicação web, conta com um sistema de administração de usuários, onde é possível adicionar novos colaboradores em sua empresa, tornando fácil o controle de acessos.</p>
+            </div>
+    
+            <div onmouseover="hoverCard(this)" onmouseleave="notHoverCard(this)" id="_quemSomos" class="cardCaio cardAtivo">
+                <div class="textoACaio titulodashboard"> DASHBOARD</div>
+                <div class="circuloCaio "><i class='bx bxs-dashboard'></i></div>
+                <p style="display: none;">Nossa Dashboard proporciona aos usuários informações importantes para tomada de decisão, Informações chave e gráficos para facilitar a visualização das informações monitoradas pelos sensores ao decorrer do tempo estão presentes.</p>
+            </div>
+        </div>
+        
+        <div id="_segmento"></div>
+        <div id="quemSomos" class="segundaParteCaio fade-in">
+            <div class="textoQuemSomos">
+                <span class="tituloC2">PROBLEMA <br>SITUADO</span>
+                <span class="textoCCaio2">As grandes cidades enfrentam congestionamentos severos, afetando a saúde, o bem-estar e a sustentabilidade. Essa situação impacta diretamente a eficiência das organizações de trânsito. Nossa missão é implementar soluções tecnológicas inovadoras, como semáforos inteligentes, para otimizar a mobilidade urbana e reduzir os impactos negativos do tráfego.</span>
+            </div>
+    
+            <div class="cardsjustificativa">
+                <div class="cardjustificativaum">
+                    <span class="tituloJustificativa">25%</span>
+                    <span class="textoJustificativa"><b>Redução da ociosidade do trânsito</b></span>
+                </div>
+                <div class="cardjustificativadois">
+                    <span class="tituloJustificativa tituloJustificativa2">MAIOR</span>
+                    <span class="textoJustificativa"><b>Eficiência operacional</b></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sobreONegocio">
+        <div>
+            <h1>SOBRE O NEGÓCIO</h1>
+        </div>
+        <div style="position: relative; width: 100%;">
+        <div class="swiper carrossel-diagrama">
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide slide-diagrama">
+                    <span class="identificador">5.</span>
+                    <i class='bx bxs-car'></i>
+                    <p class="subtitulo">OTIMIZAÇÃO DO FLUXO</p>
+                    <!-- <p class="descricao">A tomada de decisão gerará um controle maior do transito, gerando menos ociosidade </p> -->
+                    <p class="descricao">As decisões informadas melhorarão o controle do trânsito, reduzindo a espera e aumentando a fluidez. </p>
+                </div>
+    
+                <div class="swiper-slide slide-diagrama ">
+                    <span class="identificador">1.</span>
+                    <i class='bx bxs-volume-full'></i>
+                    <p class="subtitulo">CONFIGURAÇÃO DOS SENSORES</p>
+                    <!-- <p  class="descricao">Os sensores estarão configurados e posiciondos corretamente</p> -->
+                    <p  class="descricao">Os sensores serão instalados e ajustados corretamente para garantir o melhor desempenho.</p>
+                </div>
+                <div class="swiper-slide slide-diagrama">
+                    <span class="identificador">2.</span>
+                    <i class='bx bxs-data'></i>
+                    <p class="subtitulo">REQUISIÇÃO DE DADOS</p>
+                    <!-- <p  class="descricao">Captação dos dados vindo dos sensores para o nosso sistema </p> -->
+                    <p  class="descricao">Um sistema irá armazenar os dados em tempo real sobre o trânsito para análise.</p>
+                </div>
+                <div class="swiper-slide slide-diagrama">
+                    <span class="identificador">3.</span>
+                    <i class='bx bx-key'></i>
+                    <p class="subtitulo">ACESSO AO COLABORADOR</p>
+                    <!-- <p  class="descricao">O colaborador entra em nosso sistema para acessar a dashboard e o CRUD </p> -->
+                    <p  class="descricao">Os colaboradores poderão fazer login no sistema para acessar informações e relatórios.</p>
+                </div>
+                <div class="swiper-slide slide-diagrama">
+                    <span class="identificador">4.</span>
+                    <i class='bx bx-line-chart' ></i>
+                    <p class="subtitulo">ANÁILSE DE INFORMAÇÕES</p>
+                    <!-- <p  class="descricao">Uma parte do sistema é responsável por gerar gráficos e KPI’s com base nos dados coletados </p> -->
+                    <p class="descricao">O sistema gera gráficos e relatórios para ajudar na tomada de decisões sobre o trânsito.</p>
+                </div>
+            </div>
+    
+        </div>
+        <div class="div_control">
+            <div class="swiper-pagination page-diagrama"></div>
+            </div>
+        <div class="div_botoes">
+            <div class="swiper-button-next next-diagrama" onclick="move('proximo')"></div>
+            <div class="swiper-button-prev prev-diagrama" onclick="move('anterior')"></div>
+        </div>
+        </div>
+    </section>
+
+    <section class="corFundoEquipamento fade-in">
+        <div class="sectionCaio2">
+        <div class="ondeFundo">
+            <div id="parteEsquerdaOnde">
+                <div class="tituloOnde">ONDE O <br>EQUIPAMENTO <br>PODE SER <br>POSICIONADO</div>
+                <div class="textoOnde">
+                    <div class="conferes">
+                        <img src="./img/icons/checklist.png" alt="" class="imagemCheck">
+                        <img src="./img/icons/checklist.png" alt="" class="imagemCheck">
+                        <img src="./img/icons/checklist.png" alt="" class="imagemCheck">
+                    </div>
+                    <div class="bullets_grupo">
+                        <div class="bullets1">Equipamentos Compactos</div>
+                        <div class="bullets2">Flexibilidade</div>
+                        <div class="bullets3">Estratégias de mapeamento</div>
+                    </div>
+                </div>
+                <div class="botaoOnde">
+                    <button onclick="location.href='#_simulador'" class="btn-secondary botaoSimular">SIMULAR <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <div  class="swiper parteDireitaOnde">
+                <div class="carrosselEquipamento">
+                    <div class="swiper-wrapper" >
+                        <div id="poste"  class="swiper-slide modelagens">
+                            <div class="equipamento-foto">
+                                <div class="imagem-3d semaforo"></div>
+                            </div>
+                        </div>
+                        <div id="cone" class="swiper-slide modelagens">
+                            <div class="equipamento-foto">
+                                <div class="imagem-3d cone"></div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide modelagens">
+                            <div class="equipamento-foto">
+                                <div class="imagem-3d poste"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sep-nxtPrev-equipamento">
+                    <div onclick="tirarMarca()" class="swiper-button-next next next-equipamento"></div>
+                    <div onclick="tirarMarca()" class="swiper-button-prev back prev-equipamento"></div>
+                </div>
+                <div class="paginacao-sep-equipamento">
+                    <div class="swiper-pagination paginacao-equipamento"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="feedbacks-testemunhas" class="container-feedback">
+        <div class="content-feedback">
+            <div class="header-feedback">
+                <span>FEEDBACKS E TESTEMUNHAS<span>
+            </div>
+            <div class="subtexto-feedbacks">
+                <span>Confira o que alguns de nossos clientes dizem sobre a solução</span>
+            </div>
+        </div>
+        <div class="swiper carrosselFeedback"> 
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slides-feed">
+                    <div class="box-comentario box-feed fade-in" >
+                        <span >Estamos muito satisfeitos com a implementação do dashboard. Ele é intuitivo e fornece dados em tempo real que realmente ajudam na tomada de decisões. Os sensores Arduino são de fácil instalação e estão funcionando perfeitamente. A equipe foi super atenciosa durante todo o processo. Parabéns pelo ótimo trabalho!</span>
+                        <div class="group-comentario">
+                            <div class="foto-colaborador" id="cariri" ></div>
+                            <div class="sep-nome-cargo">
+                                <span class="nome-colab">Lucas Almeida</span>
+                                <span class="cargo-colab">Empresário</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide slides-feed">
+                      <div class="box-comentario box-feed fade-in">
+                <span >O sistema tem se mostrado eficaz na identificação de congestionamentos. A visualização dos dados no site é clara e acessível. Seria interessante ter uma funcionalidade de alerta automático para situações críticas. No geral, uma solução muito promissora!</span>
+                <div class="group-comentario">
+                    <div class="foto-colaborador" id="sebastiao"></div>
+                    <div class="sep-nome-cargo">
+                        <span class="nome-colab" >Luana Peovani</span>
+                        <span class="cargo-colab">Prefeita</span>
+                    </div>
+                </div>
+            </div>  
+                </div>
+                <div class="swiper-slide slides-feed">
+                      <div class="box-comentario box-feed fade-in">
+                <span >Eu esperava que a solução impactasse mais o fluxo de clientes em meu comércio. Embora o dashboard ofereça boas informações, acredito que uma integração com aplicativos de navegação poderia trazer benefícios adicionais. A ideia é boa, mas pode ser melhorada.</span>
+                <div class="group-comentario">
+                    <div class="foto-colaborador" id="joaozin"></div>
+                    <div class="sep-nome-cargo">
+                        <span class="nome-colab" >João Silva</span>
+                        <span class="cargo-colab">Jornalista</span>
+                    </div>
+                </div>
+            </div>  
+                </div>
+                <div class="swiper-slide slides-feed">
+                    <div class="box-comentario box-feed fade-in" id="box_comentario">
+                        <span>O projeto superou minhas expectativas. A análise dos dados de trânsito nos ajudou a redesenhar algumas rotas e reduzir congestionamentos em áreas críticas. A interface do site é muito amigável e fácil de usar. Altamente recomendável!</span>
+                        <div class="group-comentario">
+                            <div class="foto-colaborador" id="fernandinha"></div>
+                            <div class="sep-nome-cargo">
+                                <span class="nome-colab">Fernanda Lima</span>
+                                <span class="cargo-colab">Analista</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide slides-feed">
+                      <div class="box-comentario box-feed fade-in">
+                <span>Eu percebo uma melhora no fluxo de trânsito, mas gostaria de ver mais informações sobre o que está sendo feito. O site é bonito, mas poderia ter mais dados explicativos. A ideia é excelente, mas a comunicação com a comunidade poderia ser melhor.</span>
+                <div class="group-comentario">
+                    <div class="foto-colaborador" id="jeffinho"></div>
+                    <div class="sep-nome-cargo">
+                        <span class="nome-colab">Jeff Besos</span>
+                        <span class="cargo-colab">Empresário</span>
+                    </div>
+                </div>
+            </div>  
+                </div>
+                <div class="swiper-slide slides-feed">
+                      <div class="box-comentario box-feed fade-in">
+                <span>O projeto realmente trouxe uma nova perspectiva para a gestão do trânsito na nossa cidade. A integração dos sensores Arduino com o dashboard é incrível, permitindo monitorar áreas críticas em tempo real. A equipe de suporte foi extremamente eficiente e sempre pronta para ajudar. Estou animado para ver como podemos expandir essa solução em outras áreas da cidade!</span>
+                <div class="group-comentario">
+                    <div class="foto-colaborador" id="nolan"></div>
+                    <div class="sep-nome-cargo">
+                        <span class="nome-colab">Nolan Souza</span>
+                        <span class="cargo-colab">Prefeito</span>
+                    </div>
+                </div>
+            </div>  
+                </div>
+            </div>
+        </div>
+        <div class="paginacao_feed">
+            <div class="swiper-pagination paginacao-feed"></div>
+            <span class="afs"></span>
+        </div>
+ 
+    </section>
+    <div id="_simulador"></div>
+    <section id="simulador" class="fade-in simulador quadrado-pai-column">
+        <div class="header-simulador">
+            <h1 class="title">SIMULADOR</h1>
+            <span class="subtitle">FIQUE POR DENTRO DE COMO NOSSA SOLUÇÃO PODE CONTRIBUIR PARA A DIMINUIÇÃO DOS ACIDENTES E, CONSEQUENTEMENTE, OS CUSTOS ENVOLVIDOS NELES:</span>
+        </div>
+        <div class="content-simulador">
+            <div class="coluna inputs-simulador">
+                <div class="conteudo input-group-simulador">
+                    <h3 for="iptArea">Informe o tempo ocioso médio que você passa no trânsito em um dia:</h3>
+                    <input onkeyup="simular()" id="ipt_tempo_ocioso" class="input" type="text" placeholder="Exemplo: 2">
+                </div>
+                <div class="conteudo input-group-simulador">
+                    <h3 for="iptGastos">Quantidade de dias que você costuma ficar no trânsito em uma semana:</h3>
+                    <input max="7" min="1" onkeyup="simular()" id="ipt_dias_semana" class="input" type="number" placeholder="Exemplo: 4">
+                </div>
+                <div id="div_tempo_gasto" style="visibility: hidden;" class="divPrejuizo">
+                    <h2 class="prejuizo">Tempo Gasto Na Semana</h2>
+                    <h1 class="h1_tempo_gasto" >R$175.000,00</h1>
+                </div>
+            </div>
+                
+            <div id="div_resultado" class=" resultado conteudo" style="visibility: hidden;">
+                <div class="sep-resultado-sim">
+                    <h1 class="destaque-porem">PORÉM,</h1>
+                    <h2 class="output">Com a nossa solução, você irá <span class="destaque">economizar</span> até <span id="span_horas_economizadas" class="destaque">40%</span>, além disso,</h2>
+                </div>
+                <h2 class="output conteudo">A emissão de gás<span class="destaque">(CO²)</span> <span class="destaque" >diminuiria</span> em <span class="destaque">15%</span></h2>
+                <h2 class="output conteudo">Caindo de <span class="destaque" id="span_emissao_semana" style="color: var(--danger-color)"></span>, para <span id="span_novo_gas" class="destaque"></span> na semana.</h2>
+            </div>
+        </div>  
+    </section>
+    <div id="_contato"></div>
+    <main id="contato" class="contato-container">
+        <div class="pai">
+        <span class="titulo-contato fade-in">ALGUMA DÚVIDA?</BR></span>
+    </div>
+    <span class="descricao-contato">Entre em contato para mais informações, suporte ou para discutir possíveis colaborações. Estamos à disposição para responder às suas dúvidas e fornecer o suporte necessário, garantindo um atendimento rápido e eficiente para suas necessidades.</span> 
+        <div class="pai fade-in">
+            <div class="informacoes-esquerda">
+                <h3>Nome Completo:</h3>
+                <input type="text" id="ipt_nome" placeholder="Nome">
+                <h3>Email:</h3>
+                <input type="email" id="ipt_email" placeholder="Email">
+                <h3>Assunto:</h3>
+                <input type="text" id="ipt_assunto" placeholder="Assunto">
+            </div>  
+            <div class="informacoes-direita">
+                <h3 class="mensagem">Mensagem:</h3>
+                <textarea type="text" id="ipt_mensagem" name="ipt_mensagem" placeholder="Mensagem"></textarea>
+                <div class="button-group">
+                    <div class="check">
+                        <input type="checkbox" id="ipt_mensagem1">
+                        <label for="ipt_mensagem1">Concordo em receber respostas pelo e-mail</label>
+                    </div>
+                    <button class="btn-enviar" onclick="sendEmail()">Enviar <i class="fa-solid fa-arrow-right"></i></button> 
+                </div>
+            </div> 
+        </div>    
+    </main>
+    <!-- <div id="_equipe"></div>
+    <section id="equipe" class="container-equipe">
+        <div class="fundo-equipe fade-in">
+            <span class="title-equipe ">CONHEÇA A EQUIPE</span>
+            <div class="swiper carrosselEquipe">
+                <div class="swiper-wrapper ">
+                    <div class="swiper-slide fotoEquipe">
+                        <div class="foto1"></div>
+                        <div class="icons-group">
+                            
+                            <a href="https://github.com/Carvalho003"><i class='bx bxl-github icon-equipe'></i></a>
+                            <a href="https://www.linkedin.com/in/hugo-carvalho-734b19274/"><i class='bx bxl-linkedin icon-equipe'></i></a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide fotoEquipe">
+                        <div class="foto2"></div>
+                        <div class="icons-group">
+                            
+                            <a href="https://github.com/Carvalho003"><i class='bx bxl-github icon-equipe'></i></a>
+                            <a href="https://www.linkedin.com/in/hugo-carvalho-734b19274/"><i class='bx bxl-linkedin icon-equipe'></i></a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide fotoEquipe">
+                        <div class="foto3"></div>
+                        <div class="icons-group">
+                            
+                            <a href="https://github.com/RanierDalton"><i class='bx bxl-github icon-equipe'></i></a>
+                            <a href="https://www.linkedin.com/in/ranierdalton"><i class='bx bxl-linkedin icon-equipe'></i></a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide fotoEquipe">
+                        <div class="foto4"></div>
+                        <div class="icons-group">
+                            
+                            <a href="https://github.com/Carvalho003"><i class='bx bxl-github icon-equipe'></i></a>
+                            <a href="https://www.linkedin.com/in/hugo-carvalho-734b19274/"><i class='bx bxl-linkedin icon-equipe'></i></a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide fotoEquipe">
+                        <div class="foto5"></div>
+                        <div class="icons-group">
+                            
+                            <a href="https://github.com/Carvalho003"><i class='bx bxl-github icon-equipe'></i></a>
+                            <a href="https://www.linkedin.com/in/hugo-carvalho-734b19274/"><i class='bx bxl-linkedin icon-equipe'></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="sep-nxtPrev">
+                <div class="swiper-button-next proximo next-equipe" onclick="renderizar(1)"></div>
+                <div class="swiper-button-prev anterior prev-equipe" onclick="renderizar(2)"></div>
+            </div>
+            <div class="paginacao-sep">
+                <div class="swiper-pagination paginacao-equipe"></div>
+            </div>
+        </div>
+        <div class="fundo-comentarios fade-in">
+            
+            <span class="title-equipe-green">SINAL VERDE</span>
+            
+            <div class="box-comentario fade-in" id="box_comentario">
+                <span id="mensagem-colab">Trabalhar nesse projeto para mim é muito especial, me sinto confortável e livre para compartilhar minhas ideias com os colaboradores.</span>
+                <div class="group-comentario">
+                    <div class="foto-colaborador" id="foto-colab"></div>
+                    <div   class="sep-nome-cargo">
+                        <span class="nome-colab" id="nome-colab">Hugo Carvalho</span>
+                        <span class="cargo-colab" id="cargo-colab">Dev Back-End</span>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </section> -->
+    
+
+<footer>
+    <div class="footer-container" >
+  
+      <ul class="column">
+        <div class="icon-sv">
+            <img class="icon" width="100px" src="./img/logos/logo-maior.png" alt="">
+            
+        </div>
+        <li>Contatos e Links</li>
+        <a href="https://www.linkedin.com/in/sinal-verde/"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/sinalverde_ofc/"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://x.com/SinalVerde_"><i class="fa-brands fa-x-twitter"></i></a>
+      </ul>
+  
+      <ul style="padding: 5px;" class="column">
+        <br><a href="#"><li>Home</li></a>
+        <a href="#_solucao"><li>O que oferecemos</li></a>
+        <a href="#_quemSomos"><li>Quem somos</li></a>
+        <a href="#_equipamentos"><li>Equipamento</li></a>
+        <a href="#feedback"><li>Feedbacks</li></a>
+      </ul>
+      
+      <ul class="column">
+        <br><a href="#_simulador"><li>Simulador</li></a>
+        <a href="#_equipe"><li>Equipe</li></a>
+      </ul>
+      
+      <ul class="column">
+          <br><a href="https://www.google.com/maps/place/Rua+Haddock+Lobo,+595+-+Cerqueira+César,+São+Paulo+-+SP,+01414-001/@-23.558092,-46.6642554,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce59d2a5270055:0x3c7ea4f4c7d51fb6!8m2!3d-23.558092!4d-46.6616751!16s%2Fg%2F11b8v86f6p?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D"><li>Localização</li></a>
+          <li>R. Haddock Lobo.</li>
+          <li>SP São Paulo</li>
+          <br><br>
+          <a href="../App/login.html"><li style="margin-top: -25px;"><u>Acesse a Aplicação</u></li></a>
+        </ul>
+    </div>
+  </footer>
+
+
+
+</section>
+</body>
+</html>
+
+<dialog  id="modal_contato">
+            
+    <div class="modal-head">
+        <div class="top-head">
+            
+            <i class='bx bx-x' onclick="closeModal()" id="close-modal"></i>
+        </div>
+
+        
+    </div>
+    <div class="modal-content">
+        
+        <i class='bx bxs-comment-error'></i>
+        <span id="span_erro">Erro Teste!</span>
+    </div>
+
+    <div class="modal-footer">
+        <button onclick="closeModal()">OK</button>
+    </div>
+</dialog>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./js/animacao.js"></script>
+
+<script>
+    var swiper = new Swiper(".carrosselEquipe", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      
+      pagination: {
+        el: ".paginacao-equipe",
+        clickable: true,
+      },
+      
+      navigation: {
+        nextEl: ".next-equipe",
+        prevEl: ".prev-equipe",
+      },
+    });
+
+    // carrossel-feedback
+    var swiper_feedback = new Swiper(".carrosselFeedback", {
+      slidesPerView: 3,
+      loop:true,
+      allowTouchMove: false,
+      spaceBetween: 100,
+      pagination: {
+        el: ".paginacao_feed",
+        clickable: true,
+      },
+      
+    });
+
+    var swiperDiagrama = new Swiper(".carrossel-diagrama", {
+      slidesPerView: 3,
+      spaceBetween: 100,
+      allowTouchMove: false,
+      loop: true,
+      pagination: {
+        el: ".page-diagrama",
+        clickable: true,
+      },
+
+      navigation: {
+        nextEl: ".next-diagrama",
+        prevEl: ".prev-diagrama",
+      },
+      }
+);
+
+    // Atribuir a tag verde para a navbar
+    document.addEventListener('click', (e) => {    
+        var href = e.target.closest('a').href || '';
+        href = href.split("/");
+
+        navAnterior = this.document.getElementsByClassName('active');
+        console.log(navAnterior[0].id);
+        var nav = navHome
+
+        if (href[href.length - 1] == 'index.html#_simulador') {
+            nav = navSimulador;
+        } else if(href[href.length - 1] == 'index.html#_equipe'){
+            nav = navEquipe;
+        } else if(href[href.length - 1] == 'index.html#_contato'){
+            nav = navContato;
+        }
+        navAnterior = this.document.getElementById(navAnterior[0].id);
+        navAnterior.classList.value = "nav-item";
+        nav.classList.add("active");
+    }, false);
+
+  </script>
+  <script>
+    var swiperEquipamento = new Swiper(".carrosselEquipamento", {
+      slidesPerView: 1,
+      spaceBetween: 70,
+      pagination: {
+        el: ".paginacao-equipamento",
+        clickable: true,
+      },
+      
+      navigation: {
+        nextEl: ".next-equipamento",
+        prevEl: ".prev-equipamento",
+      },
+    });
+
+    //função para tirar a marca da agua do spline
+   </script>
+
+<!-- IMPORT DE SCRIPTS -->
+<script src="js/contato.js"></script>
+<script src="js/simulador.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script src="./js/carrossel-equipe.js"></script>
+
+
+<!-- <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.29/build/spline-viewer.js"></script> -->
+
+<script src="./js/feedbacks.js"></script>
+
+<script src="./js/navActives.js"></script>
+
+<script src="./js/cards.js"></script>
+
+<script src="./js/diagrama.js"></script>
