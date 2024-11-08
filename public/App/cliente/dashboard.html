@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="icon" href="../../Site/img/logos/logo maior.png">
+    <link rel="icon" href="../../img/logos/logo maior.png">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,10 +13,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../../Site/css/fonts.css">
-    <link rel="stylesheet" href="../../Site/css/root.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../../css/fonts.css">
+    <link rel="stylesheet" href="../../css/root.css">
+    <link rel="stylesheet" href="../../css/style2.css">
+    <link rel="stylesheet" href="../../css/header.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
@@ -24,7 +24,7 @@
     <main class="screen-dash">
         <nav class="side-bar">
             <div class="nav-logo">
-                <img src="../../Site/img/logos/logo sinal verde- nome e cores ajustadas.png" alt="">
+                <img src="../../img/logos/logo sinal verde- nome e cores ajustadas.png" alt="">
             </div>
             <ul class="list-nav">
                 <div class="item-nav item-active">
@@ -33,7 +33,7 @@
                         <span>dashboard</span>
                     </a>
                 </div>
-                <li class="item-nav">
+                <li id="nao_mostrar_colaborador" class="item-nav">
                     <a href="./colaboradores.html" class="icon-text-nav">
                         <i class='bx bx-user-voice'></i>
                         <span>colaboradores</span>
@@ -54,7 +54,7 @@
             <header class="header-colab">
                 <div class="header-content-aside">
                     <div class="options-box">
-                        <span>Olá, Bisque</span>
+                        <span>Olá, <span id="nome_usuario"></span></span>
                         <i onclick="toggleMenu(this)" class='bx bxs-chevron-down'></i>
                         <div class="menu hide">
                             <ul>
@@ -207,6 +207,11 @@
 </html>
 
 <script>
+    nome_usuario.innerText = sessionStorage.NOME_USUARIO;
+
+    if( sessionStorage.NIVEL_USUARIO == 2 ){
+        nao_mostrar_colaborador.style.display = "none"
+    }
     const graficoLinha = document.getElementById('distanciamedia'); // const == variável constante
 
     // se tiver [] é vetor, se tiver {} é json = juntar inúmeras propriedades dentro de um grupo

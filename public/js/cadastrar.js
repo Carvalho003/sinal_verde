@@ -180,7 +180,6 @@ function cadastrarColaborador(){
     console.log("resposta: ", resposta);
     
     if (resposta.ok) {
-      cardErro.style.display = "block";
     
     //   mensagem_erro.innerHTML =
     //     "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
