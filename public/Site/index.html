@@ -341,31 +341,34 @@
     <section id="simulador" class="fade-in simulador quadrado-pai-column">
         <div class="header-simulador">
             <h1 class="title">SIMULADOR</h1>
-            <span class="subtitle">FIQUE POR DENTRO DE COMO NOSSA SOLUÇÃO PODE CONTRIBUIR PARA A DIMINUIÇÃO DOS ACIDENTES E, CONSEQUENTEMENTE, OS CUSTOS ENVOLVIDOS NELES:</span>
+            <span class="subtitle">FIQUE POR DENTRO DE COMO NOSSA SOLUÇÃO CONTRIBUI PARA A REDUÇÃO DE GASTOS COM O CONGESTIONAMENTO:</span>
         </div>
         <div class="content-simulador">
             <div class="coluna inputs-simulador">
                 <div class="conteudo input-group-simulador">
-                    <h3 for="iptArea">Informe o tempo ocioso médio que você passa no trânsito em um dia:</h3>
-                    <input onkeyup="simular()" id="ipt_tempo_ocioso" class="input" type="text" placeholder="Exemplo: 2">
+                    <h3 for="iptArea">Qual o valor anual que é investido no combate ao congestionamento, em reais? </h3>
+                    <input oninput="simular()" id="iptGastoAnual" class="input" type="text" data-affixes-stay="true" data-prefix="R$ " data-thousands="." data-decimal="," > <!-- placeholder="Exemplo: R$ 400.000.000,00" -->
                 </div>
                 <div class="conteudo input-group-simulador">
-                    <h3 for="iptGastos">Quantidade de dias que você costuma ficar no trânsito em uma semana:</h3>
-                    <input max="7" min="1" onkeyup="simular()" id="ipt_dias_semana" class="input" type="number" placeholder="Exemplo: 4">
+                    <h3 for="iptGastos">Qual a quantidade média de tempo gasto no deslocamento casa-trabalho, em minutos?</h3>
+                    <input max="7" min="1" oninput="simular()" id="iptQtdTempo" class="input" type="number" placeholder="Exemplo: 114">
                 </div>
-                <div id="div_tempo_gasto" style="visibility: hidden;" class="divPrejuizo">
-                    <h2 class="prejuizo">Tempo Gasto Na Semana</h2>
-                    <h1 class="h1_tempo_gasto" >R$175.000,00</h1>
+                <div id="div_tempo" class=" resultado conteudo" style="visibility: hidden;width: 100%;">
+                    <h2 class="output conteudo">O tempo de deslocamento casa-trabalho diminuiria de <span class="destaque" id="span_tempo_deslocamento" style="color: var(--danger-color)"></span>, para <span id="span_novo_tempo_deslocamento" class="destaque"></span> minutos.</h2>
                 </div>
             </div>
                 
-            <div id="div_resultado" class=" resultado conteudo" style="visibility: hidden;">
+            <div id="div_resultado" class="resultado conteudo" style="visibility: hidden;">
                 <div class="sep-resultado-sim">
-                    <h1 class="destaque-porem">PORÉM,</h1>
-                    <h2 class="output">Com a nossa solução, você irá <span class="destaque">economizar</span> até <span id="span_horas_economizadas" class="destaque">40%</span>, além disso,</h2>
+                    <h1 class="destaque-porem">APROFUNDANDO MAIS...</h1>
+                    <h2 class="output">Com a nossa solução, você irá <span class="destaque">economizar</span> até <span id="span_investimento_economizado" class="destaque"></span> do investimento no combate ao congestionamernto,</h2>
                 </div>
-                <h2 class="output conteudo">A emissão de gás<span class="destaque">(CO²)</span> <span class="destaque" >diminuiria</span> em <span class="destaque">15%</span></h2>
-                <h2 class="output conteudo">Caindo de <span class="destaque" id="span_emissao_semana" style="color: var(--danger-color)"></span>, para <span id="span_novo_gas" class="destaque"></span> na semana.</h2>
+
+                <h2 class="output conteudo">O valor que deixaria de ser produzido para a economia com o tempo de deslocamento antigo é <span class="destaque" id="span_deixar_produzir_economia" style="color: var(--danger-color)"></span>.</h2>
+                <div id="div_tempo_gasto" style="visibility: hidden;" class="divPrejuizo">
+                    <h2 class="prejuizo">Economia Anual em Congestionamentos</h2>
+                    <h1 class="h1_tempo_gasto" id="outputGasto" >R$175.000,00</h1>
+                </div>
             </div>
         </div>  
     </section>
@@ -629,7 +632,7 @@
 
 <!-- IMPORT DE SCRIPTS -->
 <script src="js/contato.js"></script>
-<script src="js/simulador.js"></script>
+<script src="../js/simulador.js"></script>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script src="./js/carrossel-equipe.js"></script>
 

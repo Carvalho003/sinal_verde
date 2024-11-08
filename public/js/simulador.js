@@ -1,66 +1,51 @@
 function simular(){
-    let tempo_ocioso = Number(ipt_tempo_ocioso.value);
-    let dias_semana = Number(ipt_dias_semana.value);
+    let gastoAnual = Number(iptGastoAnual.value);
+    let tempoMedioDeslocamento = Number(iptQtdTempo.value);
 
-    if(dias_semana < 0 || dias_semana > 7){
-        modal.showModal();
-        return span_erro.innerText = "Preencha o campo de dias da semana em um intervalo de 1 a 7 dias";
-    }
+    const valorDeixouProduzirMedioTempoDeslocamento = (111000000000 * tempoMedioDeslocamento)/114;
 
-    let tempo_semana = tempo_ocioso * dias_semana;
-    let tempo_economizado_semana = tempo_semana - (tempo_semana * 0.25)
+    var economiaAnual = gastoAnual - (gastoAnual * 0.9);
+    console.log(economiaAnual);
+    var economiaTempoMedioDeslocamento = tempoMedioDeslocamento - (tempoMedioDeslocamento * (25/100)); 
+    let valorDeixouProduzirMedioEconomiaTempoDeslocamento = ((111000000000 * economiaTempoMedioDeslocamento)/114);
+    var valorProduziuMedio = valorDeixouProduzirMedioTempoDeslocamento - valorDeixouProduzirMedioEconomiaTempoDeslocamento;
+    var totalEconomia = economiaAnual + valorProduziuMedio;
 
-    //media de liberação em gramas, 150(MEDIA), vamos reduzir em 15%
+    // - Informar o valor que deixaria de ser produzido para a economia que se tem o tempo de deslocamento casa-trabalho: valorDeixouProduzirMedioTempoDeslocamento, tempoMedioDeslocamento
 
-    let emissao_gas_economizado_semana = (tempo_economizado_semana * 60) * (150 * 0.15)
+    // - Informar valor que seria produzido por nossa solução e o novo tempo de deslocamento: valorProduziuMedio, economiaTempoMedioDeslocamento
 
-    let campoTempoGasto = document.getElementsByClassName('h1_tempo_gasto')[0]
-    campoTempoGasto.innerText = tempo_semana + ' Horas';
 
-    let emissao_gas_semana = (tempo_ocioso * 60) * 150
+    outputGasto.innerText = prepararNumero(totalEconomia);
 
-    span_emissao_semana.innerText = emissao_gas_semana/1000 + 'kg';
+    span_tempo_deslocamento.innerText = tempoMedioDeslocamento;
 
-    span_horas_economizadas.innerText = tempo_semana - tempo_economizado_semana + " horas";
+    span_investimento_economizado.innerText = prepararNumero(economiaAnual);
 
-    span_novo_gas.innerText = (emissao_gas_semana - emissao_gas_economizado_semana)/1000 + 'kg';
+    span_novo_tempo_deslocamento.innerText = economiaTempoMedioDeslocamento;
+
+    span_deixar_produzir_economia.innerText = prepararNumero(valorDeixouProduzirMedioTempoDeslocamento);
 
     div_resultado.style.animation = 'showResult 1s linear';
     div_tempo_gasto.style.animation = 'showResult 1s linear';
     div_tempo_gasto.style.visibility = 'initial'
     div_resultado.style.visibility = 'initial';
 
+    div_tempo.style.animation = 'showResult 1s linear';
+    div_tempo.style.visibility = 'initial';
+
     setTimeout(() => {
         div_resultado.style.animation = 'none';
         div_tempo_gasto.style.animation = 'none';
+        div_tempo.style.animation = 'none';
     },1000)
 }
 
+function prepararNumero(numero){
+    let charsNumero= Math.floor(numero).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+    let separacaoNumero = charsNumero.split(".");
 
+    const outputNumber = separacaoNumero.length == 5 ? `${separacaoNumero[0]} Trilhões` :  separacaoNumero.length == 4 ? `${separacaoNumero[0]} Bilhões` : separacaoNumero.length == 3 ? `${separacaoNumero[0]} Milhões` : separacaoNumero.length == 2 ? `${separacaoNumero[0]} Mil` :`${numero.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}`;
 
-
-
-// parte nova 
-
-
-// Qual o valor anual que é investido no combate ao congestionamento, em reais? gastoAnual
-
-// Qual a quantidade média de tempo gasto no deslocamento casa-trabalho, em minutos? tempoMedioDeslocamento
-
-// const valorDeixouProduzirMedioTempoDeslocamento = (111 000 000 000 * tempoMedioDeslocamento)/114;
-// 			             10%
-// var economiaAnual = gastoAnual * (10/100);
-
-// var economiaTempoMedioDeslocamento = tempoMedioDeslocamento - (tempoMedioDeslocamento * (25/100)); 
-
-// var valorProduziuMedio = valorDeixouProduzirMedioTempoDeslocamento - ((111 000 000 000 * tempoMedioDeslocamento)/114);
-
-// var totalEconomia = economiaAnual + valorProduziuMedio;
-
-// - Informar a economia do valor que seria investido: economiaAnual
-
-// - Informar o valor que deixaria de ser produzido para a economia que se tem o tempo de deslocamento casa-trabalho: valorDeixouProduzirMedioTempoDeslocamento, tempoMedioDeslocamento
-
-// - Informar valor que seria produzido por nossa solução e o novo tempo de deslocamento: valorProduziuMedio, economiaTempoMedioDeslocamento
-
-// - Informar total da economia: totalEconomia
+    return outputNumber;
+}
