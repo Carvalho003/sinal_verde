@@ -53,7 +53,7 @@
                 <header class="header-colab">
                     <div class="header-content-aside">
                         <div class="options-box">
-                            <span>Olá, Root</span>
+                            <span>Olá, <span id="nome_usuario"></span></span>
                             <i onclick="toggleMenu(this)" class='bx bxs-chevron-down'></i>
                             <div class="menu hide">
                                 <ul>
@@ -234,4 +234,7 @@
 <script src="../../js/adicionarModal.js"></script>
 
 <script src="../../js/togglemenu.js"></script>
+<script>
+    nome_usuario.innerText = sessionStorage.NOME_USUARIO;
+</script>
 
