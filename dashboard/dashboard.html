@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="icon" href="../../../../../trabalho_de_pi/teste/sinal_verde/sinal_verde/Site/img/logos/logo maior.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/d5ea0dfb99.js" crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../../../../trabalho_de_pi/teste/sinal_verde/sinal_verde/Site/css/fonts.css">
+    <link rel="stylesheet" href="../../../../../trabalho_de_pi/teste/sinal_verde/sinal_verde/Site/css/root.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../../../../../trabalho_de_pi/teste/sinal_verde/sinal_verde/App/css/header.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <main class="screen-dash">
+        <nav class="side-bar">
+            <div class="nav-logo">
+                <img src="../../../../../trabalho_de_pi/teste/sinal_verde/sinal_verde/Site/img/logos/logo sinal verde- nome e cores ajustadas.png" alt="">
+            </div>
+            <ul class="list-nav">
+                <div class="item-nav item-active">
+                    <a href="./dashboard.html" class="icon-text-nav">
+                        <i class='bx bxs-dashboard'></i>
+                        <span>dashboard</span>
+                    </a>
+                </div>
+                <li class="item-nav">
+                    <a href="./colaboradores.html" class="icon-text-nav">
+                        <i class='bx bx-user-voice'></i>
+                        <span>colaboradores</span>
+                    </a>
+                </li>
+
+            </ul>
+            <a class="item-nav" href="../login.html" style="text-decoration: none;">
+                <div class="item-nav logout-sec">
+                    <div class="icon-text-nav">
+                        <i class='bx bx-log-out' ></i>
+                        <span>sair</span>
+                    </div>
+                </div>
+            </a>
+        </nav>
+        <main class="main-content">
+            <header class="header-colab">
+                <div class="header-content-aside">
+                </div>
+                <div class="title-section" style="width: 95%; display: flex; flex-direction: row; justify-content: space-between;">
+                    <div>
+                        <div style="display: flex; flex-direction: row; gap: 10px">
+                            <h1>Dashboard</h1>
+                            <div id="search_geral">
+                                <button class="search" onclick="searchModal()"></button>
+                            </div>
+                        </div>
+                        <div style="display: flex; flex-direction: row; width: 330px; height: 40px; align-items: center; justify-content: center;">
+                            <span>São Miguel Paulista - SP São Paulo ZL</span>
+                            <div id="search_bairro">
+                                <button class="search-sec" onclick="bairroModal()"></button>
+                            </div>
+                        </div>
+                        <div style="display: flex; flex-direction: row; width: 254px;height: 40px; align-items: center; justify-content: space-between;">
+                            <span>Rua:</span>
+                            <div style="display: flex; align-items: center;">
+                                <span style="color: black;" id="title-rua">Avenida Marechal Tito</span>
+                                <div id="search_rua">
+                                    <button class="search-sec" onclick="ruaModal()"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-end;">
+                        <div class="date-section">
+                            <span id="span-date" style="text-align: right;">14/10 SEG 22:03</span>
+                        </div>
+                        <div class="alerta">
+                            <span style="color: #A41D1D">Avenida Marechal Tito com <br>trânsito parado a 15 minutos</span>
+                            <img src="../../../../bell-ring-solid-24.png" alt="" style="width: 50px; height: 50px;">
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="dashboard" >
+                <div style="display: none" id="div_modal">
+                    <dialog close id="modal"></dialog>
+                </div>
+                <div class="container-dashboard">
+                    <div class="painel-dashboard">
+                        <div class="parte-superior">
+                            <div class="kpi-bairros">
+                                <div class="sup-bairros">
+                                    <span class="titulo-kpi">
+                                        Bairros Monitorados
+                                    </span>
+                                    <div class="valor">
+                                        <span class="legenda">
+                                            quantidade total:
+                                        </span>
+                                        <span class="valor-kpi" id="qtd_bairros">
+                                            10
+                                        </span>
+                                    </div>
+                                </div>
+                                <img class="imagem-bairros" src="file:///C:/Users/caiov/Downloads/bxs-business.svg"></img>
+                            </div>
+                            <div class="kpi-ruas">
+                                <div class="sup-ruas">
+                                    <span class="titulo-kpi">
+                                        Ruas Monitoradas em São Miguel Paulista
+                                    </span>
+                                    <div class="valor">
+                                        <span class="legenda">
+                                            quantidade total:
+                                        </span>
+                                        <span class="valor-kpi" id="qtd_bairros">
+                                            23
+                                        </span>
+                                    </div>
+                                </div>
+                                <img class="imagem-ruas" src="file:///C:/Users/caiov/Downloads/bx-street-view.svg"/>
+                            </div>
+                            <div class="percentual">
+                                <canvas class="grafico-setor" id="setor"></canvas>
+                                <img class="imagem-setor" src="file:///C:/Users/caiov/Downloads/bx-doughnut-chart.svg">
+                            </div>
+                        </div>
+                        <div class="parte-inferior">
+                            <div class="superior-grafico-linha">
+                                <span class="titulo-grafico">
+                                    Monitoramento Do Fluxo de Movimento da Rua: Avenida Marechal Tito:
+                                </span>
+                                    <div class="cards-horario">
+                                        <button onclick="aparecer1h()" class="card-horario" style="background-color: #1D6975; color: #FFFFFF" id="umaH">1h</button>
+                                        <button onclick="aparecer6h()" class="card-horario" style="background-color: #FFF; color: #000000" id="seisH">6h</button>
+                                        <button onclick="aparecer12h()" class="card-horario" style="background-color: #FFF; color: #000000" id="dozeH">12h</button>
+                                        <button onclick="infoModal()" class="info"></button>
+                                    </div>
+                            </div>
+                                <canvas id="grafico-linha" class="grafico-linha"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </main>
+</body>
+
+</html>
+
+<script>
+    const graficoSetor = document.getElementById('setor'); // const == variável constante
+
+    // se tiver [] é vetor, se tiver {} é json = juntar inúmeras propriedades dentro de um grupo
+
+    new Chart(graficoSetor, {
+        type: 'doughnut', // tipo do gráfico 
+        data: { // data = todos os valores que serão colocados
+            labels: ['Ruas congestionadas', 'Ruas livres'], // array = vetores que serão utilizados na label
+            datasets: [{ // métricas do gráfico = linha
+                label: 'Ruas congestionadas', // nome da linha
+                backgroundColor: '#1DA426',
+                borderColor: '#1DA426',
+                data: [34], // valores do gráfico
+                borderWidth: 1 // largura da borda do gráfico
+            }, {
+                label: 'Ruas livres',
+                backgroundColor: '#A41D1D',
+                borderColor: '#A41D1D',
+                data: [66],
+                borderWidth: 1
+            }]
+        },
+        options: { // opções do formato do gráfico
+            plugins:{
+                title:{
+                    display:false
+                },
+                legend:{
+                    position:'right',
+                    labels:{
+                        boxHeight:10
+                    }
+                }
+            }
+        }
+    });
+</script>
+
+<script>
+    
+    var graficoBarras = document.getElementById('grafico-linha');
+
+    var horariosAtual = ['09:45', '09:40', '09:45', '09:50', '09:55', '10:00', '10:05', '10:10', '10:15', '10:20', '10:25', '10:30',];
+
+    var valoresAtual = [200, 300, 350, 400, 380, 360, 280, 240, 220, 230, 290, 300];
+
+    var valoresMAtual = [240, 310, 340, 370, 400, 370, 290, 240, 250, 255, 270, 280];
+
+    function aparecer1h() {
+        var graficoBarras = document.getElementById('grafico-linha');
+
+        umaH.style.backgroundColor = '#1D6975';
+        umaH.style.color = '#FFFFFF'
+        seisH.style.backgroundColor = '#FFF';
+        seisH.style.color = '#000000'
+        dozeH.style.backgroundColor = '#FFF';
+        dozeH.style.color = '#000000';
+
+        // Horários:
+        var horariosAtual = ['09:45', '09:40', '09:45', '09:50', '09:55', '10:00', '10:05', '10:10', '10:15', '10:20', '10:25', '10:30',];
+    
+        // Valores:
+        var valoresAtual = [200, 300, 350, 400, 380, 360, 280, 240, 220, 230, 290, 300];
+            
+        // Valores Médio:
+        var valoresMAtual = [240, 310, 340, 370, 400, 370, 290, 240, 250, 255, 270, 280];
+        
+        Chart(graficoBarras, {
+            type: 'line', // tipo do gráfico 
+            data: { // data = todos os valores que serão colocados
+                labels: horariosAtual, // array = vetores que serão utilizados na label
+                datasets: [{ // métricas do gráfico = linha
+                    label: 'Avenida 1', // nome da linha
+                    backgroundColor: '#1DA426',
+                    borderColor: '#1DA426',
+                    data: valoresAtual, // valores do gráfico
+                    borderWidth: 1 // largura da borda do gráfico
+                }, {
+                    label: 'Média do bairro',
+                    backgroundColor: '#A41D1D',
+                    borderColor: '#A41D1D',
+                    data: valoresMAtual,
+                    borderWidth: 1
+                }]
+            },
+            options: { // opções do formato do gráfico
+                scales: {
+                    y: {
+                        display: false,
+                        grid: {
+                            display: false
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                    tension: 0.55,
+                plugins:{
+                    title:{
+                        display:false
+                    },
+                    legend:{
+                        position:'top',
+                        labels:{
+                            boxHeight:3
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    function aparecer6h() {
+        var graficoBarras = document.getElementById('grafico-linha');
+
+        umaH.style.backgroundColor = '#FFF';
+        umaH.style.color = '#000000'
+        seisH.style.backgroundColor = '#1D6975';
+        seisH.style.color = '#FFFFFF'
+        dozeH.style.backgroundColor = '#FFF';
+        dozeH.style.color = '#000000';
+
+        // Horários
+        var horariosAtual = ['05:30', '06:00', '06:30', '07:00', '07:30', '08:00', '08:30', '09:00', '09:30', '09:30', '10:00', '10:30'];
+    
+        // Valores
+        var valoresAtual = [280, 290, 290, 270, 273, 295, 300, 305, 301, 287, 280, 273];
+            
+        // Valores Médio:
+        var valoresMAtual = [270, 310, 330, 320, 315, 305, 290, 285, 290, 270, 275, 275];
+
+        Chart(graficoBarras, {
+            type: 'line', // tipo do gráfico 
+            data: { // data = todos os valores que serão colocados
+                labels: horariosAtual, // array = vetores que serão utilizados na label
+                datasets: [{ // métricas do gráfico = linha
+                    label: 'Avenida 1', // nome da linha
+                    backgroundColor: '#1DA426',
+                    borderColor: '#1DA426',
+                    data: valoresAtual, // valores do gráfico
+                    borderWidth: 1 // largura da borda do gráfico
+                }, {
+                    label: 'Média do bairro',
+                    backgroundColor: '#A41D1D',
+                    borderColor: '#A41D1D',
+                    data: valoresMAtual,
+                    borderWidth: 1
+                }]
+            },
+            options: { // opções do formato do gráfico
+                scales: {
+                    y: {
+                        display: false,
+                        grid: {
+                            display: false
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                    tension: 0.55,
+                plugins:{
+                    title:{
+                        display:false
+                    },
+                    legend:{
+                        position:'top',
+                        labels:{
+                            boxHeight:3
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    function aparecer12h() {
+        var graficoBarras = document.getElementById('grafico-linha');
+
+        umaH.style.backgroundColor = '#FFF';
+        umaH.style.color = '#000000'
+        seisH.style.backgroundColor = '#FFF';
+        seisH.style.color = '#000000'
+        dozeH.style.backgroundColor = '#1D6975';
+        dozeH.style.color = '#FFFFFF'
+
+        // Horários
+        var horariosAtual = ['23:30','00:30','01:30','02:30','03:30','04:30','05:30','06:30','07:30', '08:30', '09:30', '10:30',];
+    
+        // Valores
+        var valoresAtual = [287, 290, 285, 280, 279, 275, 275, 280, 285, 281, 290, 291]
+        
+        // Valores Médio:
+        var valoresMAtual = [280, 285, 283, 275, 271, 270, 276, 279, 280, 274, 281, 282]
+
+        Chart(graficoBarras, {
+            type: 'line', // tipo do gráfico 
+            data: { // data = todos os valores que serão colocados
+                labels: horariosAtual, // array = vetores que serão utilizados na label
+                datasets: [{ // métricas do gráfico = linha
+                    label: 'Avenida 1', // nome da linha
+                    backgroundColor: '#1DA426',
+                    borderColor: '#1DA426',
+                    data: valoresAtual, // valores do gráfico
+                    borderWidth: 1 // largura da borda do gráfico
+                }, {
+                    label: 'Média do bairro',
+                    backgroundColor: '#A41D1D',
+                    borderColor: '#A41D1D',
+                    data: valoresMAtual,
+                    borderWidth: 1
+                }]
+            },
+            options: { // opções do formato do gráfico
+                scales: {
+                    y: {
+                        display: false,
+                        grid: {
+                            display: false
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                    tension: 0.55,
+                plugins:{
+                    title:{
+                        display:false
+                    },
+                    legend:{
+                        position:'top',
+                        labels:{
+                            boxHeight:3
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    
+        new Chart(graficoBarras, {
+            type: 'line', // tipo do gráfico 
+            data: { // data = todos os valores que serão colocados
+                labels: horariosAtual, // array = vetores que serão utilizados na label
+                datasets: [{ // métricas do gráfico = linha
+                    label: 'Avenida 1', // nome da linha
+                    backgroundColor: '#1DA426',
+                    borderColor: '#1DA426',
+                    data: valoresAtual, // valores do gráfico
+                    borderWidth: 1 // largura da borda do gráfico
+                }, {
+                    label: 'Média do bairro',
+                    backgroundColor: '#A41D1D',
+                    borderColor: '#A41D1D',
+                    data: valoresMAtual,
+                    borderWidth: 1
+                }]
+            },
+            options: { // opções do formato do gráfico
+                scales: {
+                    y: {
+                        display: false,
+                        grid: {
+                            display: false
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                    tension: 0.55,
+                plugins:{
+                    title:{
+                        display:false
+                    },
+                    legend:{
+                        position:'top',
+                        labels:{
+                            boxHeight:3
+                        }
+                    }
+                }
+            }
+        });
+</script>
+<script src="../js/togglemenu.js"></script>
+
+<script src="./main.js"></script>
