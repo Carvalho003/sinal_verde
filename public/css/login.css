@@ -111,7 +111,7 @@ button:hover {background-color: var( --secondary-color);}
 }
 
 .background-filho {
-  background-image: url("../../img/logos/logo\ maior.png");
+  background-image: url("../img/logos/logo\ maior.png");
   background-size: cover;
   width: 85%;
   height: 70%;
