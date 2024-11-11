@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="icon" href="../../../../../trabalho_de_pi/teste/sinal_verde/sinal_verde/Site/img/logos/logo maior.png">
+    <link rel="icon" href="../public/img/logos/logo maior.png">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,10 +13,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../../../../../trabalho_de_pi/teste/sinal_verde/sinal_verde/Site/css/fonts.css">
-    <link rel="stylesheet" href="../../../../../trabalho_de_pi/teste/sinal_verde/sinal_verde/Site/css/root.css">
+    <link rel="stylesheet" href="../public/css/fonts.css">
+    <link rel="stylesheet" href="../public/css/root.css">
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="../../../../../trabalho_de_pi/teste/sinal_verde/sinal_verde/App/css/header.css">
+    <link rel="stylesheet" href="../public/css/header.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
@@ -24,7 +24,7 @@
     <main class="screen-dash">
         <nav class="side-bar">
             <div class="nav-logo">
-                <img src="../../../../../trabalho_de_pi/teste/sinal_verde/sinal_verde/Site/img/logos/logo sinal verde- nome e cores ajustadas.png" alt="">
+                <img src="../public/img/logos/logo sinal verde- nome e cores ajustadas.png" alt="">
             </div>
             <ul class="list-nav">
                 <div class="item-nav item-active">
@@ -44,7 +44,7 @@
             <a class="item-nav" href="../login.html" style="text-decoration: none;">
                 <div class="item-nav logout-sec">
                     <div class="icon-text-nav">
-                        <i class='bx bx-log-out' ></i>
+                        <i class='bx bx-log-out'></i>
                         <span>sair</span>
                     </div>
                 </div>
@@ -85,15 +85,13 @@
                         </div>
                         <div class="alerta">
                             <span style="color: #A41D1D">Avenida Marechal Tito com <br>trânsito parado a 15 minutos</span>
-                            <img src="../../../../bell-ring-solid-24.png" alt="" style="width: 50px; height: 50px;">
+                            <img src="../public/img/icons/bell-ring-solid-24.png" alt="" style="width: 50px; height: 50px;">
                         </div>
                     </div>
                 </div>
             </header>
             <div class="dashboard" >
-                <div style="display: none" id="div_modal">
-                    <dialog close id="modal"></dialog>
-                </div>
+                <dialog id="modal" style="display: none;"></dialog>
                 <div class="container-dashboard">
                     <div class="painel-dashboard">
                         <div class="parte-superior">
@@ -111,7 +109,7 @@
                                         </span>
                                     </div>
                                 </div>
-                                <img class="imagem-bairros" src="file:///C:/Users/caiov/Downloads/bxs-business.svg"></img>
+                                <img class="imagem-bairros" src="../public/img/icons/bxs-business.svg"></img>
                             </div>
                             <div class="kpi-ruas">
                                 <div class="sup-ruas">
@@ -127,11 +125,14 @@
                                         </span>
                                     </div>
                                 </div>
-                                <img class="imagem-ruas" src="file:///C:/Users/caiov/Downloads/bx-street-view.svg"/>
+                                <img class="imagem-ruas" src="../public/img/icons/bx-street-view.svg"/>
                             </div>
                             <div class="percentual">
-                                <canvas class="grafico-setor" id="setor"></canvas>
-                                <img class="imagem-setor" src="file:///C:/Users/caiov/Downloads/bx-doughnut-chart.svg">
+                                <span class="titulo-percentual">Porcentagem de ruas congestionadas em São Miguel Paulista:</span>
+                                <div style="display: flex; flex-direction: row;">
+                                    <canvas class="grafico-setor" id="setor"></canvas>
+                                    <img class="imagem-setor" src="../public/img/icons/bx-doughnut-chart.svg">
+                                </div>
                             </div>
                         </div>
                         <div class="parte-inferior">
@@ -184,6 +185,9 @@
             plugins:{
                 title:{
                     display:false
+                },
+                customCanvasBackgroundColor: {
+                    display: 'none',
                 },
                 legend:{
                     position:'right',
@@ -455,6 +459,6 @@
             }
         });
 </script>
-<script src="../js/togglemenu.js"></script>
+<script src="../public/js/togglemenu.js"></script>
 
 <script src="./main.js"></script>

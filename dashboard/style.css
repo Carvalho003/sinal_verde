@@ -235,12 +235,18 @@
     width: 50%;
     height: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     border: 3px solid black;
     border-radius: 10px;
     background-color: #FFF;
     box-shadow: 0px 4px 10px 2px rgba(158, 157, 157, 0.3);
+}
+
+.titulo-percentual {
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .imagem-setor {
@@ -254,8 +260,6 @@
 }
 
 .grafico-setor {
-    width: 100%;
-    height: 100px;
     box-shadow: 0px 4px 10px 2px rgba(158, 157, 157, 0.3);
 }
 
@@ -414,4 +418,8 @@
 
 .input-modal {
     width: 60%;
+}
+
+canvas {
+    background: none;
 }

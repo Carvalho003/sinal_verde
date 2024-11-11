@@ -1,7 +1,7 @@
 var modal = document.getElementById("modal");
 
 function searchModal() {
-    div_modal.style.display = "flex";
+    modal.style.display = 'flex';
     modal.showModal();
 
     modal.innerHTML = `
@@ -12,38 +12,32 @@ function searchModal() {
         </div>
         <div class="inferior-modal"
             <select class="input-modal" placeholder="Digite o bairro aqui"></select>
-            <button onclick="pesquisaGeral()">Pesquisar</button>
+            <button onclick="fecharModal()" style="border: 2px solid black">Pesquisar</button>
         </div>
             `;
 }
 
 function bairroModal() {
-    var modal = document.getElementById("modal");
-    div_modal.style.display = "flex";
+    modal.style.display = 'flex';
     modal.showModal();
-
     modal.innerHTML = `Teste 2<button onclick="fecharModal()" class="fecharModal"></button>`;
 }
 
 function ruaModal() {
-    var modal = document.getElementById("modal");
-    div_modal.style.display = "flex";
+    modal.style.display = 'flex';
     modal.showModal();
-
     modal.innerHTML = `Teste 3<button onclick="fecharModal()" class="fecharModal"></button>`;
 }
 
 function infoModal() {
-    var modal = document.getElementById("modal");
-    div_modal.style.display = "flex";
+    modal.style.display = 'flex';
     modal.showModal();
-
     modal.innerHTML = `Teste 4<button onclick="fecharModal()" class="fecharModal"></button>`;
 }
 
 function fecharModal() {
-    div_modal.style.display = "none";
-    modal.closeModal();
+    modal.style.display = 'none'
+    modal.close();
     search_geral.button.onclick = "searchModal()"
     search_bairro.button.onclick = "bairroModal()"
     search_rua.button.onclick = "ruaModal()"
