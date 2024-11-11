@@ -39,11 +39,11 @@
                     <li id="navHome" class="nav-item active">
                         <a href="#">Home</a>
                     </li>
-                    <li id="navSimulador" class="nav-item ">
-                        <a href="#_simulador">Simulador</a>
-                    </li>
                     <li id="navEquipe" class="nav-item ">
                         <a href="#_segmento">Segmento</a>
+                    </li>
+                    <li id="navSimulador" class="nav-item ">
+                        <a href="#_simulador">Simulador</a>
                     </li>
                     <li id="navContato" class="nav-item ">
                         <a href="#_contato">Contato</a>
@@ -354,7 +354,7 @@
                     <input max="7" min="1" oninput="simular()" id="iptQtdTempo" class="input" type="number" placeholder="Exemplo: 114">
                 </div>
                 <div id="div_tempo" class=" resultado conteudo" style="visibility: hidden;width: 100%;">
-                    <h2 class="output conteudo">O tempo de deslocamento casa-trabalho diminuiria de <span class="destaque" id="span_tempo_deslocamento" style="color: var(--danger-color)"></span>, para <span id="span_novo_tempo_deslocamento" class="destaque"></span> minutos.</h2>
+                    <h2 class="output conteudo">O tempo de deslocamento casa-trabalho diminuiria de <span class="destaque" name="span_tempo_deslocamento" style="color: var(--danger-color)"></span>, para <span id="span_novo_tempo_deslocamento" class="destaque"></span> minutos.</h2>
                 </div>
             </div>
                 
@@ -364,7 +364,7 @@
                     <h2 class="output">Com a nossa solução, você irá <span class="destaque">economizar</span> até <span id="span_investimento_economizado" class="destaque"></span> do investimento no combate ao congestionamernto,</h2>
                 </div>
 
-                <h2 class="output conteudo">O valor que deixaria de ser produzido para a economia com o tempo de deslocamento antigo é <span class="destaque" id="span_deixar_produzir_economia" style="color: var(--danger-color)"></span>.</h2>
+                <h2 class="output conteudo">O prejuízo para a economia com o tempo de deslocamento de <span class="destaque" name="span_tempo_deslocamento" style="color: var(--danger-color)"></span> minutos é <span class="destaque" id="span_deixar_produzir_economia" style="color: var(--danger-color)"></span>.</h2>
                 <div id="div_tempo_gasto" style="visibility: hidden;" class="divPrejuizo">
                     <h2 class="prejuizo">Economia Anual em Congestionamentos</h2>
                     <h1 class="h1_tempo_gasto" id="outputGasto" >R$175.000,00</h1>
