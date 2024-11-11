@@ -18,7 +18,7 @@ function simular(){
 
     outputGasto.innerText = prepararNumero(totalEconomia);
 
-    span_tempo_deslocamento.innerText = tempoMedioDeslocamento;
+    document.getElementsByName("span_tempo_deslocamento").forEach((ipt) => ipt.innerText = tempoMedioDeslocamento);
 
     span_investimento_economizado.innerText = prepararNumero(economiaAnual);
 
