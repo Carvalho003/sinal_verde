@@ -189,7 +189,7 @@ WHERE id =2;
 UPDATE usuario SET senha = 'novasenha123' WHERE id =2;
 
 -- SELECT DE LISTAGEM DE EMPRESAS COM COUNT E GROUP BY PARA CONTAR O NUMERO DE COLABORADORES
-SELECT e.nome AS Nome, l.cidade AS Localidade, COUNT(c.id) AS Colaboradores, e.id as 'Id empresa' FROM empresa AS e
+SELECT e.nome AS nome, l.cidade AS localidade, COUNT(c.id) AS colaboradores, e.id as id FROM empresa AS e
 JOIN logradouro l
 ON e.logradouro_id = l.id
 JOIN usuario c
