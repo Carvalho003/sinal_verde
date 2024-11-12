@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="../../css/modal_contato.css">
 </head>
-<body>
+<body onload="validarSessaoRooot(), carregarEmpresas(), carregarColaboradores()">
     <div class="div_papai">
         <main class="screen-dash">
             <nav class="side-bar">
@@ -94,8 +94,8 @@
                         <td>Hugo</td>
                         <td>Supervisor</td>
                         <td>Todas</td>
-                        <td><i onclick="kk()"  class='bx bx-edit-alt' ></i></td>
-                        <td><i onclick="kk()" class='bx bx-trash'></i></td>
+                        <td><i onclick="editarColaborador()"  class='bx bx-edit-alt' ></i></td>
+                        <td><i onclick="deletarColaborador()" class='bx bx-trash'></i></td>
                     </tr>
                     <tr class="usuario-tab">
                         <td>Ranier</td>
@@ -230,11 +230,11 @@
 
 </body>
 </html>
-<script src="../../js/cadastrar.js"></script>
+<script src="../js/session.js"></script>
+
+<script src="../js/cadastrar.js"></script>
 <script src="../../js/adicionarModal.js"></script>
 
 <script src="../../js/togglemenu.js"></script>
-<script>
-    nome_usuario.innerText = sessionStorage.NOME_USUARIO;
-</script>
+
 

@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="../../css/modal_contato.css">
 </head>
-<body>
+<body onload="validarSessaoRooot(), carregarEmpresas(), carregarColaboradores()">
     <main class="screen-dash">
         <nav class="side-bar">
             <div class="nav-logo">
@@ -29,7 +29,7 @@
                 <li  class="item-nav">
                     <a href="./colaboradores.html" class="icon-text-nav">
                         <i class='bx bx-user-voice' ></i>
-                        <span >colaboradores</span>
+                        <span>colaboradores</span>
                     </a>
                 </li>
                 <li class="item-nav item-active">
@@ -94,8 +94,8 @@
                     <td>CET</td>
                     <td>São Paulo</td>
                     <td>33</td>
-                    <td><i onclick="kk()"  class='bx bx-edit-alt' ></i></td>
-                    <td><i onclick="kk()" class='bx bx-trash'></i></td>
+                    <td><i onclick="editarEmpresa()"  class='bx bx-edit-alt' ></i></td>
+                    <td><i onclick="deletarEmpresa()" class='bx bx-trash'></i></td>
                 </tr>
             </table>
         </div>
@@ -216,12 +216,11 @@
 
 </body>
 </html>
-<script src="../../js/cadastrar.js"></script>
+<script src="../js/session.js"></script>
+<script src="../js/cadastrar.js"></script>
 <script src="../../js/adicionarModalEmpresa.js"></script>
 
 <script src="../../js/adicionarModal.js"></script>
 <script src="../../js/togglemenu.js"></script>
-<script>
-    nome_usuario.innerText = sessionStorage.NOME_USUARIO;
-</script>
+
 
