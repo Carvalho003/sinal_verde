@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="../../css/header.css">
 
     <link rel="stylesheet" href="../../css/modal_contato.css">
+    
+    <script src="../js/empresa.js"></script>
 </head>
 <body onload="validarSessaoRooot(), carregarEmpresas()">
     <main class="screen-dash">
@@ -81,7 +83,7 @@
                 <i onclick="abrirModal()" class="fa-solid fa-plus closee"></i>
             </div>
         </div>
-        <div class="tab-inicio">
+        <div id="tabela-empresa" class="tab-inicio">
             <table>
                 <tr class="comeco-tr">
                     <td>Nome</td>
@@ -89,13 +91,6 @@
                     <td>Colaboradores</td>
                     <td>Editar</td>
                     <td>Excluir</td>
-                </tr>
-                <tr class="usuario-tab">
-                    <td>CET</td>
-                    <td>São Paulo</td>
-                    <td>33</td>
-                    <td><i onclick="editarEmpresa()"  class='bx bx-edit-alt' ></i></td>
-                    <td><i onclick="deletarEmpresa()" class='bx bx-trash'></i></td>
                 </tr>
             </table>
         </div>
