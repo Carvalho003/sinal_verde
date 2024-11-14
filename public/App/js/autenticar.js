@@ -93,10 +93,12 @@ function autenticar(){
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
                     // sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+                    
+
                     if (sessionStorage.NIVEL_USUARIO == 1 || sessionStorage.NIVEL_USUARIO == 0){
                         window.location = "../App/cliente/dashboard.html";
                     } else {
-                        window.location = "../App/root/colaboradores.html";
+                        window.location = "../App/root/empresa.html";
                     }
                 });
 

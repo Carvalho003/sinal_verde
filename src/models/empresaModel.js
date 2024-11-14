@@ -8,8 +8,14 @@ const getEmpresas = () =>{
     return database.executar(instrucaoSql);
 };
 
-const postEmpresa = () => {
-    // TODO
+const postEmpresa = (nome, cnpj, fkLogradouro) => {
+    const instrucaoSql = `
+        INSERT INTO empresa (nome, cnpj, logradouro_id)
+        VALUES 
+            ('${nome}', '${cnpj}', ${fkLogradouro})
+    `;
+    
+    return database.executar(instrucaoSql);
 };
 
 module.exports = {getEmpresas, postEmpresa};
