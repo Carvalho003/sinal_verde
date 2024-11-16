@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- ICON E TITULO DA PÁGINA -->
-    <link rel="icon" href="img/logos/logo maior.png">
+    <link rel="icon" href="../img/logos/logo maior.png">
     <title>Sinal Verde</title>
 
     <!-- IMPORTAÇÕES DE CSS E LIBS -->
@@ -120,16 +120,19 @@
         <div id="_segmento"></div>
         <div id="quemSomos" class="segundaParteCaio fade-in">
             <div class="textoQuemSomos">
-                <span class="tituloC2">PROBLEMA <br>SITUADO</span>
-                <span class="textoCCaio2">As grandes cidades enfrentam congestionamentos severos, afetando a saúde, o bem-estar e a sustentabilidade. Essa situação impacta diretamente a eficiência das organizações de trânsito. Nossa missão é implementar soluções tecnológicas inovadoras, como semáforos inteligentes, para otimizar a mobilidade urbana e reduzir os impactos negativos do tráfego.</span>
+                <span id="titulo_span" class="tituloC2">DESAFIOS<br>URBANOS</span>
+                <span id="texto_span" class="textoCCaio2">As grandes cidades enfrentam <strong>congestionamentos severos,</strong> afetando a saúde, o bem-estar e a sustentabilidade. Essa situação impacta diretamente a eficiência das organizações de trânsito. Nossa missão é implementar soluções tecnológicas inovadoras, como semáforos inteligentes, para otimizar a mobilidade urbana e reduzir os impactos negativos do tráfego.</span>
+                <button id="botao_contexto" onclick="mudar_texto()" class="botao_do_contexto">Entenda</button>
             </div>
     
-            <div class="cardsjustificativa">
+            <div id="card_justificativa" class="cardsjustificativa">
                 <div class="cardjustificativaum">
+                    <span class="textoJustificativa"><b>Visando reduzir a ociosidade do fluxo do trânsito em até</b></span>
                     <span class="tituloJustificativa">25%</span>
-                    <span class="textoJustificativa"><b>Redução da ociosidade do trânsito</b></span>
+                    <!-- <span class="textoJustificativa"><b>a ociosidade do trânsito</b></span> -->
                 </div>
                 <div class="cardjustificativadois">
+                    <span class="textoJustificativa"><b>E garantir</b></span>
                     <span class="tituloJustificativa tituloJustificativa2">MAIOR</span>
                     <span class="textoJustificativa"><b>Eficiência operacional</b></span>
                 </div>
@@ -635,6 +638,7 @@
 <script src="../js/simulador.js"></script>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script src="../js/carrossel-equipe.js"></script>
+<script src="../js/mudar_texto.js"></script>
 
 
 <!-- <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.29/build/spline-viewer.js"></script> -->

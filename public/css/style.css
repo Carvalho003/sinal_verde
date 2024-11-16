@@ -294,7 +294,7 @@ position: absolute;
 }
 
 .arte-sensor{
-background-image: url('../img/sensor/ultra.png');
+background-image: url('../img/logos/semafoto_provisorio.webp');
 background-size: contain;
 position: absolute;
 filter: drop-shadow(3px 7px 1px rgb(255, 255, 255,0.2));
@@ -611,6 +611,21 @@ font-weight: 700;
   bottom: 0;
   right: 0;
 }
+
+.botao_do_contexto {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  filter: drop-shadow(2px 1.5px 2px var(--white-color));
+  transition: 1s all;
+  border-radius: 11px;
+  border: none;
+}
+
+.botao_do_contexto:hover{
+  filter: drop-shadow(2px 1.5px 2px var(--complementar-color));
+  color: var(--secondary-color);
+  background-color: var(--white-color);
+  }
 
 /* CARROSSEL EQUIPAMENTO */
 .tituloOnde {
