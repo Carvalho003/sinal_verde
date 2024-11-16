@@ -52,46 +52,40 @@
         </nav>
         <main class="main-content">
             <header class="header-colab">
-                <div class="header-content-aside">
-                </div>
-                <div class="title-section" style="width: 95%; display: flex; flex-direction: row; justify-content: space-between;">
+                <div class="header-content-aside"></div>
+                <div class="title-section">
                     <div>
-                        <div style="display: flex; flex-direction: row; gap: 10px">
+                        <div class="dashboard-search">
                             <h1>Dashboard</h1>
                             <div id="search_geral">
                                 <button class="search" onclick="searchModal()"></button>
                             </div>
                         </div>
-                        <div style="display: flex; flex-direction: row; width: 330px; height: 40px; align-items: center; justify-content: center;">
-                            <span>São Miguel Paulista - SP São Paulo ZL</span>
-                            <div id="search_bairro">
-                                <button class="search-sec" onclick="bairroModal()"></button>
-                            </div>
+                        <div class="bairro-search">
+                            <select id="" class="select-cabecalho">
+                                <option value="a">São Miguel Paulista - SP São Paulo ZL</option>
+                            </select>
                         </div>
-                        <div style="display: flex; flex-direction: row; width: 254px;height: 40px; align-items: center; justify-content: space-between;">
-                            <span>Rua:</span>
-                            <div style="display: flex; align-items: center;">
-                                <span style="color: black;" id="title-rua">Avenida Marechal Tito</span>
-                                <div id="search_rua">
-                                    <button class="search-sec" onclick="ruaModal()"></button>
-                                </div>
-                            </div>
+                        <div class="rua-search">
+                            <span style="font-size: 20px">Logradouro:</span>
+                            <select id="" class="select-cabecalho">
+                                <option value="b">Avenida Marechal Tito</option>
+                            </select>
                         </div>
                     </div>
-
-                    <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-end;">
+                    <div class="cabecalho-direita">
                         <div class="date-section">
-                            <span id="span-date" style="text-align: right;">14/10 SEG 22:03</span>
+                            <span id="span-date">14/10 SEG 22:03</span>
                         </div>
-                        <div class="alerta">
+                        <div class="alerta" style="display: none;">
                             <span style="color: #A41D1D">Avenida Marechal Tito com <br>trânsito parado a 15 minutos</span>
-                            <img src="../public/img/icons/bell-ring-solid-24.png" alt="" style="width: 50px; height: 50px;">
+                            <img src="../public/img/icons/bell-ring-solid-24.png" alt="" class="alerta-img">
                         </div>
                     </div>
                 </div>
             </header>
             <div class="dashboard" >
-                <dialog id="modal" style="display: none;"></dialog>
+                <dialog id="modal" style="display: none; height: 662px;"></dialog>
                 <div class="container-dashboard">
                     <div class="painel-dashboard">
                         <div class="parte-superior">
@@ -101,7 +95,7 @@
                                         Bairros Monitorados
                                     </span>
                                     <div class="valor">
-                                        <span class="legenda">
+                                        <span class="legenda-kpi">
                                             quantidade total:
                                         </span>
                                         <span class="valor-kpi" id="qtd_bairros">
@@ -117,7 +111,7 @@
                                         Ruas Monitoradas em São Miguel Paulista
                                     </span>
                                     <div class="valor">
-                                        <span class="legenda">
+                                        <span class="legenda-kpi">
                                             quantidade total:
                                         </span>
                                         <span class="valor-kpi" id="qtd_bairros">
@@ -129,9 +123,19 @@
                             </div>
                             <div class="percentual">
                                 <span class="titulo-percentual">Porcentagem de ruas congestionadas em São Miguel Paulista:</span>
-                                <div style="display: flex; flex-direction: row;">
+                                <div class="corpo-percentual">
                                     <div style="height: 250px;">
                                         <canvas class="grafico-setor" id="setor"></canvas>
+                                    </div>
+                                    <div class="legendas-setor">
+                                        <div class="legenda">
+                                            <div class="legenda-verde"></div>
+                                            <span class="legenda-percentual">Ruas Livres</span>
+                                        </div>
+                                        <div class="legenda">
+                                            <div class="legenda-vermelha"></div>
+                                            <span class="legenda-percentual">Ruas Congestionadas</span>
+                                        </div>
                                     </div>
                                     <img class="imagem-setor" src="../public/img/icons/bx-doughnut-chart.svg">
                                 </div>
@@ -149,7 +153,9 @@
                                         <button onclick="infoModal()" class="info"></button>
                                     </div>
                             </div>
-                                <canvas id="grafico-linha" class="grafico-linha"></canvas>
+                                <canvas id="grafico_linha1" display="none" class="grafico-linha"></canvas>
+                                <canvas id="grafico_linha6" display="none" class="grafico-linha"></canvas>
+                                <canvas id="grafico_linha12" display="none" class="grafico-linha"></canvas>
                         </div>
                     </div>
                 </div>
@@ -165,46 +171,53 @@
 
     // se tiver [] é vetor, se tiver {} é json = juntar inúmeras propriedades dentro de um grupo
 
-    new Chart(graficoSetor, {
+     new Chart(graficoSetor, {
         type: 'doughnut', // tipo do gráfico 
         data: { // data = todos os valores que serão colocados
-            labels: ['Ruas congestionadas', 'Ruas livres'], // array = vetores que serão utilizados na label
             datasets: [{ // métricas do gráfico = linha
-                label: 'Ruas congestionadas', // nome da linha
-                backgroundColor: '#1DA426',
-                borderColor: '#1DA426',
-                data: [34], // valores do gráfico
+                backgroundColor: ['#A41D1D', '#1DA426'],
+                borderColor: ['#A41D1D', '#1DA426'],
+                data: [66, 34], // valores do gráfico
                 borderWidth: 1 // largura da borda do gráfico
-            }, {
-                label: 'Ruas livres',
-                backgroundColor: '#A41D1D',
-                borderColor: '#A41D1D',
-                data: [66],
-                borderWidth: 1
             }]
         },
         options: { // opções do formato do gráfico
             plugins:{
-                title:{
-                    display:false
-                },
                 customCanvasBackgroundColor: {
-                    display: 'none',
+                    color: '#FFFFFF',
                 },
-                legend:{
-                    position:'right',
-                    labels:{
-                        boxHeight:10
-                    }
+                tooltip: {
+                    enable: false
                 }
-            }
-        }
+            },
+            cutout: '70%',
+            responsive: true
+        }/*,
+            plugins: {
+                id: 'grafico-setor',
+                beforeDraw: (chart) => {
+                    const largura = chart.width;
+                    const altura = chart.height;
+                    const ctx = chart.ctx;
+                    ctx.restore();
+                    const fontSize = 40;
+                    ctx.font = `${fontSize}em sans-serif`;
+                    ctx.textBaseline = "middle";
+
+                    const mensagem = "68%";
+                    const coordenadaX = Math.round((largura - ctx.measureText(mensagem).largura) / 2);
+                    const coordenadaY = altura / 2;
+
+                    ctx.fillStyle = "#8b0000";
+                    ctx.fillText(mensagem, coordenadaX, coordenadaY);
+                    ctx.save();
+                }
+            }*/
     });
 </script>
 
 <script>
-    
-    var graficoBarras = document.getElementById('grafico-linha');
+
 
     var horariosAtual = ['09:45', '09:40', '09:45', '09:50', '09:55', '10:00', '10:05', '10:10', '10:15', '10:20', '10:25', '10:30',];
 
@@ -212,8 +225,12 @@
 
     var valoresMAtual = [240, 310, 340, 370, 400, 370, 290, 240, 250, 255, 270, 280];
 
-    function aparecer1h() {
-        var graficoBarras = document.getElementById('grafico-linha');
+    window.onload = function aparecer1h() {
+        console.log('1h');
+        var graficoBarras = document.getElementById('grafico_linha1');
+        grafico_linha1.style.display = 'flex';
+        grafico_linha6.style.display = 'none';
+        grafico_linha12.style.display = 'none';
 
         umaH.style.backgroundColor = '#1D6975';
         umaH.style.color = '#FFFFFF'
@@ -231,7 +248,78 @@
         // Valores Médio:
         var valoresMAtual = [240, 310, 340, 370, 400, 370, 290, 240, 250, 255, 270, 280];
         
-        Chart(graficoBarras, {
+        new Chart(graficoBarras, {
+            type: 'line', // tipo do gráfico 
+            data: { // data = todos os valores que serão colocados
+                labels: horariosAtual, // array = vetores que serão utilizados na label
+                datasets: [{ // métricas do gráfico = linha
+                    label: 'Avenida 1', // nome da linha
+                    backgroundColor: '#1DA426',
+                    borderColor: '#1DA426',
+                    data: valoresAtual, // valores do gráfico
+                    borderWidth: 1 // largura da borda do gráfico
+                }, {
+                    label: 'Média do bairro',
+                    backgroundColor: '#A41D1D',
+                    borderColor: '#A41D1D',
+                    data: valoresMAtual,
+                    borderWidth: 1
+                }]
+            },
+            options: { // opções do formato do gráfico
+                scales: {
+                    y: {
+                        display: false,
+                        grid: {
+                            display: false
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                    tension: 0.55,
+                plugins:{
+                    title:{
+                        display:false
+                    },
+                    legend:{
+                        position:'top',
+                        labels:{
+                            boxHeight:3
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    function aparecer1h() {
+        console.log('1h');
+        var graficoBarras = document.getElementById('grafico_linha1');
+        grafico_linha1.style.display = 'flex';
+        grafico_linha6.style.display = 'none';
+        grafico_linha12.style.display = 'none';
+
+        umaH.style.backgroundColor = '#1D6975';
+        umaH.style.color = '#FFFFFF'
+        seisH.style.backgroundColor = '#FFF';
+        seisH.style.color = '#000000'
+        dozeH.style.backgroundColor = '#FFF';
+        dozeH.style.color = '#000000';
+
+        // Horários:
+        var horariosAtual = ['09:45', '09:40', '09:45', '09:50', '09:55', '10:00', '10:05', '10:10', '10:15', '10:20', '10:25', '10:30',];
+    
+        // Valores:
+        var valoresAtual = [200, 300, 350, 400, 380, 360, 280, 240, 220, 230, 290, 300];
+            
+        // Valores Médio:
+        var valoresMAtual = [240, 310, 340, 370, 400, 370, 290, 240, 250, 255, 270, 280];
+        
+        new Chart(graficoBarras, {
             type: 'line', // tipo do gráfico 
             data: { // data = todos os valores que serão colocados
                 labels: horariosAtual, // array = vetores que serão utilizados na label
@@ -280,7 +368,11 @@
     }
 
     function aparecer6h() {
-        var graficoBarras = document.getElementById('grafico-linha');
+        var graficoBarras = document.getElementById('grafico_linha6');
+        grafico_linha1.style.display = 'none';
+        grafico_linha6.style.display = 'flex';
+        grafico_linha12.style.display = 'none';
+        console.log('6h');
 
         umaH.style.backgroundColor = '#FFF';
         umaH.style.color = '#000000'
@@ -298,7 +390,7 @@
         // Valores Médio:
         var valoresMAtual = [270, 310, 330, 320, 315, 305, 290, 285, 290, 270, 275, 275];
 
-        Chart(graficoBarras, {
+        new Chart(graficoBarras, {
             type: 'line', // tipo do gráfico 
             data: { // data = todos os valores que serão colocados
                 labels: horariosAtual, // array = vetores que serão utilizados na label
@@ -347,7 +439,11 @@
     }
 
     function aparecer12h() {
-        var graficoBarras = document.getElementById('grafico-linha');
+        console.log('12h');
+        var graficoBarras = document.getElementById('grafico_linha12');
+        grafico_linha1.style.display = 'none';
+        grafico_linha6.style.display = 'none';
+        grafico_linha12.style.display = 'flex';
 
         umaH.style.backgroundColor = '#FFF';
         umaH.style.color = '#000000'
@@ -365,7 +461,7 @@
         // Valores Médio:
         var valoresMAtual = [280, 285, 283, 275, 271, 270, 276, 279, 280, 274, 281, 282]
 
-        Chart(graficoBarras, {
+        new Chart(graficoBarras, {
             type: 'line', // tipo do gráfico 
             data: { // data = todos os valores que serão colocados
                 labels: horariosAtual, // array = vetores que serão utilizados na label
@@ -413,53 +509,6 @@
         });
     }
 
-    
-        new Chart(graficoBarras, {
-            type: 'line', // tipo do gráfico 
-            data: { // data = todos os valores que serão colocados
-                labels: horariosAtual, // array = vetores que serão utilizados na label
-                datasets: [{ // métricas do gráfico = linha
-                    label: 'Avenida 1', // nome da linha
-                    backgroundColor: '#1DA426',
-                    borderColor: '#1DA426',
-                    data: valoresAtual, // valores do gráfico
-                    borderWidth: 1 // largura da borda do gráfico
-                }, {
-                    label: 'Média do bairro',
-                    backgroundColor: '#A41D1D',
-                    borderColor: '#A41D1D',
-                    data: valoresMAtual,
-                    borderWidth: 1
-                }]
-            },
-            options: { // opções do formato do gráfico
-                scales: {
-                    y: {
-                        display: false,
-                        grid: {
-                            display: false
-                        }
-                    },
-                    x: {
-                        grid: {
-                            display: false
-                        }
-                    }
-                },
-                    tension: 0.55,
-                plugins:{
-                    title:{
-                        display:false
-                    },
-                    legend:{
-                        position:'top',
-                        labels:{
-                            boxHeight:3
-                        }
-                    }
-                }
-            }
-        });
 </script>
 <script src="../public/js/togglemenu.js"></script>
 
