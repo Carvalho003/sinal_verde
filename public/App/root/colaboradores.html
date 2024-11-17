@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="../../css/modal_contato.css">
 </head>
-<body onload="validarSessaoRooot(), carregarEmpresas(), carregarColaboradores()">
+<body onload="validarSessaoRooot(), carregarEmpresasColaboradores(), carregarColaboradores()">
     <div class="div_papai">
         <main class="screen-dash">
             <nav class="side-bar">
@@ -75,45 +75,16 @@
             <div class="header-table">
                 <div class="head-table">
                     <h3>COLABORADORES</h3>
-                    <span>Goinfra - GOIAS</span>
+                    <select name="" onchange="carregarColaboradores(this.value)" id="slt_empresa">
+
+                    </select>
                 </div>
                 <div class="icone-header">
                     <i onclick="abrirModal()" class="fa-solid fa-plus closee"></i>
                 </div>
             </div>
-            <div class="tab-inicio">
-                <table>
-                    <tr class="comeco-tr">
-                        <td>Nome</td>
-                        <td>Cargo</td>
-                        <td>Permissão</td>
-                        <td>Editar</td>
-                        <td>Excluir</td>
-                    </tr>
-                    <tr class="usuario-tab">
-                        <td>Hugo</td>
-                        <td>Supervisor</td>
-                        <td>Todas</td>
-                        <td><i onclick="editarColaborador()"  class='bx bx-edit-alt' ></i></td>
-                        <td><i onclick="deletarColaborador()" class='bx bx-trash'></i></td>
-                    </tr>
-                    <tr class="usuario-tab">
-                        <td>Ranier</td>
-                        <td>Supervisor</td>
-                        <td>Todas</td>
-                        <td><i onclick="kk()" class='bx bx-edit-alt' ></i></td>
-                        <td><i onclick="kk()" class='bx bx-trash'></i></td>
-
-                    </tr>
-                    <tr class="usuario-tab">
-                        <td>Caio</td>
-                        <td>Supervisor</td>
-                        <td>Todas</td>
-                        <td><i class='bx bx-edit-alt' ></i></td>
-                        <td><i class='bx bx-trash'></i></td>
-
-                    </tr>
-                </table>
+            <div id="tab-colab" class="tab-inicio">
+                
             </div>
         </section>
     </div>
@@ -234,6 +205,8 @@
 
 <script src="../js/cadastrar.js"></script>
 <script src="../../js/adicionarModal.js"></script>
+
+<script src="../js/empresa.js"></script>
 
 <script src="../../js/togglemenu.js"></script>
 

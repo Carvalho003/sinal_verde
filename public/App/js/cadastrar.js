@@ -1,3 +1,5 @@
+let empresaId = 'null'
+
 let modalErro = modal_contato;
 
 let modalSucesso = document.getElementById('modal_sucesso');
@@ -175,6 +177,7 @@ function cadastrarColaborador(){
             emailServer: email,
             senhaServer: senha,
             data_nascimento: data,
+            empresaId: empresaId
         }),
     })
     .then(function (resposta) {

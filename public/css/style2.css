@@ -4,6 +4,13 @@
     flex-direction: row;
 }
 
+#slt_empresa{
+    border: none;
+    background-color: transparent;
+    font-size: 22px;
+    outline: none;
+}
+
 .side-bar{
     width: 20%;
     height: 100VH;

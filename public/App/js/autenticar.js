@@ -79,7 +79,7 @@ function autenticar(){
             })
         }).then(function (resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
-
+            console.log(resposta)
             if (resposta.ok) {
                 console.log(resposta);
 

@@ -1,6 +1,19 @@
 var usuarioModel = require("../models/usuarioModel");
 // var aquarioModel = require("../models/aquarioModel");
 
+
+function buscarPelaEmpresa(req,res) {
+    const empresaId = req.params.empresaId;
+
+    
+        usuarioModel.buscarPelaEmpresa(empresaId).then(resultado => {
+            res.json(resultado);
+        }).catch(e => {
+            res.json(e);
+        })
+    
+}
+
 function autenticar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
@@ -13,6 +26,7 @@ function autenticar(req, res) {
 
         usuarioModel.autenticar(email, senha)
             .then(
+                
                 function (resultadoAutenticar) {
                     console.log(`\nResultados encontrados: ${resultadoAutenticar.length}`);
                     console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`); // transforma JSON em String
@@ -43,7 +57,7 @@ function autenticar(req, res) {
                 }
             ).catch(
                 function (erro) {
-                    // console.log(erro);
+                    console.log(erro);
                     // console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
                     res.status(500).json(erro.sqlMessage);
                 }
@@ -61,6 +75,7 @@ function cadastrar(req, res) {
     var email = req.body.emailServer;
     var cpf = req.body.cpfServer;
     var senha = req.body.senhaServer;
+    var empresaId = req.body.empresaId;
     // var fkEmpresa = req.body.idEmpresaVincularServer;
 
     // Faça as validações dos valores
@@ -83,7 +98,7 @@ function cadastrar(req, res) {
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, cpf, senha, cargo, nivel, data)
+        usuarioModel.cadastrar(nome, email, cpf, senha, cargo, nivel, data, empresaId)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -103,5 +118,6 @@ function cadastrar(req, res) {
 
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    buscarPelaEmpresa
 }
