@@ -14,6 +14,41 @@ function buscarPelaEmpresa(req,res) {
     
 }
 
+function editarPeloId(req, res){
+    const userId = req.params.id;
+    const nome = req.body.nome
+    const cpf =  req.body.cpf
+    const nivel_permissao =  req.body.nivel_permissao
+    const cargo =  req.body.cargo
+    const email =  req.body.email
+    const senha =  req.body.senha
+    const data_nascimento =  req.body.data_nascimento
+
+    console.log(data_nascimento)
+
+    
+    usuarioModel.editarPeloId(nome, cpf, nivel_permissao, cargo, email, senha, data_nascimento, userId).then(resultado => {
+        res.json(resultado)
+    }).catch(e => {
+        res.json({
+            message: "Erro interno no servidor",
+            error: e
+        })
+    })
+}
+
+function buscarPeloId(req,res){
+    const usuarioId = req.params.id;
+    usuarioModel.buscarPeloId(usuarioId).then(resultado => {
+        res.json(resultado[0])
+    }).catch(e => {
+        res.json({
+            message: "Erro Interno no servidor",
+            error: e
+        })
+    })
+}
+
 function autenticar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
@@ -119,5 +154,7 @@ function cadastrar(req, res) {
 module.exports = {
     autenticar,
     cadastrar,
-    buscarPelaEmpresa
+    buscarPelaEmpresa,
+    buscarPeloId,
+    editarPeloId
 }

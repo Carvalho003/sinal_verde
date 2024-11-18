@@ -67,6 +67,60 @@ function carregarEmpresasColaboradores(){
     });
 }
 
+function putUsuario(userId) {
+
+    var nome = ipt_nome.value;
+    var cpf = ipt_cpf.value;
+    var data = ipt_data.value;
+    console.log(data)
+    var email = ipt_email.value;
+    var cargo = ipt_cargo.value;
+    var permissao = Number(slt_permissao.value);
+    var senha = ipt_senha.value;
+    var confirmacao = ipt_confirme.value;
+    if(validarNome(nome) && validarCPF(cpf) && validarData(data) && validarEmail(email) && validarCargo(cargo)){
+        // lançar os dados no banco de dados
+        if(senha != ""){
+            if(!validarSenha(senha, confirmacao)){
+        
+                span_erro.innerText = "Senha inválida";
+                return modalErro.showModal()
+
+            }
+        }
+        dadosColaborador = {
+            nome:nome,
+            cpf:cpf,
+            nivel_permissao:permissao,
+            cargo: cargo,
+            email:email,
+            senha:senha,
+            data_nascimento:data,
+            
+        };
+        
+        fetch(`/usuarios/single/${userId}`, {
+            method: "PUT",
+        headers: { 
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dadosColaborador),
+        }).then(res => res.json()).then(res => {
+            console.log(res)
+            modalSucesso.showModal()
+            span_sucesso.innerText = "Dados atualizados com sucesso!";
+            restoreButtons()
+            carregarColaboradores(sessionStorage.EMPRESA_ID);
+        }).catch(e => {
+            console.log(e)
+        })
+
+
+        
+    }
+
+}
+
 
 function carregarColaboradores(empresaIdAtual){
     empresaId = empresaIdAtual
@@ -97,8 +151,8 @@ function carregarColaboradores(empresaIdAtual){
                             <td>${usuario.nome}</td>
                             <td>${usuario.cargo}</td>
                             <td>${usuario.permissao}</td>
-                            <td><i onclick="editarEmpresa(${usuario.id})"  class='bx bx-edit-alt'></i></td>
-                            <td><i onclick="deletarEmpresa(${usuario.id})" class='bx bx-trash'></i></td>
+                            <td><i onclick="editarColaborador(${usuario.id})"  class='bx bx-edit-alt'></i></td>
+                            <td><i onclick="deletarColaborador(${usuario.id})" class='bx bx-trash'></i></td>
                         </tr>
                     `;
                 });
@@ -118,7 +172,52 @@ function carregarColaboradores(empresaIdAtual){
     });
 }
 
+function restoreButtons(){
+    document.getElementById('btn_salvar').onclick = () => cadastrarColaborador();
+    document.getElementById('btn_cancelar').onclick = () => closeModal();
+    document.getElementById('btn_cancelar').onclick = () => closeModal();
+    ipt_nome.value = "";
+    ipt_cpf.value = "";
+    ipt_data.value = "";
+    ipt_email.value = "";
+    ipt_cargo.value = "";
+    closeModal();
+}
 
+function editarColaborador(id){
+    fetch(`/usuarios/single/${id}`,  { cache: 'no-store' }).then(res => res.json()).then(res =>{
+        console.log(res)
+        ipt_nome.value = res.nome
+        ipt_cpf.value = res.cpf
+        ipt_data.value = res.dataNasc
+        ipt_email.value = res.email
+        ipt_cargo.value = res.cargo
+        document.getElementById('btn_salvar').onclick = () => putUsuario(res.id);
+        document.getElementById('btn_cancelar').onclick = () => restoreButtons();
+        document.getElementById('close-modal').onclick = () => restoreButtons();
+        console.log(slt_permissao);
+        let options = slt_permissao.querySelectorAll('option');
+        console.log(options)
+        
+        options.forEach(opcao => {
+            
+            
+            if((opcao.innerText).toUpperCase() == res.nivel_usuario){
+                opcao.selected = true;
+            }
+        })
+        
+        
+        abrirModal();
+        console.log(res)
+    }).catch(e => {
+        console.log(e)
+    })
+}
+
+function deletarColaborador(id){
+
+}
 
 function editarEmpresa(id){
     // TODO

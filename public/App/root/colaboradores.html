@@ -90,71 +90,71 @@
     </div>
     <dialog id="modal_adicionar">
             
-            <div class="modal-head">
-                <div class="top-head">
-                    <div class="modal-circle-icon">
-                        <i class='bx bx-user-voice'></i>
-                    </div>
-                    <i class='bx bx-x' onclick="closeModal()" id="close-modal"></i>
+        <div class="modal-head">
+            <div class="top-head">
+                <div class="modal-circle-icon">
+                    <i class='bx bx-user-voice'></i>
                 </div>
+                <i class='bx bx-x' onclick="closeModal()" id="close-modal"></i>
+            </div>
 
-                <div class="title-area">
-                    <span>adicionar novo colaborador</span>
+            <div class="title-area">
+                <span>adicionar novo colaborador</span>
+            </div>
+        </div>
+        <form id="form_colaborador" action="#" class="modal-content">
+            <!-- DIV CAMPO NOME -->
+            <div class="input-group-modal">
+                <label for="Nome do colaborador">Nome:</label>
+                <input id="ipt_nome" type="text">
+            </div>
+
+            <div class="group-meio">
+                <div class="input-group-modal cpf-group">
+                    <label for="Cpf do colaborador">CPF:</label>
+                    <input id="ipt_cpf" type="text">
+                </div>
+                <div class="input-group-modal dtnasc-group">
+                    <label for="Data Nasc Colaborador">Data Nascimento:</label>
+                    <input id="ipt_data" type="date">
                 </div>
             </div>
-            <form id="form_colaborador" action="#" class="modal-content">
-                <!-- DIV CAMPO NOME -->
-                <div class="input-group-modal">
-                    <label for="Nome do colaborador">Nome:</label>
-                    <input id="ipt_nome" type="text">
-                </div>
 
-                <div class="group-meio">
-                    <div class="input-group-modal cpf-group">
-                        <label for="Cpf do colaborador">CPF:</label>
-                        <input id="ipt_cpf" type="text">
-                    </div>
-                    <div class="input-group-modal dtnasc-group">
-                        <label for="Data Nasc Colaborador">Data Nascimento:</label>
-                        <input id="ipt_data" type="date">
-                    </div>
+            <div class="group-fim">
+                <div class="input-group-modal email-senha-group">
+                    <label for="Email do colaborador">Email:</label>
+                    <input id="ipt_email" type="email">
                 </div>
-
-                <div class="group-fim">
-                    <div class="input-group-modal email-senha-group">
-                        <label for="Email do colaborador">Email:</label>
-                        <input id="ipt_email" type="email">
-                    </div>
-                    <div class="input-group-modal cargo-tipo-group">
-                        <label for="Cargo do colaborador ">Cargo:</label>
-                        <input id="ipt_cargo" type="text">
-                    </div>
+                <div class="input-group-modal cargo-tipo-group">
+                    <label for="Cargo do colaborador ">Cargo:</label>
+                    <input id="ipt_cargo" type="text">
                 </div>
-
-                <div class="group-fim">
-                    <div class="input-group-modal email-senha-group">
-                        <label for="Senha do colaborador">Senha:</label>
-                        <input id="ipt_senha" type="password">
-                    </div>
-                    <div class="input-group-modal cargo-tipo-group">
-                        <label for="Tipo do colaborador ">Tipo:</label>
-                        <select  id="slt_permissao">
-                            <option value="1">Master</option>
-                            <option value="2">Comum</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="input-group-modal">
-                    <label for="Senha do colaborador">Confirme a Senha:</label>
-                    <input id="ipt_confirme" type="password">
-                </div>
-            </form>
-
-            <div class="modal-footer">
-                <button onclick="cadastrarColaborador()" class="btn-modal btn-green">Salvar</button>
-                <button class="btn-modal btn-gray" onclick="closeModal()" >Cancelar</button>
             </div>
-    </dialog>
+
+            <div class="group-fim">
+                <div class="input-group-modal email-senha-group">
+                    <label for="Senha do colaborador">Senha:</label>
+                    <input id="ipt_senha" type="password">
+                </div>
+                <div class="input-group-modal cargo-tipo-group">
+                    <label for="Tipo do colaborador ">Tipo:</label>
+                    <select  id="slt_permissao">
+                        <option value="1">Master</option>
+                        <option value="0">Comum</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-group-modal">
+                <label for="Senha do colaborador">Confirme a Senha:</label>
+                <input id="ipt_confirme" type="password">
+            </div>
+        </form>
+
+        <div class="modal-footer">
+            <button id="btn_salvar" onclick="cadastrarColaborador()" class="btn-modal btn-green">Salvar</button>
+            <button id="btn_cancelar" class="btn-modal btn-gray" onclick="closeModal()" >Cancelar</button>
+        </div>
+</dialog>
 
     <dialog  id="modal_contato">
             

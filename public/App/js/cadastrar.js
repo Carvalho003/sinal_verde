@@ -1,5 +1,11 @@
 let empresaId = 'null'
 
+if(sessionStorage.NIVEL_USUARIO != 2 || sessionStorage.NIVEL_USUARIO != '2'){
+    empresaId = sessionStorage.EMPRESA_ID;
+    console.log(empresaId)
+    carregarColaboradores(empresaId);
+}
+
 let modalErro = modal_contato;
 
 let modalSucesso = document.getElementById('modal_sucesso');

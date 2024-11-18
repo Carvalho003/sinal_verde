@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="../../css/header.css">
     <link rel="stylesheet" href="../../css/modal_contato.css">
 </head>
-<body>
+<body >
     <div class="div_papai">
         <main class="screen-dash">
             <nav class="side-bar">
@@ -80,7 +80,7 @@
                     <i onclick="abrirModal()" class="fa-solid fa-plus closee"></i>
                 </div>
             </div>
-            <div class="tab-inicio">
+            <div id="tab-colab" class="tab-inicio">
                 <table>
                     <tr class="comeco-tr">
                         <td>Nome</td>
@@ -168,7 +168,7 @@
                         <label for="Tipo do colaborador ">Tipo:</label>
                         <select  id="slt_permissao">
                             <option value="1">Master</option>
-                            <option value="2">Comum</option>
+                            <option value="0">Comum</option>
                         </select>
                     </div>
                 </div>
@@ -179,8 +179,8 @@
             </form>
 
             <div class="modal-footer">
-                <button onclick="cadastrarColaborador()" class="btn-modal btn-green">Salvar</button>
-                <button class="btn-modal btn-gray" onclick="closeModal()" >Cancelar</button>
+                <button id="btn_salvar" onclick="cadastrarColaborador()" class="btn-modal btn-green">Salvar</button>
+                <button id="btn_cancelar" class="btn-modal btn-gray" onclick="closeModal()" >Cancelar</button>
             </div>
     </dialog>
 
@@ -230,10 +230,12 @@
 
 </body>
 </html>
+<script src="../js/empresa.js"></script>
 <script src="../js/cadastrar.js"></script>
 <script src="../../js/adicionarModal.js"></script>
 
 <script src="../../js/togglemenu.js"></script>
 <script src="../js/session.js"></script>
+
 
 

@@ -16,4 +16,12 @@ router.get("/:empresaId", (req,res) => {
     usuarioController.buscarPelaEmpresa(req, res)
 })
 
+router.get("/single/:id", (req, res) => {
+    usuarioController.buscarPeloId(req,res)
+})
+
+router.put("/single/:id", (req, res) => {
+    usuarioController.editarPeloId(req, res)
+})
+
 module.exports = router;

@@ -9,6 +9,47 @@ function autenticar(email, senha) {
     return database.executar(instrucaoSql);
 }
 
+function editarPeloId (nome, cpf, nivel_permissao, cargo, email, senha, data_nascimento, userId){
+    let sql = ``;
+    if(senha != ""){
+        sql = `UPDATE usuario SET nome = '${nome}',
+        cpf = '${cpf}',
+        nivel_permissao = ${nivel_permissao},
+        cargo = '${cargo}',
+        email = '${email}',
+        senha = '${senha}',
+        dataNasc = '${data_nascimento}'
+        WHERE id = ${userId}
+        `;
+    }else{
+        sql = `UPDATE usuario SET nome = '${nome}',
+        cpf = '${cpf}',
+        nivel_permissao = ${nivel_permissao},
+        cargo = '${cargo}',
+        email = '${email}',
+        dataNasc = '${data_nascimento}'
+        WHERE id = ${userId}
+        `;
+    }
+
+    return database.executar(sql);
+
+
+}
+
+function buscarPeloId(usuarioId){
+    const sql = `SELECT id, nome, cpf, dataNasc, email, cargo, 
+    CASE
+    WHEN nivel_permissao = 2
+    THEN 'ROOT'
+    WHEN nivel_permissao = 1
+    THEN 'MASTER'
+    ELSE 'COMUM' 
+    END as nivel_usuario
+    FROM usuario WHERE id = ${usuarioId}`;
+    return database.executar(sql);
+}
+
 function buscarPelaEmpresa(empresaId){
     if(empresaId != 'undefined'){
     const sql = `SELECT id,nome, cargo, 
@@ -55,5 +96,7 @@ function cadastrar(nome, email, cpf, senha, cargo, nivel, data, empresaId ) {
 module.exports = {
     autenticar,
     cadastrar,
-    buscarPelaEmpresa
+    buscarPelaEmpresa,
+    buscarPeloId,
+    editarPeloId
 };
