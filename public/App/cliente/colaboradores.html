@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="../../css/header.css">
     <link rel="stylesheet" href="../../css/modal_contato.css">
 </head>
-<body >
+<body onload="getEmpresaById()">
     <div class="div_papai">
         <main class="screen-dash">
             <nav class="side-bar">
@@ -74,7 +74,7 @@
             <div class="header-table">
                 <div class="head-table">
                     <h3>COLABORADORES</h3>
-                    <span>Goinfra - GOIAS</span>
+                    <span id="span_empresa_local">Goinfra - GOIAS</span>
                 </div>
                 <div class="icone-header">
                     <i onclick="abrirModal()" class="fa-solid fa-plus closee"></i>

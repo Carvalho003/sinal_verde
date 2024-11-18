@@ -1,10 +1,13 @@
 function carregarEmpresas(){
+    
+
     fetch(`/empresas`, { cache: 'no-store' })
     .then((response) => {
         if (response.ok) {
             response.json()
             .then((empresas) => {
                 console.log(empresas)
+                document.getElementById("tabela-empresa").innerHTML = "";
                 let tabela = document.createElement("table");
                 console.log(tabela);
                 let linhas = `  <tr class="comeco-tr">
@@ -21,7 +24,7 @@ function carregarEmpresas(){
                             <td>${empresa.nome}</td>
                             <td>${empresa.localidade}</td>
                             <td>${empresa.colaboradores}</td>
-                            <td><i onclick="editarEmpresa(${empresa.id})"  class='bx bx-edit-alt'></i></td>
+                            <td><i onclick="getEmpresaById(${empresa.id})"  class='bx bx-edit-alt'></i></td>
                             <td><i onclick="deletarEmpresa(${empresa.id})" class='bx bx-trash'></i></td>
                         </tr>
                     `;
@@ -181,6 +184,105 @@ function restoreButtons(){
     ipt_data.value = "";
     ipt_email.value = "";
     ipt_cargo.value = "";
+    closeModal();
+}
+
+const getEmpresaById = (id) => {
+    if(id == undefined){
+        id = sessionStorage.EMPRESA_ID
+    }
+    fetch(`/empresas/${id}`).then(res => res.json()).then(res => {
+        console.log(res)
+        let url = window.location.href;
+        url = url.split('/');
+        url = url[url.length -1];
+
+        if(url == "empresa.html"){
+            document.getElementById('btn_cadastrar').onclick = () => putEmpresa(res.id, res.logrId);
+            document.getElementById('btn_cancelar').onclick = () => restoreButtonsEmpresa();
+            document.getElementById('icon_fechar').onclick = () => restoreButtonsEmpresa();
+            fillModalEmpresa(res)
+            abrirModal()
+        }else{
+            span_empresa_local.innerText = `${res.nome} - ${res.cidade}`
+        }
+    }).catch(e => {
+        console.log(e)
+    })
+}
+
+function fillModalEmpresa (data) {
+    ipt_nome.value = data.nome;
+    ipt_bairro.value = data.bairro;
+    ipt_cnpj.value = data.cnpj;            
+    ipt_cep_sede.value = (data.cep).replaceAll("-", "");
+    ipt_regiao.value = data.regiao_cidade;
+    ipt_logradouro.value = data.logradouro;
+    ipt_numero_logr.value = data.numLogradouro;
+    ipt_cidade.value = data.cidade;
+    ipt_uf.value = data.uf;
+
+}
+
+function putEmpresa(empresaId, logrId){
+    var nome = ipt_nome.value;
+    var bairro = ipt_bairro.value;
+
+    var cnpj = ipt_cnpj.value;            
+    var cep_sede = ipt_cep_sede.value;
+    var regiao = ipt_regiao.value;
+    var logradouro = ipt_logradouro.value;
+    var numero_logr = Number(ipt_numero_logr.value);
+    var cidade = ipt_cidade.value;
+    var uf = ipt_uf.value;
+
+    if(validarNome(nome) && validarEndereco(cep_sede, numero_logr, regiao) && validarCNPJ(cnpj)){
+        dadosEmpresa = {
+            nome:nome,
+            cnpj:cnpj,
+            cep:cep_sede,
+            num_logradouro: numero_logr,
+            logradouro:logradouro,
+            bairro:bairro,
+            regiao:regiao,
+            cidade: cidade,
+            uf: uf
+        }
+        console.log(dadosEmpresa)
+
+        fetch(`/empresas/${empresaId}/${logrId}`, {
+            method: "PUT",
+        headers: { 
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dadosEmpresa),
+        }).then(res => res.json()).then(res => {
+            console.log(res)
+            modalSucesso.showModal()
+            span_sucesso.innerText = "Dados atualizados com sucesso!";
+            restoreButtonsEmpresa()
+            carregarEmpresas(empresaId)
+        }).catch(e => {
+            console.log(e)
+        })
+
+    }
+}
+
+function restoreButtonsEmpresa (){
+    document.getElementById('btn_cadastrar').onclick = () => cadastrarEmpresa();
+    document.getElementById('btn_cancelar').onclick = () => closeModal();
+    document.getElementById('close-modal').onclick = () => closeModal();
+    ipt_nome.value = "";
+    ipt_bairro.value = "";
+    ipt_cnpj.value = "";            
+    ipt_cep_sede.value = "";
+    ipt_regiao.value = "";
+    ipt_logradouro.value = "";
+    ipt_numero_logr.value = "";
+    ipt_cidade.value = "";
+    ipt_uf.value = "";
+
     closeModal();
 }
 

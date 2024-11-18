@@ -11,4 +11,12 @@ router.post("/cadastrar", function (req, res) {
     empresaController.postEmpresa(req,res);
 });
 
+router.get("/:empresaId", function(req,res){
+    empresaController.getById(req, res);
+})
+
+router.put("/:empresaId/:logrId", function(req,res){
+    empresaController.updateEmpresa(req, res);
+})
+
 module.exports = router;
