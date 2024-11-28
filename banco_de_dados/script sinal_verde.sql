@@ -60,6 +60,8 @@ CREATE TABLE dados_sensor(
 );
 
 
+
+
 -- COMANDO PARA CADASTRO DO USUARIO ROOT 
 INSERT INTO usuario VALUES 
 (DEFAULT, 'Root', 'Root', '2000-01-01', '11111111111', 'root@sinalverde.com', 'Root#2024', 2, NULL);

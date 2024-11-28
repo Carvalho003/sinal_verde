@@ -704,7 +704,6 @@ font-weight: 700;
 
 .parteDireitaOnde {
   width: 669px;
-  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1430,8 +1429,6 @@ footer{
 
 .paginacao_feed {
   position: absolute;
-  
-  
   width: 100%;
   display: flex;
   justify-content: center;

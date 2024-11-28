@@ -148,4 +148,3 @@ function fecharModal() {
     search_bairro.button.onclick = "bairroModal()"
     search_rua.button.onclick = "ruaModal()"
 }
-
