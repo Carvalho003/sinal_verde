@@ -65,7 +65,7 @@ const selectRuas= (nomeBairro, nomeCidade) => {
 
 const search= (input, uf) => {
     const instrucaoSql_slt_bairro = `
-        SELECT bairro AS Bairro, uf AS Unidade, logradouro AS Logradouro, regiao_cidade AS Regiao FROM logradouro WHERE logradouro LIKE '%${input}%' AND uf = ${uf};
+        SELECT bairro AS Bairro, uf AS Unidade, logradouro AS Logradouro, regiao_cidade AS Regiao FROM logradouro WHERE logradouro LIKE '%${input}%' AND uf = '${uf}';
     `;
 
     return database.executar(instrucaoSql_slt_bairro)

@@ -61,7 +61,7 @@ function selectRuas(req, res) {
 function search(req, res) {
     const input = req.body.inputServer;
     const uf = req.body.ufServer;
-    console.log("Passou do search");
+    console.log(input + ' ' + uf);
 
     logradouroModel.search(input, uf)
     .then(resultado => {

@@ -132,8 +132,6 @@ function infoModal() {
 }
 
 function teste() { // FUNÇÃO DO INPUT DE PESQUISA
-
-    console.log('teste');
     var inputVar = ipt_teste.value;
     var ufVar = sessionStorage.UF;
     var vetor_ruas2 = [];
@@ -148,13 +146,14 @@ function teste() { // FUNÇÃO DO INPUT DE PESQUISA
             },
             body: JSON.stringify({
                 inputServer: inputVar,
-                ufServerr: ufVar
+                ufServer: ufVar
             })
         }).then(function (resposta) {
             console.log(resposta)
     
                 resposta.json().then(json => {
-                    console.log(json.lista);
+                    console.log(json.lista + ' teste');
+                    console.log(json.lista );
                     var vetor = json.lista;
                     
                     for(var i = 0; i < vetor.length; i++) {
