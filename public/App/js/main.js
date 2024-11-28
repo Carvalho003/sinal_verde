@@ -132,13 +132,62 @@ function infoModal() {
 }
 
 function teste() { // FUNÇÃO DO INPUT DE PESQUISA
-    var input = ipt_teste.value;
 
-    if (input != '') {
+    console.log('teste');
+    var inputVar = ipt_teste.value;
+    var ufVar = sessionStorage.UF;
+    var vetor_ruas2 = [];
+    var mensagem = '';
+
+    if (inputVar != '') {
         div_lista.style.display = 'flex';
+        fetch("/logradouro/search", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                inputServer: inputVar,
+                ufServerr: ufVar
+            })
+        }).then(function (resposta) {
+            console.log(resposta)
+    
+                resposta.json().then(json => {
+                    console.log(json.lista);
+                    var vetor = json.lista;
+                    
+                    for(var i = 0; i < vetor.length; i++) {
+    
+                        if(!vetor_ruas2.includes(vetor[i].Logradouro)) {
+                            vetor_ruas2.push(vetor[i].Logradouro);
+                            mensagem += `
+                                <div class="modal-search-lista">
+                                    <div class="modal-search-option">
+                                        <span class="modal-search-rua">${vetor[i].Logradouro}</span>
+                                        <span class="modal-search-bairro">${vetor[i].Bairro} - ${vetor[i].Regiao} ${vetor[i].Unidade}</span>
+                                    </div>
+                                    <button onclick="fecharModal()" class="botao-modal">Verificar</button>
+                                </div>
+                            `;
+                        }
+    
+                        console.log(vetor[i].Logradouro);
+    
+                    }
+    
+                    div_lista.innerHTML = mensagem;
+                });
+    
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+    
+        return false;
     } else {
         div_lista.style.display = 'none';
     }
+    
 }
 
 function fecharModal() {

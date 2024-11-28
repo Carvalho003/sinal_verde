@@ -18,6 +18,10 @@ router.post("/select_bairro", function (req, res) {
 
 router.post("/select_ruas", function (req, res) {
     logradouroController.selectRuas(req, res)
-})
+}) 
+
+router.post("/search", function (req, res) {
+    logradouroController.search(req, res)
+}) 
 
 module.exports = router

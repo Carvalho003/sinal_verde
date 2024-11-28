@@ -79,7 +79,7 @@
                             <span id="span-date">14/10 SEG 22:03</span>
                         </div>
                         <div class="alerta" style="display: flex;">
-                            <span style="color: #A41D1D">Avenida Marechal Tito com <br>trânsito parado a 15 minutos</span>
+                            <span style="color: #A41D1D" id="div_alerta">Avenida Marechal Tito com <br>trânsito parado a 15 minutos</span>
                             <img src="../../img/icons/bell-ring-solid-24.png" alt="" class="alerta-img">
                         </div>
                     </div>
@@ -107,7 +107,7 @@
                             <div class="kpi-ruas">
                                 <div class="sup-ruas">
                                     <span class="titulo-kpi">
-                                        Ruas Monitoradas em São Miguel Paulista
+                                        Ruas Monitoradas em <span id="bairro_kpi"></span>
                                     </span>
                                     <div class="valor">
                                         <span class="legenda-kpi">
@@ -119,7 +119,7 @@
                                 <img class="imagem-ruas" src="../../img/icons/bx-street-view.svg"/>
                             </div>
                             <div class="percentual">
-                                <span class="titulo-percentual">Porcentagem de ruas congestionadas em São Miguel Paulista:</span>
+                                <span class="titulo-percentual">Porcentagem de ruas congestionadas em <span id="spn_porcentagem"></span>:</span>
                                 <div class="corpo-percentual">
                                     <div style="height: 250px;">
                                         <canvas class="grafico-setor" id="setor"></canvas>
@@ -141,7 +141,7 @@
                         <div class="parte-inferior">
                             <div class="superior-grafico-linha">
                                 <span class="titulo-grafico">
-                                    Monitoramento Do Fluxo de Movimento da Rua: Avenida Marechal Tito:
+                                    Monitoramento Do Fluxo de Movimento da Rua: <span id="spn_grafico"></span>
                                 </span>
                                     <div class="cards-horario">
                                         <button onclick="aparecer1h()" class="card-horario" style="background-color: #1D6975; color: #FFFFFF" id="umaH">1h</button>
@@ -446,6 +446,18 @@
     })
 
     function trocarGrafico(){
+        vetor_rua.push('Teste');
+        var rua = slt_ruas.value;
+        var a = vetor_rua[rua];
+
+        if(a == undefined) {
+            a = 'Teste'
+        }
+        
+        spn_grafico.innerHTML = a;
+
+        grafico_atual.data.datasets.label = `'${a[rua]}'`;
+
         let  lista_valores =[1,1,1,1,1,1,1,1,1,1,1,1]
         let lista_valores2 = []
         for(let i = 0; i < 12;i++){
@@ -566,12 +578,16 @@ function mostrarBairros() {
 
     return false;
 }
+var vetor_rua = [];
 
 function buscarLogradouros() {
     var numero_vetor = slt_bairro.value;
     var nomeBairroVar = vetor_bairro[numero_vetor];
     var nomeCidadeVar = vetor_cidade[numero_vetor];
     var mensagem = '';
+
+    bairro_kpi.innerHTML = nomeBairroVar;
+    spn_porcentagem.innerHTML = nomeBairroVar;
 
     console.log(`${nomeBairroVar} ${nomeCidadeVar}`);
 
@@ -592,14 +608,17 @@ function buscarLogradouros() {
             resposta.json().then(json => {
                 console.log(json.lista);
                 var vetor = json.lista;
-
+                
                 for(var i = 0; i < vetor.length; i++) {
+                    vetor_rua.push(vetor[i].Logradouro);
                     mensagem += `
                         <option value="${i}">${vetor[i].Logradouro}</option>
+                        <option value="${i + 1}">Teste</option>
                     `;
                 }
 
                 slt_ruas.innerHTML = mensagem;
+                trocarGrafico(vetor_rua);
             });
 
     }).catch(function (erro) {
@@ -608,4 +627,5 @@ function buscarLogradouros() {
 
     return false;
 }
+
 </script>

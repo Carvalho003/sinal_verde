@@ -41,7 +41,7 @@ const buscarkpi1= (idEmpresa) => {
 
 const buscarkpi2= (idEmpresa) => {
     const instrucaoSqlKpi2 = `
-        SELECT count(logradouro) AS Logradouro FROM logradouro WHERE cidade = (SELECT cidade as bairros FROM empresa AS e JOIN logradouro AS l ON e.logradouro_id = l.id WHERE e.id = ${idEmpresa});
+        SELECT COUNT(logradouro) AS Logradouro FROM logradouro WHERE cidade = 'São Paulo';
     `;
 
     return database.executar(instrucaoSqlKpi2)
@@ -63,4 +63,12 @@ const selectRuas= (nomeBairro, nomeCidade) => {
     return database.executar(instrucaoSql_slt_bairro)
 }
 
-module.exports = {getLogradouro, postLogradouro, updateLogradouro, buscarkpi1, buscarkpi2, selectBairro, selectRuas};
+const search= (input, uf) => {
+    const instrucaoSql_slt_bairro = `
+        SELECT bairro AS Bairro, uf AS Unidade, logradouro AS Logradouro, regiao_cidade AS Regiao FROM logradouro WHERE logradouro LIKE '%${input}%' AND uf = ${uf};
+    `;
+
+    return database.executar(instrucaoSql_slt_bairro)
+}
+
+module.exports = {getLogradouro, postLogradouro, updateLogradouro, buscarkpi1, buscarkpi2, selectBairro, selectRuas, search};

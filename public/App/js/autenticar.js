@@ -93,6 +93,7 @@ function autenticar(){
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
                     sessionStorage.EMPRESA_ID = json.empresa_id;
+                    sessionStorage.UF = json.uf;
                     // sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
                     
 

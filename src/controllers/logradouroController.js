@@ -58,9 +58,25 @@ function selectRuas(req, res) {
         })
 }
 
+function search(req, res) {
+    const input = req.body.inputServer;
+    const uf = req.body.ufServer;
+    console.log("Passou do search");
+
+    logradouroModel.search(input, uf)
+    .then(resultado => {
+        res.json({
+            lista: resultado
+        });
+    }).catch(e => {
+        res.json(e);
+    })
+}
+
 module.exports = {
     buscarkpi1,
     buscarkpi2,
     selectBairro,
-    selectRuas
+    selectRuas,
+    search
 }
