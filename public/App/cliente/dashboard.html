@@ -20,7 +20,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body onload="aparecer1h()">
+<body onload="carregarkpi1()">
     <main class="screen-dash">
         <nav class="side-bar">
             <div class="nav-logo">
@@ -216,7 +216,6 @@
 <!--Gráfico de linha:-->
 <script>
     function aparecer1h() {
-        carregarkpi1();
         var graficoBarras = document.getElementById('grafico_linha1');
         grafico_linha1.style.display = 'flex';
         grafico_linha6.style.display = 'none';
@@ -469,6 +468,7 @@
 var idEmpresaVar = sessionStorage.EMPRESA_ID;
 
 function carregarkpi1() {
+    aparecer1h();
     console.log('to no carregarkpi1')
     var qtd = 0;
 

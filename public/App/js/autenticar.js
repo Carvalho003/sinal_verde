@@ -1,20 +1,5 @@
 let modal = modal_contato;
 
-const infosColaboradores = [
-    {
-        nome:"admin",
-        senha:"Admin123",
-        nivel_permissao:0,
-        email:"contatosinalverde@outlook.com"
-    },
-    {
-        nome:"Bisque",
-        senha:"Urubu#100",
-        nivel_permissao:1,
-        email:"bisque@email.com"
-    }
-];
-
 function analisarEmail(email){
     var tamEmail = email.length;
 
