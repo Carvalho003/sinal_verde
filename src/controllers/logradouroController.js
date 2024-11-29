@@ -78,5 +78,5 @@ module.exports = {
     buscarkpi2,
     selectBairro,
     selectRuas,
-    search
+    search,
 }

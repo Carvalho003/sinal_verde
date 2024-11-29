@@ -69,7 +69,7 @@
                         <div class="rua-search">
                             <span style="font-size: 20px">Logradouro:</span>
                             <select onchange="trocarGrafico()" id="slt_ruas" class="select-cabecalho">
-                                <option value="b">Avenida Marechal Tito</option>
+                                <option>Avenida Marechal Tito</option>
                                 <option value="b">Avenida Rosária</option>
                             </select>
                         </div>
@@ -162,7 +162,7 @@
 </body>
 
 </html>
-
+<!--Gráfico de setor:-->
 <script>
     const graficoSetor = document.getElementById('setor'); // const == variável constante
 
@@ -213,15 +213,8 @@
     });
 </script>
 
+<!--Gráfico de linha:-->
 <script>
-
-    var grafico_atual;
-    var horariosAtual = ['09:45', '09:40', '09:45', '09:50', '09:55', '10:00', '10:05', '10:10', '10:15', '10:20', '10:25', '10:30',];
-
-    var valoresAtual = [200, 300, 350, 400, 380, 360, 280, 240, 220, 230, 290, 300];
-
-    var valoresMAtual = [240, 310, 340, 370, 400, 370, 290, 240, 250, 255, 270, 280];
-
     function aparecer1h() {
         carregarkpi1();
         var graficoBarras = document.getElementById('grafico_linha1');
@@ -235,7 +228,7 @@
         seisH.style.color = '#000000'
         dozeH.style.backgroundColor = '#FFF';
         dozeH.style.color = '#000000';
-
+        
         // Horários:
         var horariosAtual = ['09:45', '09:40', '09:45', '09:50', '09:55', '10:00', '10:05', '10:10', '10:15', '10:20', '10:25', '10:30',];
     
@@ -440,27 +433,27 @@
 
 <script src="../js/main.js"></script>
 
+<!--Passagem dos dados:-->
 <script>
     setInterval(() => {
 
     })
 
-    function trocarGrafico(){
-        vetor_rua.push('Teste');
+    function trocarGrafico(a){
         var rua = slt_ruas.value;
-        var a = vetor_rua[rua];
+        var rua_selecionada = a[rua];
 
-        if(a == undefined) {
-            a = 'Teste'
+        if(rua_selecionada == undefined) {
+            rua_selecionada = 'Teste';
         }
         
-        spn_grafico.innerHTML = a;
+        spn_grafico.innerHTML = rua_selecionada;
 
-        grafico_atual.data.datasets.label = `'${a[rua]}'`;
+        grafico_atual.data.datasets[0].label = rua_selecionada;
 
-        let  lista_valores =[1,1,1,1,1,1,1,1,1,1,1,1]
-        let lista_valores2 = []
-        for(let i = 0; i < 12;i++){
+        let  lista_valores =[1,1,1,1,1,1,1,1,1,1,1,1];
+        let lista_valores2 = [];
+        for(let i = 0; i < 12; i++){
             // lista_valores.push(Math.floor(Math.random() * 6 + 1))
             lista_valores2.push(Math.floor(Math.random() * 6 + 1))
         }
@@ -610,15 +603,18 @@ function buscarLogradouros() {
                 var vetor = json.lista;
                 
                 for(var i = 0; i < vetor.length; i++) {
-                    vetor_rua.push(vetor[i].Logradouro);
-                    mensagem += `
-                        <option value="${i}">${vetor[i].Logradouro}</option>
-                        <option value="${i + 1}">Teste</option>
-                    `;
+                    if(!vetor_rua.includes(vetor[i].Logradouro)) {
+                        vetor_rua.push(vetor[i].Logradouro);
+                    }
+                        mensagem += `
+                            <option value="${i}">${vetor[i].Logradouro}</option>
+                        `;
+                    
                 }
 
                 slt_ruas.innerHTML = mensagem;
                 trocarGrafico(vetor_rua);
+
             });
 
     }).catch(function (erro) {

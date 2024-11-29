@@ -74,61 +74,6 @@ function infoModal() {
             </div>
         </div>
     `;
-
-    var horariosAtual = ['09:45', '09:40', '09:45', '09:50', '09:55', '10:00', '10:05', '10:10', '10:15', '10:20', '10:25', '10:30',];
-
-    var valoresAtual = [200, 210, 210, 200, 220, 210, 220, 210, 220, 230, 225, 210];
-
-    var valoresMAtual = [240, 310, 340, 370, 400, 370, 290, 240, 250, 255, 270, 280];
-
-    const graficoBarras1 = document.getElementById('grafico-exemplo');
-
-    new Chart(graficoBarras1, {
-        type: 'line', // tipo do gráfico 
-        data: { // data = todos os valores que serão colocados
-            labels: horariosAtual, // array = vetores que serão utilizados na label
-            datasets: [{
-                label: 'Exemplo 1',
-                backgroundColor: '#A41D1D',
-                borderColor: '#A41D1D',
-                data: valoresMAtual,
-                borderWidth: 1
-            }, {
-                label: 'Exemplo 2',
-                backgroundColor: '#1DA426',
-                borderColor: '#1DA426',
-                data: valoresAtual,
-                borderWidth: 1
-            }]
-        },
-        options: { // opções do formato do gráfico
-            scales: {
-                y: {
-                    display: false,
-                    grid: {
-                        display: false
-                    }
-                },
-                x: {
-                    grid: {
-                        display: false
-                    }
-                }
-            },
-                tension: 0.55,
-            plugins:{
-                title:{
-                    display:false
-                },
-                legend:{
-                    position:'top',
-                    labels:{
-                        boxHeight:3
-                    }
-                }
-            }
-        }
-    });
 }
 
 function teste() { // FUNÇÃO DO INPUT DE PESQUISA
@@ -152,7 +97,6 @@ function teste() { // FUNÇÃO DO INPUT DE PESQUISA
             console.log(resposta)
     
                 resposta.json().then(json => {
-                    console.log(json.lista + ' teste');
                     console.log(json.lista );
                     var vetor = json.lista;
                     
@@ -166,7 +110,7 @@ function teste() { // FUNÇÃO DO INPUT DE PESQUISA
                                         <span class="modal-search-rua">${vetor[i].Logradouro}</span>
                                         <span class="modal-search-bairro">${vetor[i].Bairro} - ${vetor[i].Regiao} ${vetor[i].Unidade}</span>
                                     </div>
-                                    <button onclick="fecharModal()" class="botao-modal">Verificar</button>
+                                    <button onclick="pesquisar('${vetor[i].Bairro}')" class="botao-modal">Verificar</button>
                                 </div>
                             `;
                         }
@@ -186,13 +130,20 @@ function teste() { // FUNÇÃO DO INPUT DE PESQUISA
     } else {
         div_lista.style.display = 'none';
     }
-    
 }
 
 function fecharModal() {
     modal.style.display = 'none'
     modal.close();
-    search_geral.button.onclick = "searchModal()"
-    search_bairro.button.onclick = "bairroModal()"
-    search_rua.button.onclick = "ruaModal()"
+}
+
+function pesquisar(a) {
+    var bairroVar = '';
+    bairroVar = vetor_bairro.indexOf(a);
+    slt_bairro.value = bairroVar;
+
+    buscarLogradouros();
+
+    modal.style.display = 'none'
+    modal.close();
 }
