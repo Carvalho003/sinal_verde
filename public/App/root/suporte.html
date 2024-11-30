@@ -109,7 +109,7 @@
         const pergunta = document.getElementById('pergunta').value;
         document.getElementById("pergunta_expor").innerText = pergunta
 
-        const response = await fetch('http://10.0.2.15:3001/perguntar', {
+        const response = await fetch('http://192.168.0.128:3001/perguntar', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
