@@ -39,7 +39,7 @@ app.listen(PORTA_SERVIDOR, () => {
         ######   ####  #####  ### #     # 
         `
     );
-    console.info(`A API BobIA iniciada, acesse http://10.0.2.255:${PORTA_SERVIDOR}`);
+    console.info(`A API BobIA iniciada, acesse http://10.0.2.15:${PORTA_SERVIDOR}`);
 });
 
 // rota para receber perguntas e gerar respostas
