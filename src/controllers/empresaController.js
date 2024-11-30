@@ -2,7 +2,7 @@ const empresaModel = require("../models/empresaModel");
 
 const logradouroModel = require("../models/logradouroModel");
 
-const logradouroController = require("../controllers/logradouroController")
+// const logradouroController = require("../controllers/logradouroController")
 
 const getEmpresas = (req,res)=>{
     empresaModel.getEmpresas()

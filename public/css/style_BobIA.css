@@ -6,8 +6,7 @@ body {
 }
 
 #container {
-    width: 80%;
-    margin: 50px auto;
+    width: 10%;
     text-align: center;
 }
 
@@ -19,7 +18,7 @@ textarea[type="text"] {
     padding: 8px;
     font-size: 16px;
     border-radius: 5px;
-    width: 400px;
+    width: 100%;
 }
 
 select,
@@ -47,5 +46,4 @@ button:hover {
     background-color: #D0D3D4;
     border: 1px solid #63666A;
     text-align: left;
-    display: none;
 }

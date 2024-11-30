@@ -1,0 +1,100 @@
+.container_chat{
+    background-color: #D0D3D4;
+    height: 83vh;
+    width: 80%;
+    border: solid black 4px;
+    border-radius: 10px;
+    box-shadow: #D0D3D4 5px 5px 5px 0;
+}
+
+.titulo_chat {
+    width: 80%;
+    font-size: 40px;
+    font-weight: 550;
+}
+
+.content_user {
+    margin-left: 16%;
+    width: 80%;
+    height: 40%;
+    /* border: solid green; */
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: end;
+}
+
+.body_chat_user {
+    width: 50%;
+    height: 80%;
+    background-color: #fff;
+    border: solid #ED145B 8px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+}
+.usuario_posicao {
+    align-self: flex-end;
+    font-size: 60px;
+    color: #ED145B;
+}
+
+.content_bobia {
+    margin-left: 4%;
+    width: 80%;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    align-items: end;   
+}
+
+.body_chat_bobia {
+    width: 50%;
+    height: 80%;
+    background-color: #fff;
+    border: solid #63B1BC 8px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bobia_posicao {
+    align-self: flex-start;
+    width: 63px;
+}
+
+.content_input {
+    width: 97%;
+    height: 7%;
+    margin-top: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input_chat {
+    width: 93%;
+    margin-left: 1%;
+    height: 90%;
+    border: solid black;
+    border-radius: 10px;
+    font-size: 25px;
+    padding-left: 10px;
+}
+
+.enviar_chat {
+    font-size: 50px;
+    color: #ED145B;
+    cursor: pointer;
+}
+.enviar_chat:hover{
+    font-size: 52px;
+}
+
+.text_edit{
+    width: 90%;
+    margin-left: 3%;
+    height: 70%;
+    border: none;
+    background-color: #fff;
+    font-size: 20px;
+}

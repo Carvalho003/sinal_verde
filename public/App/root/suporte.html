@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suporte</title>
+    <link rel="icon" href="../../img/logos/logo maior.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/d5ea0dfb99.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/fonts.css">
+    <link rel="stylesheet" href="../../css/root.css">
+    <link rel="stylesheet" href="../../css/style2.css">
+    <link rel="stylesheet" href="../../css/modal_usuario.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/suporte.css">
+    <link rel="stylesheet" href="../../css/modal_contato.css">
+</head>
+<body >
+    <!-- onload="validarSessaoRooot(), carregarEmpresasColaboradores(), carregarColaboradores()" -->
+    <div class="div_papai">
+        <main class="screen-dash">
+            <nav class="side-bar">
+                <div class="nav-logo">
+                    <img src="../../img/logos/logo sinal verde- nome e cores ajustadas.png"  alt="">
+                </div>
+                <ul class="list-nav">
+                    <li  class="item-nav">
+                        <a href="./colaboradores.html" class="icon-text-nav">
+                            <i class='bx bx-user-voice' ></i>
+                            <span >colaboradores</span>
+                        </a>
+                    </li>
+                    <div class="item-nav ">
+                        <a href="./empresa.html" class="icon-text-nav">
+                            <i class='bx bxs-business'></i>
+                            <span>Empresas</span>
+                        </a>
+                    </div>
+                    <div class="item-nav item-active">
+                        <a href="./suporte.html" class="icon-text-nav">
+                            <i class='bx bx-message-dots'></i>
+                            <span>Suporte</span>
+                        </a>
+                    </div>
+        
+                </ul>
+                <a class="item-nav" href="../login.html" style="text-decoration: none;">
+                    <div class="item-nav logout-sec">
+                        <div class="icon-text-nav">
+                            <i class='bx bx-log-out' ></i>
+                            <span>sair</span>
+                        </div>
+                    </div>
+                </a>
+            </nav>
+            <main class="main-content">
+                <header class="header-colab">
+                    <div class="header-content-aside">
+                        <div class="options-box">
+                            <span>Olá, <span id="nome_usuario"></span></span>
+                            <i onclick="toggleMenu(this)" class='bx bxs-chevron-down'></i>
+                            <div class="menu hide">
+                                <ul>
+                                    <li>
+                                        <span>Meus Dados</span>
+                                    </li>
+                                    <li>
+                                        <span>Sair</span>
+                                    </li>
+                                </ul>
+                                <i class='bx bxs-up-arrow seta-header'></i>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <h2 class="titulo_chat">BobIA</h2>
+                <div class="container_chat">
+                    <div class="content_user">
+                        <div class="body_chat_user">
+                            <i class="fa-regular fa-circle-user usuario_posicao"></i>
+                            <textarea class="text_edit" disabled id="pergunta_expor" name="" ></textarea>
+                        </div>
+                    </div>
+                    <div class="content_bobia">
+                        <div class="body_chat_bobia">
+                            <img class=" bobia_posicao" src="../../img/icons/icon_bobia.png" alt="">
+                            <textarea class="text_edit" disabled name="" id="resposta"></textarea>
+                        </div>
+                    </div>
+                    <div class="content_input">
+                        <input class="input_chat" id="pergunta" type="text" placeholder="Digite sua mensagem aqui">
+                        <i class='bx bx-right-arrow enviar_chat'  onclick="gerarResposta()"></i>
+                    </div>
+                </div>
+            </main>
+        </main>
+    </div>
+
+</body>
+</html>
+<script src="../js/session.js"></script>
+
+<script src="../js/cadastrar.js"></script>
+<script src="../../js/adicionarModal.js"></script>
+
+<script src="../js/empresa.js"></script>
+
+<script src="../../js/togglemenu.js"></script>
+<script>
+        
+    async function gerarResposta() {
+        const pergunta = document.getElementById('pergunta').value;
+        document.getElementById("pergunta_expor").innerText = pergunta
+
+        const response = await fetch('http://10.18.6.122:3001/perguntar', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ pergunta })
+        });
+
+        const data = await response.json();
+        document.getElementById('resposta').innerText = data.resultado;
+    }
+
+</script>
+
