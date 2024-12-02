@@ -7,7 +7,7 @@ function buscarkpi1(req, res) {
         logradouroModel.buscarkpi1(empresaId)
         .then(resultado => {
             res.json({
-                logradouro: resultado[0].bairro
+                logradouro: resultado.length
             });
         }).catch(e => {
             res.json(e);
@@ -46,9 +46,10 @@ function selectBairro(req, res) {
 function selectRuas(req, res) {
     const nomeBairro = req.body.nomeBairroServer;
     const nomeCidade = req.body.nomeCidadeServer;
+    const bairroId = req.params.bairroId;
     console.log('To aqui no controller');
 
-        logradouroModel.selectRuas(nomeBairro, nomeCidade)
+        logradouroModel.selectRuas(nomeBairro, nomeCidade, bairroId)
         .then(resultado => {
             res.json({
                 lista: resultado

@@ -33,7 +33,7 @@ const postLogradouro= (cep, uf, cidade, bairro, logradouro, numero, regiao) => {
 
 const buscarkpi1= (idEmpresa) => {
     const instrucaoSqlKpi1 = `
-        SELECT count(bairro) AS bairro FROM logradouro WHERE cidade = (SELECT cidade as bairros FROM empresa AS e JOIN logradouro AS l ON e.logradouro_id = l.id WHERE e.id = ${idEmpresa});
+        SELECT  bairro AS bairro FROM logradouro WHERE cidade = (SELECT cidade as bairros FROM empresa AS e JOIN logradouro AS l ON e.logradouro_id = l.id WHERE e.id = ${idEmpresa} group by bairros) group by bairro ;
     `;
 
     return database.executar(instrucaoSqlKpi1)
@@ -49,15 +49,20 @@ const buscarkpi2= (idEmpresa) => {
 
 const selectBairro= (idEmpresa) => {
     const instrucaoSql_slt_bairro = `
-        SELECT bairro, regiao_cidade AS Regiao, uf AS Unidade, cidade AS Cidade FROM logradouro AS l JOIN empresa AS e ON e.logradouro_id = l.id WHERE uf = (SELECT uf as bairros FROM empresa AS e JOIN logradouro AS l ON e.logradouro_id = l.id WHERE e.id = ${idEmpresa});
+        SELECT l.id, bairro, regiao_cidade AS Regiao, uf AS Unidade, cidade AS Cidade FROM logradouro AS l JOIN empresa AS e ON e.logradouro_id = l.id WHERE cidade = (SELECT cidade as bairros FROM empresa AS e JOIN logradouro AS l ON e.logradouro_id = l.id WHERE e.id = ${idEmpresa}) ;
     `;
 
     return database.executar(instrucaoSql_slt_bairro)
 }
 
-const selectRuas= (nomeBairro, nomeCidade) => {
+const selectRuas= (nomeBairro, nomeCidade, bairroId) => {
+    console.log(nomeBairro);
+    console.log(bairroId)
     const instrucaoSql_slt_bairro = `
-    SELECT logradouro AS Logradouro FROM logradouro WHERE bairro = '${nomeBairro}' AND cidade = '${nomeCidade}';
+    SELECT es.id AS sensor_id,logradouro.id, concat(logradouro, ' ', numLogradouro) AS Logradouro FROM logradouro 
+    JOIN equipamento_sensor es
+    ON es.logradouro_id = logradouro.id
+    WHERE bairro = (SELECT bairro FROM logradouro WHERE id = ${bairroId}) AND cidade = (SELECT cidade FROM logradouro WHERE id = ${bairroId}) ;
     `;
 
     return database.executar(instrucaoSql_slt_bairro)
@@ -65,7 +70,7 @@ const selectRuas= (nomeBairro, nomeCidade) => {
 
 const search= (input, uf) => {
     const instrucaoSql_slt_bairro = `
-        SELECT bairro AS Bairro, uf AS Unidade, logradouro AS Logradouro, regiao_cidade AS Regiao, Cidade FROM logradouro WHERE logradouro LIKE '%${input}%' AND uf = '${uf}';
+        SELECT id ,bairro AS Bairro, uf AS Unidade, logradouro AS Logradouro, regiao_cidade AS Regiao, Cidade FROM logradouro WHERE logradouro LIKE '%${input}%' AND uf = '${uf}';
     `;
 
     return database.executar(instrucaoSql_slt_bairro)

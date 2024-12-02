@@ -16,7 +16,7 @@ router.post("/select_bairro", function (req, res) {
     logradouroController.selectBairro(req, res)
 })
 
-router.post("/select_ruas", function (req, res) {
+router.post("/:bairroId/select_ruas", function (req, res) {
     logradouroController.selectRuas(req, res)
 }) 
 

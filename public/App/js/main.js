@@ -110,7 +110,7 @@ function teste() { // FUNÇÃO DO INPUT DE PESQUISA
                                         <span class="modal-search-rua">${vetor[i].Logradouro}</span>
                                         <span class="modal-search-bairro">${vetor[i].Bairro} - ${vetor[i].Regiao} ${vetor[i].Unidade}</span>
                                     </div>
-                                    <button onclick="pesquisar('${vetor[i].Bairro}')" class="botao-modal">Verificar</button>
+                                    <button onclick="pesquisar('${vetor[i].id}', '${vetor[i].Bairro}')" class="botao-modal">Verificar</button>
                                 </div>
                             `;
                         }
@@ -137,12 +137,31 @@ function fecharModal() {
     modal.close();
 }
 
-function pesquisar(a) {
+function pesquisar(id, bairro) {
     var bairroVar = '';
-    bairroVar = vetor_bairro.indexOf(a);
-    slt_bairro.value = bairroVar;
+    bairro = bairro.replaceAll(' ', '')
+    console.log(bairro)
+    console.log(vetor_bairro)
+    bairroVar = vetor_bairro.indexOf(bairro);
+    console.log(bairroVar)
+    let options = document.getElementById('slt_bairro');
+    let value = 0;
 
-    buscarLogradouros();
+    for(let i =0; i < options.length; i ++){
+        let texto = options[i].text
+        let bairroTexto = texto.split('-')[0]
+        bairroTexto = bairroTexto.replaceAll(' ', '');
+        
+        if(bairroTexto == bairro){
+            value = options[i].value
+            console.log(options[i].value)
+        }
+
+    }
+    slt_bairro.value = value;
+
+
+    buscarLogradouros(id);
 
     modal.style.display = 'none'
     modal.close();

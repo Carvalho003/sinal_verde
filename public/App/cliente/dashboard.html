@@ -21,7 +21,7 @@
 </head>
 
 <body onload="carregarkpi1()">
-    <main class="screen-dash">
+    <main style="position: relative;" class="screen-dash">
         <nav class="side-bar">
             <div class="nav-logo">
                 <img src="../../img/logos/logo sinal verde- nome e cores ajustadas.png" alt="">
@@ -50,7 +50,11 @@
                 </div>
             </a>
         </nav>
-        <main class="main-content">
+        <div style="position: absolute; " id="main_load" class="main-load">
+           <div class="loader"></div> 
+
+        </div>
+        <main style="opacity: 0;" id="main_dashboard" class="main-content">
             <header class="header-colab">
                 <div class="header-content-aside"></div>
                 <div class="title-section">
@@ -62,13 +66,13 @@
                             </div>
                         </div>
                         <div class="bairro-search">
-                            <select id="slt_bairro" class="select-cabecalho" onchange="buscarLogradouros()">
+                            <select id="slt_bairro" class="select-cabecalho" onchange="buscarLogradouros(this.value)">
                                 <option value="a">São Miguel Paulista - SP São Paulo ZL</option>
                             </select>
                         </div>
                         <div class="rua-search">
                             <span style="font-size: 20px">Logradouro:</span>
-                            <select onchange="trocarGrafico()" id="slt_ruas" class="select-cabecalho">
+                            <select onchange="trocarGrafico(this.value)" id="slt_ruas" class="select-cabecalho">
                                 <option>Avenida Marechal Tito</option>
                                 <option value="b">Avenida Rosária</option>
                             </select>
@@ -119,10 +123,13 @@
                                 <img class="imagem-ruas" src="../../img/icons/bx-street-view.svg"/>
                             </div>
                             <div class="percentual">
-                                <span class="titulo-percentual">Porcentagem de ruas congestionadas em <span id="spn_porcentagem"></span>:</span>
+                                <span class="titulo-percentual">Porcentagem de ruas congestionadas nos ultimos 15 minutos em <span id="spn_porcentagem"></span>:</span>
                                 <div class="corpo-percentual">
-                                    <div style="height: 250px;">
+                                    <div id="div_grafico_por" style="height: 250px;">
                                         <canvas class="grafico-setor" id="setor"></canvas>
+                                        <div id="div_destaque">
+                                            <span id="span_porcentagem">30%</span>
+                                        </div>
                                     </div>
                                     <div class="legendas-setor">
                                         <div class="legenda">
@@ -144,9 +151,9 @@
                                     Monitoramento Do Fluxo de Movimento da Rua: <span id="spn_grafico"></span>
                                 </span>
                                     <div class="cards-horario">
-                                        <button onclick="aparecer1h()" class="card-horario" style="background-color: #1D6975; color: #FFFFFF" id="umaH">1h</button>
-                                        <button onclick="aparecer6h()" class="card-horario" style="background-color: #FFF; color: #000000" id="seisH">6h</button>
-                                        <button onclick="aparecer12h()" class="card-horario" style="background-color: #FFF; color: #000000" id="dozeH">12h</button>
+                                        <button onclick="trocarTipoGrafico(1)" class="card-horario" style="background-color: #1D6975; color: #FFFFFF" id="umaH">1h</button>
+                                        <button onclick="trocarTipoGrafico(2)" class="card-horario" style="background-color: #FFF; color: #000000" id="seisH">6h</button>
+                                        <button onclick="trocarTipoGrafico(3)" class="card-horario" style="background-color: #FFF; color: #000000" id="dozeH">12h</button>
                                         <button onclick="infoModal()" class="info"></button>
                                     </div>
                             </div>
@@ -164,464 +171,21 @@
 </html>
 <!--Gráfico de setor:-->
 <script>
-    const graficoSetor = document.getElementById('setor'); // const == variável constante
-
-    // se tiver [] é vetor, se tiver {} é json = juntar inúmeras propriedades dentro de um grupo
-
-     new Chart(graficoSetor, {
-        type: 'doughnut', // tipo do gráfico 
-        data: { // data = todos os valores que serão colocados
-            datasets: [{ // métricas do gráfico = linha
-                backgroundColor: ['#A41D1D', '#1DA426'],
-                borderColor: ['#A41D1D', '#1DA426'],
-                data: [66, 34], // valores do gráfico
-                borderWidth: 1 // largura da borda do gráfico
-            }]
-        },
-        options: { // opções do formato do gráfico
-            plugins:{
-                customCanvasBackgroundColor: {
-                    color: '#FFFFFF',
-                },
-                tooltip: {
-                    enable: false
-                }
-            },
-            cutout: '70%',
-            responsive: true
-        }/*,
-            plugins: {
-                id: 'grafico-setor',
-                beforeDraw: (chart) => {
-                    const largura = chart.width;
-                    const altura = chart.height;
-                    const ctx = chart.ctx;
-                    ctx.restore();
-                    const fontSize = 40;
-                    ctx.font = `${fontSize}em sans-serif`;
-                    ctx.textBaseline = "middle";
-
-                    const mensagem = "68%";
-                    const coordenadaX = Math.round((largura - ctx.measureText(mensagem).largura) / 2);
-                    const coordenadaY = altura / 2;
-
-                    ctx.fillStyle = "#8b0000";
-                    ctx.fillText(mensagem, coordenadaX, coordenadaY);
-                    ctx.save();
-                }
-            }*/
-    });
+    
 </script>
 
 <!--Gráfico de linha:-->
-<script>
-    function aparecer1h() {
-        var graficoBarras = document.getElementById('grafico_linha1');
-        grafico_linha1.style.display = 'flex';
-        grafico_linha6.style.display = 'none';
-        grafico_linha12.style.display = 'none';
 
-        umaH.style.backgroundColor = '#1D6975';
-        umaH.style.color = '#FFFFFF'
-        seisH.style.backgroundColor = '#FFF';
-        seisH.style.color = '#000000'
-        dozeH.style.backgroundColor = '#FFF';
-        dozeH.style.color = '#000000';
-        
-        // Horários:
-        var horariosAtual = ['09:45', '09:40', '09:45', '09:50', '09:55', '10:00', '10:05', '10:10', '10:15', '10:20', '10:25', '10:30',];
-    
-        // Valores:
-        var valoresAtual = [200, 300, 350, 400, 380, 360, 280, 240, 220, 230, 290, 300];
-            
-        // Valores Médio:
-        var valoresMAtual = [240, 310, 340, 370, 400, 370, 290, 240, 250, 255, 270, 280];
-        
-        grafico_atual = new Chart(graficoBarras, {
-            type: 'line', // tipo do gráfico 
-            data: { // data = todos os valores que serão colocados
-                labels: horariosAtual, // array = vetores que serão utilizados na label
-                datasets: [{ // métricas do gráfico = linha
-                    label: 'Avenida 1', // nome da linha
-                    backgroundColor: '#1DA426',
-                    borderColor: '#1DA426',
-                    data: valoresAtual, // valores do gráfico
-                    borderWidth: 1 // largura da borda do gráfico
-                }, {
-                    label: 'Média do bairro',
-                    backgroundColor: '#A41D1D',
-                    borderColor: '#A41D1D',
-                    data: valoresMAtual,
-                    borderWidth: 1
-                }]
-            },
-            options: { // opções do formato do gráfico
-                scales: {
-                    y: {
-                        display: false,
-                        grid: {
-                            display: false
-                        }
-                    },
-                    x: {
-                        grid: {
-                            display: false
-                        }
-                    }
-                },
-                    tension: 0.55,
-                plugins:{
-                    title:{
-                        display:false
-                    },
-                    legend:{
-                        position:'top',
-                        labels:{
-                            boxHeight:3
-                        }
-                    }
-                }
-            }
-        });
-    }
-
-    function aparecer6h() {
-        var graficoBarras = document.getElementById('grafico_linha6');
-        grafico_linha1.style.display = 'none';
-        grafico_linha6.style.display = 'flex';
-        grafico_linha12.style.display = 'none';
-        console.log('6h');
-
-        umaH.style.backgroundColor = '#FFF';
-        umaH.style.color = '#000000'
-        seisH.style.backgroundColor = '#1D6975';
-        seisH.style.color = '#FFFFFF'
-        dozeH.style.backgroundColor = '#FFF';
-        dozeH.style.color = '#000000';
-
-        // Horários
-        var horariosAtual = ['05:30', '06:00', '06:30', '07:00', '07:30', '08:00', '08:30', '09:00', '09:30', '09:30', '10:00', '10:30'];
-    
-        // Valores
-        var valoresAtual = [280, 290, 290, 270, 273, 295, 300, 305, 301, 287, 280, 273];
-            
-        // Valores Médio:
-        var valoresMAtual = [270, 310, 330, 320, 315, 305, 290, 285, 290, 270, 275, 275];
-
-        new Chart(graficoBarras, {
-            type: 'line', // tipo do gráfico 
-            data: { // data = todos os valores que serão colocados
-                labels: horariosAtual, // array = vetores que serão utilizados na label
-                datasets: [{ // métricas do gráfico = linha
-                    label: 'Avenida 1', // nome da linha
-                    backgroundColor: '#1DA426',
-                    borderColor: '#1DA426',
-                    data: valoresAtual, // valores do gráfico
-                    borderWidth: 1 // largura da borda do gráfico
-                }, {
-                    label: 'Média do bairro',
-                    backgroundColor: '#A41D1D',
-                    borderColor: '#A41D1D',
-                    data: valoresMAtual,
-                    borderWidth: 1
-                }]
-            },
-            options: { // opções do formato do gráfico
-                scales: {
-                    y: {
-                        display: false,
-                        grid: {
-                            display: false
-                        }
-                    },
-                    x: {
-                        grid: {
-                            display: false
-                        }
-                    }
-                },
-                    tension: 0.55,
-                plugins:{
-                    title:{
-                        display:false
-                    },
-                    legend:{
-                        position:'top',
-                        labels:{
-                            boxHeight:3
-                        }
-                    }
-                }
-            }
-        });
-    }
-
-    function aparecer12h() {
-        console.log('12h');
-        var graficoBarras = document.getElementById('grafico_linha12');
-        grafico_linha1.style.display = 'none';
-        grafico_linha6.style.display = 'none';
-        grafico_linha12.style.display = 'flex';
-
-        umaH.style.backgroundColor = '#FFF';
-        umaH.style.color = '#000000'
-        seisH.style.backgroundColor = '#FFF';
-        seisH.style.color = '#000000'
-        dozeH.style.backgroundColor = '#1D6975';
-        dozeH.style.color = '#FFFFFF'
-
-        // Horários
-        var horariosAtual = ['23:30','00:30','01:30','02:30','03:30','04:30','05:30','06:30','07:30', '08:30', '09:30', '10:30',];
-    
-        // Valores
-        var valoresAtual = [287, 290, 285, 280, 279, 275, 275, 280, 285, 281, 290, 291]
-        
-        // Valores Médio:
-        var valoresMAtual = [280, 285, 283, 275, 271, 270, 276, 279, 280, 274, 281, 282]
-
-        new Chart(graficoBarras, {
-            type: 'line', // tipo do gráfico 
-            data: { // data = todos os valores que serão colocados
-                labels: horariosAtual, // array = vetores que serão utilizados na label
-                datasets: [{ // métricas do gráfico = linha
-                    label: 'Avenida 1', // nome da linha
-                    backgroundColor: '#1DA426',
-                    borderColor: '#1DA426',
-                    data: valoresAtual, // valores do gráfico
-                    borderWidth: 1 // largura da borda do gráfico
-                }, {
-                    label: 'Média do bairro',
-                    backgroundColor: '#A41D1D',
-                    borderColor: '#A41D1D',
-                    data: valoresMAtual,
-                    borderWidth: 1
-                }]
-            },
-            options: { // opções do formato do gráfico
-                scales: {
-                    y: {
-                        display: false,
-                        grid: {
-                            display: false
-                        }
-                    },
-                    x: {
-                        grid: {
-                            display: false
-                        }
-                    }
-                },
-                    tension: 0.55,
-                plugins:{
-                    title:{
-                        display:false
-                    },
-                    legend:{
-                        position:'top',
-                        labels:{
-                            boxHeight:3
-                        }
-                    }
-                }
-            }
-        });
-    }
-
-</script>
 <script src="../js/togglemenu.js"></script>
 
 <script src="../js/main.js"></script>
 
-<!--Passagem dos dados:-->
-<script>
-    setInterval(() => {
+<script src="../js/graficosDashboard.js"></script>
 
-    })
-
-    function trocarGrafico(a){
-        var rua = slt_ruas.value;
-        var rua_selecionada = a[rua];
-
-        if(rua_selecionada == undefined) {
-            rua_selecionada = 'Teste';
-        }
-        
-        spn_grafico.innerHTML = rua_selecionada;
-
-        grafico_atual.data.datasets[0].label = rua_selecionada;
-
-        let  lista_valores =[1,1,1,1,1,1,1,1,1,1,1,1];
-        let lista_valores2 = [];
-        for(let i = 0; i < 12; i++){
-            // lista_valores.push(Math.floor(Math.random() * 6 + 1))
-            lista_valores2.push(Math.floor(Math.random() * 6 + 1))
-        }
-        console.log(lista_valores)
-        console.log(grafico_atual)
-
-        grafico_atual.data.datasets[0].data = lista_valores;
-        grafico_atual.data.datasets[1].data = lista_valores2;
-        grafico_atual.update()
-        
-}
-
-var idEmpresaVar = sessionStorage.EMPRESA_ID;
-
-function carregarkpi1() {
-    aparecer1h();
-    console.log('to no carregarkpi1')
-    var qtd = 0;
-
-    console.log(idEmpresaVar);
-
-    fetch("/logradouro/kpi1", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            idEmpresaServer: idEmpresaVar
-        })
-    }).then(function (resposta) {
-        console.log(resposta)
-
-            resposta.json().then(json => {
-                console.log(json.logradouro);
-                qtd = json.logradouro;
-                qtd_bairros.innerHTML = `${qtd}`;
-                carregarkpi2();
-            });
-
-    }).catch(function (erro) {
-        console.log(erro);
-    })
-
-    return false;
-}
-
-function carregarkpi2() {
-    console.log('to no carregarkpi2')
-    var qtd = 0;
-
-    fetch("/logradouro/kpi2", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            idEmpresaServer: idEmpresaVar
-        })
-    }).then(function (resposta) {
-        console.log(resposta)
-
-            resposta.json().then(json => {
-                console.log(json.logradouro);
-                qtd = json.logradouro;
-                qtd_ruas.innerHTML = `${qtd}`;
-                mostrarBairros();
-            });
-
-    }).catch(function (erro) {
-        console.log(erro);
-    })
-
-    return false;
-}
-var vetor_bairro = [];
-var vetor_cidade = [];
-
-function mostrarBairros() {
-    var vetor = '';
-    var mensagem = '';
-
-    fetch("/logradouro/select_bairro", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            idEmpresaServer: idEmpresaVar
-        })
-    }).then(function (resposta) {
-        console.log(resposta)
-
-            resposta.json().then(json => {
-                console.log(json.lista);
-                vetor = json.lista;
-                for(var i = 0; i < vetor.length; i++) {
-                    if(!vetor_bairro.includes(vetor[i].bairro)) {
-                        vetor_bairro.push(vetor[i].bairro);
-                        vetor_cidade.push(vetor[i].Cidade);
-
-                        mensagem += `
-                            <option value="${i}">${vetor[i].bairro}  - ${vetor[i].Unidade} ${vetor[i].Cidade} ${vetor[i].Regiao} </option>
-                        `;
-                    }
-                }
-                console.log(vetor_bairro);
-
-                slt_bairro.innerHTML = mensagem;
-
-                buscarLogradouros()
-            });
-
-    }).catch(function (erro) {
-        console.log(erro);
-    })
-
-    return false;
-}
-var vetor_rua = [];
-
-function buscarLogradouros() {
-    var numero_vetor = slt_bairro.value;
-    var nomeBairroVar = vetor_bairro[numero_vetor];
-    var nomeCidadeVar = vetor_cidade[numero_vetor];
-    var mensagem = '';
-
-    bairro_kpi.innerHTML = nomeBairroVar;
-    spn_porcentagem.innerHTML = nomeBairroVar;
-
-    console.log(`${nomeBairroVar} ${nomeCidadeVar}`);
-
-    console.log(vetor_bairro);
-    
-    fetch("/logradouro/select_ruas", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            nomeBairroServer: nomeBairroVar,
-            nomeCidadeServer: nomeCidadeVar
-        })
-    }).then(function (resposta) {
-        console.log(resposta)
-
-            resposta.json().then(json => {
-                console.log(json.lista);
-                var vetor = json.lista;
-                
-                for(var i = 0; i < vetor.length; i++) {
-                    if(!vetor_rua.includes(vetor[i].Logradouro)) {
-                        vetor_rua.push(vetor[i].Logradouro);
-                    }
-                        mensagem += `
-                            <option value="${i}">${vetor[i].Logradouro}</option>
-                        `;
-                    
-                }
-
-                slt_ruas.innerHTML = mensagem;
-                trocarGrafico(vetor_rua);
-
-            });
-
-    }).catch(function (erro) {
-        console.log(erro);
-    })
-
-    return false;
-}
-
+<script >
+    setTimeout(() => {
+        main_dashboard.style.opacity = 1;
+        main_load.style.display = 'none'
+    }, 4* 1000)
 </script>
+
