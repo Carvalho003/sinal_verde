@@ -96,6 +96,12 @@
     align-items: center;
     transition: all 0.4s;
     cursor: pointer;
+    flex-direction: column;
+}
+
+.logout-sec {
+    height: 100%;
+    gap: 30px;
 }
 
 .icon-text-nav{
