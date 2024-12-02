@@ -20,7 +20,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body onload="carregarkpi1()">
+<body style="position: relative;" onload="carregarkpi1()">
     <main style="position: relative;" class="screen-dash">
         <nav class="side-bar">
             <div class="nav-logo">
@@ -63,6 +63,11 @@
 
         </div>
         <main style="opacity: 0;" id="main_dashboard" class="main-content">
+            <div id="alerta_atual" class="alerta" style="display: none;">
+                <span style="color: #A41D1D" id="div_alerta">Avenida Marechal Tito com <br>trânsito parado a 15 minutos</span>
+                <img src="../../img/icons/bell-ring-solid-24.png" alt="" class="alerta-img">
+                <i onclick="abrirAlertas()" class='bx bx-chevron-down'></i>
+            </div>
             <header class="header-colab">
                 <div class="header-content-aside"></div>
                 <div class="title-section">
@@ -90,10 +95,7 @@
                         <div class="date-section">
                             <span id="span-date">14/10 SEG 22:03</span>
                         </div>
-                        <div class="alerta" style="display: flex;">
-                            <span style="color: #A41D1D" id="div_alerta">Avenida Marechal Tito com <br>trânsito parado a 15 minutos</span>
-                            <img src="../../img/icons/bell-ring-solid-24.png" alt="" class="alerta-img">
-                        </div>
+                        
                     </div>
                 </div>
             </header>
@@ -168,12 +170,42 @@
                                 <canvas id="grafico_linha1" display="none" class="grafico-linha"></canvas>
                                 <canvas id="grafico_linha6" display="none" class="grafico-linha"></canvas>
                                 <canvas id="grafico_linha12" display="none" class="grafico-linha"></canvas>
-                        </div>
+                            </div>
+                            <div class="boxinha"></div>
                     </div>
                 </div>
             </div>
         </main>
     </main>
+    <div id="modal_alertas" style="display: none;" class="backdrop-modal">
+    <div class="modal-alertas">
+        <div class="head">
+            <span>Alertas</span>
+            <i onclick="fecharAlertas()" class='bx bx-x'></i>
+        </div>
+        <div id="div_alertas" class="alertas">
+            
+            
+            
+            <div class="alerta-modal" style="display: flex;">
+                <span style="color: #A41D1D" id="div_alerta">Avenida Marechal Tito com <br>trânsito parado a 15 minutos</span>
+                <i style="color: #A41D1D;" class='bx bxs-bell-ring'></i>   
+                <!-- <i class='bx bx-chevron-down'></i> -->
+            </div>
+            <div class="alerta-modal" style="display: flex;">
+                <span style="color: #A41D1D" id="div_alerta">Avenida Marechal Tito com <br>trânsito parado a 15 minutos</span>
+                <i style="color: #A41D1D;" class='bx bxs-bell-ring'></i>   
+                <!-- <i class='bx bx-chevron-down'></i> -->
+            </div>
+            <div class="alerta-modal" style="display: flex;">
+                <span style="color: #A41D1D" id="div_alerta">Avenida Marechal Tito com <br>trânsito parado a 15 minutos</span>
+                <!-- <i class='bx bx-chevron-down'></i> -->
+            </div>
+           
+            
+        </div>
+    </div>
+    </div> 
 </body>
 
 </html>
@@ -194,6 +226,18 @@
     setTimeout(() => {
         main_dashboard.style.opacity = 1;
         main_load.style.display = 'none'
-    }, 4* 1000)
+        getAlertas()
+    }, 3.5* 1000)
+
+    function abrirAlertas(){
+        modal_alertas.style.display ='flex'
+    }
+
+    function fecharAlertas(){
+        modal_alertas.style.display ='none'
+        
+    }
 </script>
+
+<script src="../js/alertasDashboard.js"></script>
 

@@ -237,6 +237,13 @@
     font-size: 20px;
 }
 
+.boxinha{
+    min-height: 80px;
+    width: 100%;
+    background-color: transparent;
+
+}
+
 .select-cabecalho:hover {
     cursor: pointer;
 }
@@ -252,6 +259,7 @@
     border-radius: 10px;
     box-shadow: 0px 4px 10px 2px rgba(158, 157, 157, 0.3);
     padding: 10px;
+    /* margin-bottom: 5vh !important; */
 }
 
 .kpi-bairros {
@@ -505,8 +513,54 @@
     cursor: pointer;
 }
 
+.backdrop-modal{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    z-index: 11;  
+}
+
+.modal-alertas{
+    width: 60%;
+    height: 80%;
+    background-color: #fff;
+    padding: 20px;
+    z-index: 11;
+    & .head{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        & i {
+            font-size: 42px;
+            cursor: pointer;
+        }
+        & span{
+            font-size: 40px;
+            cursor: pointer;
+        }
+    }
+    & .alertas{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        /* justify-content: space-around; */
+        gap: 20px;
+        overflow-y: scroll;
+        max-height: 550px;
+    }
+}
+
 .alerta {
-    width: 95%;
+    width: 20%;
+    position: fixed;
+    bottom: 1%;
+    right: 1%;
     height: fit-content;
     display: flex;
     flex-direction: row;
@@ -514,6 +568,33 @@
     border: 3px solid #A41D1D;
     border-radius: 10px;
     gap: 10px;
+    cursor: pointer;
+    align-items: center;
+    & i {
+        font-size: 38px;
+        color: #A41D1D;
+    }
+}
+
+
+.alerta-modal {
+    width: fit-content;
+    /* position: fixed;
+    bottom: 1%;
+    right: 1%; */
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    border: 3px solid #A41D1D;
+    border-radius: 10px;
+    gap: 10px;
+    cursor: pointer;
+    align-items: center;
+    & i {
+        font-size: 38px;
+        color: #A41D1D;
+    }
 }
 
 .texto-alerta {

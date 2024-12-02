@@ -137,8 +137,32 @@ function fecharModal() {
     modal.close();
 }
 
-function pesquisar(id, bairro) {
-    var bairroVar = '';
+function pesquisar(id, bairro, infos) {
+    
+    if(infos){
+       console.log(bairro)
+       let options = document.getElementById('slt_bairro');
+        let value = 0;
+
+    for(let i =0; i < options.length; i ++){
+        let texto = options[i].text
+        let bairroTexto = texto.split('-')[0]
+        bairroTexto = bairroTexto.replaceAll(' ', '');
+        console.log(bairroTexto, bairro.replaceAll(' ', ''))
+        if(bairroTexto == bairro.replaceAll(' ', '')){
+            value = options[i].value
+            console.log(options[i].value)
+        }
+
+        options.value = value
+        buscarLogradouros(id);
+
+        modal_alertas.style.display ='none'
+
+
+    }
+    }else{
+        var bairroVar = '';
     bairro = bairro.replaceAll(' ', '')
     console.log(bairro)
     console.log(vetor_bairro)
@@ -165,4 +189,6 @@ function pesquisar(id, bairro) {
 
     modal.style.display = 'none'
     modal.close();
+
+    }
 }

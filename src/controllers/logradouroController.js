@@ -1,4 +1,6 @@
 var logradouroModel = require("../models/logradouroModel");
+var sensorController = require("./sensorController")
+
 
 function buscarkpi1(req, res) {
     const empresaId = req.body.idEmpresaServer;
@@ -29,12 +31,32 @@ function buscarkpi2(req, res) {
         })
 }
 
+async function selectRuasMonitoradas(req, res){
+    const empresaId = req.params.empresaId;
+    console.log('To aqui no controller');
+
+        const resultado = await logradouroModel.selectRuasMonitoradas(empresaId)
+        console.log(resultado)
+        await Promise.all(resultado.map(async (registro) => {
+
+            registro['ruaLivre'] = await sensorController.verificarCongestionamentos(registro.sensorId)
+                    
+        }))
+
+        
+
+        res.json(
+            resultado
+        );
+    }
+
 function selectBairro(req, res) {
     const empresaId = req.body.idEmpresaServer;
     console.log('To aqui no controller');
 
         logradouroModel.selectBairro(empresaId)
         .then(resultado => {
+            
             res.json({
                 lista: resultado
             });
@@ -80,4 +102,5 @@ module.exports = {
     selectBairro,
     selectRuas,
     search,
+    selectRuasMonitoradas
 }

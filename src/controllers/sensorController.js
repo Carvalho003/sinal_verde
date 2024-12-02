@@ -245,6 +245,68 @@ async function graficoRuasDoBairroCongestionadas(req, res){
 }
 
 
+
+async function verificarCongestionamentos(id){
+    // const in_ids = req.body.in_ids;
+    // const id_ruas_verificar = in_ids.split(',');
+    const dadosUltimaHora = {
+        dados: []
+    };
+    const promises = [];
+    
+        let minutagemMaior =5;
+        let minutagemMenor =0;
+        for(let i =0; i <3; i++){
+            promises.push(
+                await model.graficoUltimaHora(id, minutagemMaior, minutagemMenor).then(response => {
+                    return response[0]
+                }).catch(e => {
+                    console.log(e)
+                })
+            );
+            minutagemMaior += 5;
+            minutagemMenor += 5;
+        }
+    
+
+    await Promise.all(promises.map(resultado => {
+        if(resultado){
+            console.log(resultado)
+         
+         if((resultado.media)){
+            dadosUltimaHora.dados.push(Number((resultado.media).toFixed(2)))   
+         }else {
+            dadosUltimaHora.dados.push(0)   
+         }
+        }else {
+            // dadosUltimaHora.push(0)
+        }
+    }))
+   
+    let ruaLivre = false;
+    let contarCongestionadas = 0;
+    let dados = dadosUltimaHora.dados
+    for(let i =0; i < dados.length; i++){
+        
+        if(dados[i] <= 10){
+            contarCongestionadas++; 
+        }
+            if(contarCongestionadas == 3){
+                ruaLivre = false;
+            }else{
+                ruaLivre = true
+            }
+            
+            
+        
+        
+    }
+    
+    
+    return ruaLivre;
+}
+
+
 async function graficoDozeHorasBairro(req, res){
     const in_ids = req.body.in_ids;
     const dadosUltimaHora = {
@@ -335,5 +397,6 @@ module.exports ={
     graficoUltimaHoraBairro,
     graficoSeisHorasBairro,
     graficoDozeHorasBairro,
-    graficoRuasDoBairroCongestionadas
+    graficoRuasDoBairroCongestionadas,
+    verificarCongestionamentos,
 }

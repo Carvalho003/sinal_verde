@@ -12,6 +12,10 @@ router.post("/kpi2", function (req, res) {
     logradouroController.buscarkpi2(req, res)
 })
 
+router.get("/:empresaId/ruas", function(req, res){
+    logradouroController.selectRuasMonitoradas(req, res)
+})
+
 router.post("/select_bairro", function (req, res) {
     logradouroController.selectBairro(req, res)
 })
