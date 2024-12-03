@@ -17,7 +17,7 @@ const getDadosDozeHorasBairro = async(lista_de_ids) =>{
 
     console.log(in_ids)
 
-    const response = await fetch(`http://localhost:3333/sensor/twelve`, {
+    const response = await fetch(`http://127.0.0.1:3333/sensor/twelve`, {
         method: 'POST',
         headers: { 
             "Content-Type": "application/json",
@@ -46,7 +46,7 @@ const getDadosUltimaHoraBairro = async(lista_de_ids) =>{
 
     console.log(in_ids)
 
-    const response = await fetch(`http://localhost:3333/sensor/hour`, {
+    const response = await fetch(`http://127.0.0.1:3333/sensor/hour`, {
         method: 'POST',
         headers: { 
             "Content-Type": "application/json",
@@ -76,7 +76,7 @@ const getDadosSeisHorasBairro = async(lista_de_ids) =>{
 
     console.log(in_ids)
 
-    const response = await fetch(`http://localhost:3333/sensor/six`, {
+    const response = await fetch(`http://127.0.0.1:3333/sensor/six`, {
         method: 'POST',
         headers: { 
             "Content-Type": "application/json",
@@ -93,21 +93,21 @@ const getDadosSeisHorasBairro = async(lista_de_ids) =>{
 }
 
 const getDadosUltimaHora = async(sensorId) => {
-    const response = await fetch(`http://localhost:3333/sensor/hour/${sensorId}`)
+    const response = await fetch(`http://127.0.0.1:3333/sensor/hour/${sensorId}`)
     const json = await response.json()
     return json
     
 }
 
 const getDadosSeisHoras = async(sensorId) => {
-    const response = await fetch(`http://localhost:3333/sensor/six/${sensorId}`)
+    const response = await fetch(`http://127.0.0.1:3333/sensor/six/${sensorId}`)
     const json = await response.json()
     return json
     
 }
 
 const getDadosDozeHoras = async(sensorId) => {
-    const response = await fetch(`http://localhost:3333/sensor/twelve/${sensorId}`)
+    const response = await fetch(`http://127.0.0.1:3333/sensor/twelve/${sensorId}`)
     const json = await response.json()
     return json
     
@@ -198,7 +198,7 @@ const getDadosRuasCongestionadas = (lista_de_ids) => {
     }
 
 
-     fetch(`http://localhost:3333/sensor/bairro`, {
+     fetch(`http://127.0.0.1:3333/sensor/bairro`, {
         method: 'POST',
         headers: { 
             "Content-Type": "application/json",
