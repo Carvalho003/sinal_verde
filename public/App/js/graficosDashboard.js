@@ -149,7 +149,7 @@ async function trocarGrafico(sensorId){
     sensorAtual = sensorId
     }else{
     sensorAtual = slt_ruas.value;
-}
+    }
 console.log(sensorAtual)
     // var rua_selecionada = a[rua];
 
@@ -166,14 +166,14 @@ console.log(sensorAtual)
     let dadosUltimaHora
     let dadosUltimaHoraBairro
     if(tipoGrafico == 'ultimaHora'){
-         dadosUltimaHora = await getDadosUltimaHora(sensorId);
+         dadosUltimaHora = await getDadosUltimaHora(sensorAtual);
          dadosUltimaHoraBairro = await getDadosUltimaHoraBairro(lista_ids_ruas);
 
     }else if(tipoGrafico == 'seisHoras'){
-        dadosUltimaHora = await getDadosSeisHoras(sensorId)
+        dadosUltimaHora = await getDadosSeisHoras(sensorAtual)
         dadosUltimaHoraBairro = await getDadosSeisHorasBairro(lista_ids_ruas);
     }else{
-        dadosUltimaHora = await getDadosDozeHoras(sensorId)
+        dadosUltimaHora = await getDadosDozeHoras(sensorAtual)
         dadosUltimaHoraBairro = await getDadosDozeHorasBairro(lista_ids_ruas);
 
     }
