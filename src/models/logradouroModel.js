@@ -57,7 +57,7 @@ const selectBairro= (idEmpresa) => {
 
 const selectRuasMonitoradas= (idEmpresa) => {
     const instrucaoSql_slt_bairro = `
-        SELECT l.id, l.logradouro,l.bairro, es.id as sensorId FROM logradouro AS l JOIN empresa AS e ON e.logradouro_id = l.id
+        SELECT l.id,  concat(logradouro, ' ', numLogradouro) as logradouro ,l.bairro, es.id as sensorId FROM logradouro AS l JOIN empresa AS e ON e.logradouro_id = l.id
         JOIN equipamento_sensor es ON es.logradouro_id = l.id WHERE cidade = (SELECT cidade as bairros FROM empresa AS e JOIN logradouro AS l ON e.logradouro_id = l.id WHERE e.id = ${idEmpresa}) ;
     `;
 

@@ -385,6 +385,16 @@
     gap: 5%;
 }
 
+
+@keyframes pulsar {
+    0% {
+      box-shadow: 0 0 0 0px rgba(0  , 0, 0, 0.4);
+    }
+    100% {
+      box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+  }
+
 .legenda {
     width: 100%;
     display: flex;
@@ -553,6 +563,7 @@
         gap: 20px;
         overflow-y: scroll;
         max-height: 550px;
+        padding: 20px;
     }
 }
 
@@ -570,6 +581,8 @@
     gap: 10px;
     cursor: pointer;
     align-items: center;
+    box-shadow: 0px 0px 1px 1px #A41D1D;
+
     & i {
         font-size: 38px;
         color: #A41D1D;

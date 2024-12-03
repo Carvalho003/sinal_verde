@@ -251,7 +251,8 @@ const graficoSetor = document.getElementById('setor'); // const == variável con
                 },
                 tooltip: {
                     enable: false
-                }
+                },
+               
             },
             cutout: '70%',
             responsive: true
@@ -396,7 +397,7 @@ function aparecer1h() {
         options: { // opções do formato do gráfico
             scales: {
                 y: {
-                    display: false,
+                    display: true,
                     grid: {
                         display: false
                     }
@@ -416,6 +417,22 @@ function aparecer1h() {
                     position:'top',
                     labels:{
                         boxHeight:3
+                    }
+                },
+                annotation: {
+                    annotations: {
+                        horizontalLine: {
+                            type: 'line',
+                            yMin: 10, // Define o valor no eixo Y
+                            yMax: 10, // Define o valor no eixo Y
+                            borderColor: 'red', // Cor da linha
+                            borderWidth: 2, // Largura da linha
+                            label: {
+                                content: 'Y = 10', // Texto da linha
+                                enabled: true,
+                                position: 'start' // Posição do rótulo
+                            }
+                        }
                     }
                 }
             }

@@ -137,9 +137,29 @@ function fecharModal() {
     modal.close();
 }
 
-function pesquisar(id, bairro, infos) {
+function verficarAnimacaoes() {
+    const divsModalAlerta = document.querySelectorAll('.alerta-modal');
+
+    for(let i =0; i < divsModalAlerta.length; i++){
+        console.log(divsModalAlerta[i])
+        console.log(divsModalAlerta[i].style.animation)
+        let arrayPalavrasNoAnimation = (divsModalAlerta[i].style.animation).split(' ');
+
+        if(arrayPalavrasNoAnimation.includes('pulsar')){
+            return false
+        }
+    }
+    return true;
+}
+
+function pesquisar(id, bairro, infos, elemento) {
     
     if(infos){
+        elemento.style.animation = 'none'
+
+        if(verficarAnimacaoes()){
+            alerta_atual.style.animation = 'none'
+        }
        console.log(bairro)
        let options = document.getElementById('slt_bairro');
         let value = 0;
@@ -154,13 +174,44 @@ function pesquisar(id, bairro, infos) {
             console.log(options[i].value)
         }
 
-        options.value = value
-        buscarLogradouros(id);
-
-        modal_alertas.style.display ='none'
-
-
+        
+        
+        
     }
+    options.value = value
+    let arrayInfos = infos.split(',')
+    let logradouro_selecionado = arrayInfos[2];
+    let color = arrayInfos[3];
+    let situacao = arrayInfos[4];
+
+    // ['11', ' Vila Rosaria', ' Rua Maria Susano Polilo 516', ' #A41D1D', ' parado']
+    alerta_atual.style.borderColor = color
+
+    alerta_atual.innerHTML = `<span style="color: ${color}" id="div_alerta">${logradouro_selecionado} com <br>trânsito ${situacao} a 15 minutos</span>
+                <i style="color: ${color};" class='bx bxs-bell-ring'></i>   
+                <i style="color: ${color}" onclick="abrirAlertas()" class='bx bx-chevron-down'></i>`
+    alerta_atual.style.display = 'flex';
+
+    setTimeout(() => {
+        console.log(logradouro_selecionado)
+        let select_ruas = document.getElementById('slt_ruas')
+        let valueDaRua = 0;
+        for(let i =0; i < select_ruas.length; i++){
+            let texto = select_ruas[i].text 
+            console.log(texto)
+            console.log(logradouro_selecionado)
+            if(logradouro_selecionado.replaceAll(' ', '') == texto.replaceAll(' ', '')){
+                console.log("caiu")
+                valueDaRua = select_ruas[i].value
+            }
+        }
+        select_ruas.value = valueDaRua
+        trocarGrafico(valueDaRua)
+
+    }, 400)
+    buscarLogradouros(id);
+    modal_alertas.style.display ='none'
+
     }else{
         var bairroVar = '';
     bairro = bairro.replaceAll(' ', '')
