@@ -144,8 +144,12 @@ const trocarTipoGrafico = (tipo) => {
 }
 
 async function trocarGrafico(sensorId){
+    // let sensorAtual;
+    if(sensorId){
     sensorAtual = sensorId
-    var rua = slt_ruas.value;
+    }else{
+    sensorAtual = slt_ruas.value;
+    }
     // var rua_selecionada = a[rua];
 
     // if(rua_selecionada == undefined) {
