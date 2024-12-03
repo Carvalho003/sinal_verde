@@ -2,7 +2,7 @@ let alertas;
 
 
 const getAlertas = () => {
-    fetch(`http://localhost:3333/logradouro/${sessionStorage.EMPRESA_ID}/ruas`).then(res => res.json()).then(res => {
+    fetch(`http://127.0.0.1:3333/logradouro/${sessionStorage.EMPRESA_ID}/ruas`).then(res => res.json()).then(res => {
         if(alertas){
             if(JSON.stringify(res) !== JSON.stringify(alertas)){
                 let copyRes = JSON.stringify(res);
