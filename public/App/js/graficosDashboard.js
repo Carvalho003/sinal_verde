@@ -149,7 +149,8 @@ async function trocarGrafico(sensorId){
     sensorAtual = sensorId
     }else{
     sensorAtual = slt_ruas.value;
-    }
+}
+console.log(sensorAtual)
     // var rua_selecionada = a[rua];
 
     // if(rua_selecionada == undefined) {
