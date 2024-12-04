@@ -78,7 +78,8 @@
                 </header>
                 <h2 class="titulo_chat">BobIA</h2>
                 <div class="container_chat">
-                    <div class="content_user">
+                    <div id="messages_div" class="content_messages">
+                    <!-- <div class="content_user">
                         <div class="body_chat_user">
                             <i class="fa-regular fa-circle-user usuario_posicao"></i>
                             <p class="text_chat" id="pergunta_expor"></p>
@@ -89,7 +90,11 @@
                             <img class=" bobia_posicao" src="../../img/icons/icon_bobia.png" alt="">
                             <p class="text_chat" id="resposta"></p>
                         </div>
-                    </div>
+                        
+                    </div> -->
+                </div>
+                
+                <div style="display: none;" id="div_loading" class="loader"></div>
                     <div class="content_input">
                         <input class="input_chat" id="pergunta" type="text" placeholder="Digite sua mensagem aqui">
                         <i class='bx bx-right-arrow enviar_chat'  onclick="gerarResposta()"></i>
@@ -106,10 +111,18 @@
 <script>
         
     async function gerarResposta() {
+        div_loading.style.display = 'flex'
         const pergunta = document.getElementById('pergunta').value;
-        document.getElementById("pergunta_expor").innerText = pergunta
+        // document.getElementById("pergunta_expor").innerText = pergunta
 
-        const response = await fetch('http://10.18.35.52:3001/perguntar', {
+        messages_div.innerHTML += `<div class="content_user">
+                        <div class="body_chat_user">
+                            <i class="fa-regular fa-circle-user usuario_posicao"></i>
+                            <p class="text_chat" id="pergunta_expor">${pergunta}</p>
+                        </div>
+                    </div>`
+
+        const response = await fetch('http://127.0.0.1:3001/perguntar', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -118,8 +131,20 @@
         });
 
         const data = await response.json();
-        document.getElementById('resposta').innerText = data.resultado;
+        div_loading.style.display = 'none'
+        document.getElementById('pergunta').value = '';
+        messages_div.innerHTML += ` <div class="content_bobia">
+                        <div class="body_chat_bobia">
+                            <img class=" bobia_posicao" src="../../img/icons/icon_bobia.png" alt="">
+                            <p class="text_chat" id="resposta">${data.resultado}</p>
+                        </div>
+                        
+                    </div>`
+
+        // document.getElementById('resposta').innerText = data.resultado;
     }
+
+    nome_usuario.innerText = sessionStorage.NOME_USUARIO
 
 </script>
 
