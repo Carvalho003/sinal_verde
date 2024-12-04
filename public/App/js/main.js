@@ -62,11 +62,11 @@ function infoModal() {
             <div class="esquerda-modal">
                 <div class="quadro-info">
                     <span class="titulo-modal">Caso 1:</span>
-                    <span class="texto-modal">Caso a linha do gráfico mantenha um padrão mais linear, sem muitas ondulações, quer dizer que esta via está confestionada. Assim como o <span style="color: #1DA426">Exemplo 1</span> ao lado:</span>
+                    <span class="texto-modal">Caso a linha do gráfico mantenha um padrão mais linear, sem muitas ondulações, com medidas abaixo de 10 no eixo y quer dizer que esta via está congestionada. Assim como o <span style="color: #A41D1D">Exemplo 1</span> ao lado:</span>
                 </div>
                 <div class="quadro-info">
                     <span class="titulo-modal">Caso 2</span>
-                    <span class="texto-modal">Caso a linha do gráfico mantenha um padrão mais irregular, com muitas ondulações, quer dizer que esta via está livre. Assim como o <span style="color: #A41D1D">Exemplo 2</span> ao lado:</span>
+                    <span class="texto-modal">Caso a linha do gráfico mantenha um padrão mais irregular, com muitas ondulações, e com medidas acima de 10 no eixo y quer dizer que esta via está livre. Assim como o <span style="color: #1DA426">Exemplo 2</span> ao lado:</span>
                 </div>
             </div>
             <div class="direita-modal">
@@ -74,6 +74,59 @@ function infoModal() {
             </div>
         </div>
     `;
+    const graficoBarras1 = document.getElementById('grafico-exemplo');
+
+    new Chart(graficoBarras1, {
+        type: 'line', // tipo do gráfico 
+        data: { // data = todos os valores que serão colocados
+            labels: ['','','','','',''], // array = vetores que serão utilizados na label
+            datasets: [ 
+                {
+                    label: 'Exemplo 2',
+                    backgroundColor: '#A41D1D',
+                    borderColor: '#A41D1D',
+                    data: [20, 21, 20, 21, 20, 21],
+                    borderWidth: 1
+                }
+                ,
+                {
+                label: 'Exemplo 1',
+                backgroundColor: '#1DA426',
+                borderColor: '#1DA426',
+                data: [1, 10, 1, 10, 1, 10],
+                borderWidth: 1
+            }
+            ]
+        },
+        options: { // opções do formato do gráfico
+            scales: {
+                y: {
+                    display: false,
+                    grid: {
+                        display: false
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false
+                    }
+                }
+            },
+                tension: 0.55,
+            plugins:{
+                title:{
+                    display:false
+                },
+                legend:{
+                    position:'top',
+                    labels:{
+                        boxHeight:3
+                    }
+                }
+            }
+        }
+    });
+
 }
 
 function teste() { // FUNÇÃO DO INPUT DE PESQUISA

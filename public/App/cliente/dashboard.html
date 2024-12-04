@@ -92,8 +92,23 @@
                         </div>
                     </div>
                     <div class="cabecalho-direita">
+                        <div class="options-box">
+                            <span>Olá, <span id="nome_usuario"></span></span>
+                            <i onclick="toggleMenu(this)" class='bx bxs-chevron-down'></i>
+                            <div class="menu hide">
+                                <ul>
+                                    <li>
+                                        <span>Meus Dados</span>
+                                    </li>
+                                    <li>
+                                        <span>Sair</span>
+                                    </li>
+                                </ul>
+                                <i class='bx bxs-up-arrow seta-header'></i>
+                            </div>
+                        </div>
                         <div class="date-section">
-                            <span id="span-date">14/10 SEG 22:03</span>
+                            <span id="span_date">14/10 SEG 22:03</span>
                         </div>
                         
                     </div>
@@ -226,10 +241,11 @@
     setTimeout(() => {
         main_dashboard.style.opacity = 1;
         main_load.style.display = 'none'
+        nome_usuario.innerText = sessionStorage.NOME_USUARIO
         getAlertas()
         setInterval(() => {
             getAlertas()
-            
+            atualizarData()
         }, 3 * 1000)
         setInterval(() => {
             trocarGrafico()
@@ -244,6 +260,33 @@
         modal_alertas.style.display ='none'
         
     }
+
+    function fillDate(date){
+        if(date.toString().length == 1){
+            return `0${date}`
+        }
+        return date
+    }
+
+    function atualizarData(){
+        let date = new Date();
+        let dias = ['DOM', 'SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SAB'];
+        let diaSemana = dias[date.getDay()];
+        let horas = fillDate(date.getHours());
+        let minutos = fillDate(date.getMinutes());
+
+        let diaMes = fillDate(date.getDate());
+
+        let mes = fillDate(date.getMonth() +1);
+
+        let stringDate = `${diaMes}/${mes} ${diaSemana} ${horas}:${minutos}`;
+
+
+        
+        span_date.innerText = stringDate
+    }
+
+    atualizarData()
 </script>
 
 <script src="../js/alertasDashboard.js"></script>
